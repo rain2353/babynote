@@ -1,6 +1,12 @@
 # babynote
 유치원 어플
 
+키즈노트를 모티브해서 만들어본 개인 프로젝트 입니다.
+
+
+node js , mysql , kotlin
+
+node js 코드
 
 var crypto = require('crypto');
 var uuid = require('uuid');
