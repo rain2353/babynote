@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+            android:id="@+id/text_modify"
+            android:title="수정하기"
+            android:icon="@drawable/ic_create_black_24dp"
+            app:showAsAction="always" />
+    <item
+            android:id="@+id/text_delete"
+            android:title="삭제하기"
+            android:icon="@drawable/ic_delete"
+            app:showAsAction="always"/>
+    <!--    <group>-->
+    <!--        <item-->
+    <!--                android:id="@+id/menu_account"-->
+    <!--                android:title="account"-->
+    <!--                android:icon="@drawable/ic_account_circle_white_24dp"-->
+    <!--        />-->
+    <!--        <item-->
+    <!--                android:id="@+id/menu_logout"-->
+    <!--                android:title="logout"-->
+    <!--                android:icon="@drawable/ic_exit_to_app_white_24dp"-->
+    <!--        />-->
+    <!--    </group>-->
+
+</menu>

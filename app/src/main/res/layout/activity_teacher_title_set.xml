@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".Resister.Teacher_Title_set"
+        tools:showIn="@layout/activity_teacher_title_set"
+        android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_dark"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize" android:id="@+id/toolbar10" app:titleTextColor="@color/backbaby"/>
+    <TextView
+            android:text="글을 작성할떄 표시되는 호칭을 설정해주세요."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView9" android:textColor="@color/colorAccent"
+            android:gravity="center" android:layout_marginTop="20dp" android:textSize="20dp"/>
+    <TextView
+            android:text="(예시)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView11" android:gravity="center"/>
+    <TextView
+            android:text="별님반"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/teacher_nickname_EX" android:textSize="30dp"
+            android:gravity="center"/>
+    <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:id="@+id/teacher_nicknameGroup">
+        <RadioButton
+                android:text="교사"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/teacher" android:layout_weight="0"
+                android:layout_marginLeft="30dp"
+                android:textSize="20dp"/>
+
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/teacher_radioButton"
+                android:layout_marginLeft="30dp"
+                 android:textSize="20dp" android:hint="직접입력" android:checked="false"
+                android:freezesText="false" android:inputType="textPersonName|text" android:textIsSelectable="true"
+                android:singleLine="false"/>
+        <Button
+                android:text="확인"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/select" android:layout_gravity="center"/>
+    </RadioGroup>
+</LinearLayout>

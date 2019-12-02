@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Add_baby.Add_baby_info">
+
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/teacher_toolbar11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_dark"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:titleTextColor="@color/backbaby" />
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+            <TextView
+                    android:id="@+id/textView_kindergarten"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:drawableStart="@drawable/ic_home_40ecff_24dp"
+                    android:text="유치원 이름"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="20dp" />
+
+            <EditText
+                    android:id="@+id/edit_class"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:hint="선생님은 무슨 반을 맡고 계신가요?"
+                    android:inputType="textPersonName" />
+
+            <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="선생님의 프로필을 등록해 주세요."
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="20dp" />
+
+            <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:hint="선생님의 이름은 무엇인가요?"
+                    android:inputType="textPersonName" />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
+
+                <Spinner
+                        android:id="@+id/add_teacher_year"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                <Spinner
+                        android:id="@+id/add_teacher_month"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                <Spinner
+                        android:id="@+id/add_teacher_day"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+            </LinearLayout>
+
+            <ImageView
+                    android:id="@+id/teacher_image"
+                    android:layout_width="350dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="visible"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+            <Button
+                    android:id="@+id/teacher_image_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="@android:color/holo_blue_dark"
+                    android:text="선생님 사진 등록하기"
+                    android:textColor="@color/backbaby" />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
+
+                <Button
+                        android:id="@+id/button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/holo_blue_dark"
+                        android:text="남자"
+                        android:textColor="@color/backbaby" />
+
+                <Button
+                        android:id="@+id/button2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@color/backbaby"
+                        android:text="여자"
+                        android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <Button
+                    android:id="@+id/button_teacherAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@android:color/holo_blue_dark"
+                    android:text="등록하기"
+                    android:textColor="@color/backbaby" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

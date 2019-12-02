@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".투약의뢰서.request_text">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+            <android.support.v7.widget.Toolbar
+                    android:id="@+id/request_text_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/holo_red_light"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="?attr/actionBarTheme"
+                    app:titleTextColor="@color/backbaby" />
+
+            <TextView
+                    android:id="@+id/baby_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="TextView" />
+
+            <TextView
+                    android:id="@+id/textView35"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:text="금일 자녀의 투약을 선생님께 의뢰합니다." />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="10dp">
+
+                <TextView
+                        android:id="@+id/textView48"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="증상 : " />
+
+                <TextView
+                        android:id="@+id/textView49"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="10dp"/>
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/textView50"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="투약 내용"
+                    android:textSize="18dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp">
+
+                <TextView
+                        android:id="@+id/textView51"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="약의 종류 : " />
+
+                <TextView
+                        android:id="@+id/textView52"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp">
+
+                <TextView
+                        android:id="@+id/textView53"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="투약 용량 : " />
+
+                <TextView
+                        android:id="@+id/textView54"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp">
+
+                <TextView
+                        android:id="@+id/textView55"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="투약 횟수 : " />
+
+                <TextView
+                        android:id="@+id/textView56"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp">
+
+                <TextView
+                        android:id="@+id/textView57"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="투약 시간 : " />
+
+                <TextView
+                        android:id="@+id/textView58"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp">
+
+                <TextView
+                        android:id="@+id/textView59"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="보관 방법 : " />
+
+                <TextView
+                        android:id="@+id/textView60"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp">
+
+                <TextView
+                        android:id="@+id/textView61"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="특이 사항 : " />
+
+                <TextView
+                        android:id="@+id/textView62"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"/>
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/textView63"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="투약으로 인한 책임은 의뢰자가 집니다."
+                    android:layout_marginTop="30dp"/>
+
+            <TextView
+                    android:id="@+id/textView64"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="날짜"
+                    android:layout_marginTop="10dp"/>
+
+            <TextView
+                    android:id="@+id/textView65"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="부모님 성함"
+                    android:layout_marginEnd="20dp"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                <EditText
+                        android:id="@+id/request_text_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:ems="14"
+                        android:hint="댓글 쓰기"
+                        android:inputType="textPersonName" />
+
+                <Button
+                        android:id="@+id/request_comment_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:text="댓글 등록" />
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="자신이 작성한 댓글을 길게 누르면 수정, 삭제가 가능합니다."
+                    android:layout_marginStart="30dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/request_text_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="277dp" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

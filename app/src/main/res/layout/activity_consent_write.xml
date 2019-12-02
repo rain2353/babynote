@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".귀가동의서.consent_write">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            <android.support.v7.widget.Toolbar
+                    android:id="@+id/consent_write_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/holo_red_light"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="?attr/actionBarTheme"
+                    app:subtitleTextColor="#FFFFFF"
+                    app:titleTextColor="#FFFFFF" />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/item_border">
+
+                <ImageView
+                        android:id="@+id/imageView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:srcCompat="@tools:sample/avatars"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:gravity="center">
+
+                    <TextView
+                            android:id="@+id/textView33"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="TextView" />
+
+                    <TextView
+                            android:id="@+id/textView66"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="TextView"
+                            android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/textView67"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="날짜"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="20dp"/>
+
+            <Button
+                    android:id="@+id/button6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="날짜지정하기"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"/>
+
+            <TextView
+                    android:id="@+id/textView68"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="귀가 시간"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="20dp"/>
+
+            <Button
+                    android:id="@+id/button7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="귀가시간 선택하기"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"/>
+
+            <TextView
+                    android:id="@+id/textView69"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="귀가방법"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="20dp"/>
+
+            <EditText
+                    android:id="@+id/editText6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:hint="예 ) 도보, 자가용, 통학버스, 자전거, 기타등등"
+                    android:inputType="textPersonName" />
+
+            <TextView
+                    android:id="@+id/textView70"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="보호자"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="20dp"/>
+
+            <EditText
+                    android:id="@+id/editText7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="원아와의 관계"
+                    android:inputType="textPersonName"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"/>
+
+            <EditText
+                    android:id="@+id/editText8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="전화번호"
+                    android:inputType="phone"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"/>
+
+            <TextView
+                    android:id="@+id/textView71"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="비상연락망"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="20dp"/>
+
+            <EditText
+                    android:id="@+id/editText9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="원아와의 관계"
+                    android:inputType="textPersonName"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"/>
+
+            <EditText
+                    android:id="@+id/editText10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="전화번호"
+                    android:inputType="phone"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"/>
+
+            <TextView
+                    android:id="@+id/textView72"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="영유아의 귀가 시 보호자에게 인도하여 주세요.                                                         위 보호자 이외의 다른 사람에게 인계할 때는 사전에 반드시 연락을                                                                                                                                     취하겠습니다.                                                                                                                          원에서는 부모가 희망하더라도 영유아를 혼자 귀가시키지 않습니다. "
+                    android:textSize="14dp"
+                    android:layout_marginTop="15dp"/>
+
+            <TextView
+                    android:id="@+id/textView73"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="금일 자녀의 귀가를 선생님께 의뢰합니다."
+                    android:textSize="18dp"
+                    android:layout_marginTop="15dp"/>
+
+            <TextView
+                    android:id="@+id/textView74"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="날짜"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

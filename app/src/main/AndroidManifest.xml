@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.example.babynote">
+    <!-- 인터넷 연결 허용하는 퍼미션 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            android:usesCleartextTraffic="true">
+        <activity android:name=".알림장.select_baby"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"></activity>
+        <activity
+                android:name=".귀가동의서.consent_comment_modify"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity android:name=".귀가동의서.consent_text" />
+        <activity android:name=".귀가동의서.consent_write" />
+        <activity
+                android:name=".투약의뢰서.request_comment_modify"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity android:name=".투약의뢰서.request_text" />
+        <activity android:name=".투약의뢰서.request_write" />
+        <activity
+                android:name=".식단표.carte_modify"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity
+                android:name=".식단표.carte_comment_modify"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity android:name=".식단표.carte_photoview" />
+        <activity
+                android:name=".식단표.carte_read"
+                android:parentActivityName=".식단표.Carte" />
+        <activity android:name=".식단표.Carte_write" />
+        <activity android:name=".앨범.album_Image" />
+        <activity
+                android:name=".앨범.album_comment_modify"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity
+                android:name=".앨범.album_modify"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity android:name=".앨범.Album_photoview" />
+        <activity android:name=".앨범.Album_write" />
+        <activity
+                android:name=".알림장.advice_write"
+                android:parentActivityName=".알림장.Advice_note" />
+        <activity
+                android:name=".공지사항.notice_comment"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity android:name=".공지사항.PhotoView" />
+        <activity android:name=".공지사항.notice_modify" />
+        <activity android:name=".공지사항.Notice_Text" />
+        <activity
+                android:name=".공지사항.Notice_write"
+                android:parentActivityName=".공지사항.Notice" />
+        <activity
+                android:name=".Resister.Teacher_image_info"
+                android:parentActivityName=".Resister.Teacher_Info" />
+        <activity
+                android:name=".Resister.Teacher_Info"
+                android:label="activity_teacher__info"
+                android:parentActivityName=".Resister.Teacher_Title_set" />
+        <activity
+                android:name=".Login.Find_Password"
+                android:parentActivityName=".Login.Login" />
+        <activity
+                android:name=".Login.Find_ID"
+                android:parentActivityName=".Login.Login" />
+        <activity
+                android:name=".Add_baby.Add_baby_info"
+                android:parentActivityName=".Add_baby.Add_baby" />
+        <activity
+                android:name=".Add_baby.Add_baby"
+                android:label="activity_add_baby"
+                android:parentActivityName=".Main.MainActivity" />
+        <activity
+                android:name=".Resister.Teacher_Title_set"
+                android:label="@string/title_activity_teacher__title_set"
+                android:parentActivityName=".Login.Login" />
+        <activity
+                android:name=".Resister.Family_Title_set"
+                android:parentActivityName=".Login.Login" />
+        <activity
+                android:name=".Resister.Join_membership"
+                android:parentActivityName=".Login.Login" />
+        <activity android:name=".Login.Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".귀가동의서.Consent_form"
+                android:parentActivityName=".Main.MainActivity" />
+        <activity
+                android:name=".투약의뢰서.Administration_request_form"
+                android:parentActivityName=".Main.MainActivity" />
+        <activity
+                android:name=".식단표.Carte"
+                android:parentActivityName=".Main.MainActivity" />
+        <activity
+                android:name=".앨범.Album"
+                android:parentActivityName=".Main.MainActivity" />
+        <activity
+                android:name=".공지사항.Notice"
+                android:parentActivityName=".Main.MainActivity" />
+        <activity
+                android:name=".알림장.Advice_note"
+                android:parentActivityName=".Main.MainActivity" />
+        <activity android:name=".Main.MainActivity" />
+        <activity
+                android:name="com.ipaulpro.afilechooser.FileChooserActivity"
+                android:enabled="@bool/use_activity"
+                android:exported="true"
+                android:icon="@drawable/ic_chooser"
+                android:label="@string/choose_file">
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
