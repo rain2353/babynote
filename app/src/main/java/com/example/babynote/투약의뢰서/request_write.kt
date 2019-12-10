@@ -30,7 +30,7 @@ class request_write : AppCompatActivity() {
 
     var week = ""
     var week1 = ""
-    var userID = ""
+    var userID : String? = null
     var kindergarten: String? = null
     var classname: String? = null
     var writer_nickname: String? = null

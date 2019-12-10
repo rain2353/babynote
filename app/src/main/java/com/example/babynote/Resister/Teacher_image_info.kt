@@ -46,7 +46,7 @@ class Teacher_image_info : AppCompatActivity(), ProgressRequestBody.UploadCallba
     var month = ""
     var day = ""
     var gender: String = "남자"
-    var userID = ""
+    var userID : String?= null
     var kindergartenName = ""
     private val OPEN_GALLERY = 1
     private val PERMISSION_REQUEST: Int = 1000
@@ -314,7 +314,7 @@ class Teacher_image_info : AppCompatActivity(), ProgressRequestBody.UploadCallba
             if (requestCode == PICK_IMAGE_REQUEST) {
                 if (data != null) {
                     selectedFileUri = data.data
-                    if (selectedFileUri != null && !selectedFileUri!!.path.isEmpty())
+                    if (selectedFileUri != null && !selectedFileUri!!.path!!.isEmpty())
                         teacher_image.setImageURI(selectedFileUri)
                 }
             }

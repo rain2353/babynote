@@ -17,4 +17,5 @@ class advice_list{
     var classname:String?=null
     var advice_time: String? = null
     var advice_write_time: String? = null
+    var baby_image: String? = null
 }

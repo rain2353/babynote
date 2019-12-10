@@ -73,7 +73,7 @@ class Login : AppCompatActivity() {
             .subscribe{ message ->
                 if(message.contains("encrypted_password")) {
                     val pref = getSharedPreferences("UserId",Context.MODE_PRIVATE)
-                    var User: String = pref.getString("id", 0.toString())
+                    var User: String? = pref.getString("id", 0.toString())
                     UserInfo(User)
                     Toast.makeText(this, User +"님 로그인 하셨습니다.", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MainActivity::class.java)
@@ -101,7 +101,7 @@ class Login : AppCompatActivity() {
         ed.putString(Key,Value)
         ed.apply()
     }
-    private fun UserInfo(id: String) {
+    private fun UserInfo(id: String?) {
         compositeDisposable.add(myAPI.userInfo(id)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

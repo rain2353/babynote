@@ -41,7 +41,7 @@ class notice_modify : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
     var compositeDisposable = CompositeDisposable()
     var num: Int = 0
     var writer: String? = null
-    var userID = ""
+    var userID : String? = null
     var kindergarten:String? = null
     var classname:String? = null
     var writer_nickname:String? = null
@@ -181,7 +181,7 @@ class notice_modify : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
             if (requestCode == PICK_IMAGE_REQUEST) {
                 if (data != null) {
                     selectedFileUri = data.data
-                    if (selectedFileUri != null && !selectedFileUri!!.path.isEmpty())
+                    if (selectedFileUri != null && !selectedFileUri!!.path!!.isEmpty())
                         notice_modify_image.setImageURI(selectedFileUri)
                 }
             }

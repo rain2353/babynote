@@ -7,6 +7,7 @@ import com.example.babynote.귀가동의서.consent_comment_list
 import com.example.babynote.귀가동의서.consent_list
 import com.example.babynote.식단표.carte_comment_list
 import com.example.babynote.식단표.carte_list
+import com.example.babynote.알림장.advice_comment_list
 import com.example.babynote.알림장.advice_list
 import com.example.babynote.알림장.select_baby_list
 import com.example.babynote.앨범.album_comment_list
@@ -24,12 +25,12 @@ interface INodeJS {
     @POST("register")
     @FormUrlEncoded
     fun registerUser(
-        @Field("id") id: String,
-        @Field("name") name: String,
-        @Field("phonenumber") phonenumber: String,
-        @Field("email") email: String,
-        @Field("password") password: String,
-        @Field("state") state: String,
+        @Field("id") id: String?,
+        @Field("name") name: String?,
+        @Field("phonenumber") phonenumber: String?,
+        @Field("email") email: String?,
+        @Field("password") password: String?,
+        @Field("state") state: String?,
         @Field("nickname") nickname: String?
     ): Observable<String>
 
@@ -37,35 +38,35 @@ interface INodeJS {
     @POST("login")
     @FormUrlEncoded
     fun loginUser(
-        @Field("id") id: String,
-        @Field("password") password: String
+        @Field("id") id: String?,
+        @Field("password") password: String?
     ): Observable<String>
 
     // 아이디를 분실한 유저 아이디 찾기.
     @POST("find_id")
     @FormUrlEncoded
     fun find_userid(
-        @Field("name") name: String,
-        @Field("phonenumber") phonenumber: String
+        @Field("name") name: String?,
+        @Field("phonenumber") phonenumber: String?
     ): Observable<String>
 
     // 비밀번호를 분실한 유저 찾기.
     @POST("find_password")
     @FormUrlEncoded
     fun find_userPassword(
-        @Field("id") id: String,
-        @Field("name") name: String,
-        @Field("phonenumber") phonenumber: String
+        @Field("id") id: String?,
+        @Field("name") name: String?,
+        @Field("phonenumber") phonenumber: String?
     ): Observable<String>
 
     // 비밀번호 변경하기
     @POST("change_password")
     @FormUrlEncoded
     fun change_userPassword(
-        @Field("id") id: String,
-        @Field("name") name: String,
-        @Field("phonenumber") phonenumber: String,
-        @Field("password") password: String
+        @Field("id") id: String?,
+        @Field("name") name: String?,
+        @Field("phonenumber") phonenumber: String?,
+        @Field("password") password: String?
     ): Observable<String>
 
     // 유저 정보.
@@ -77,7 +78,7 @@ interface INodeJS {
     @GET("mybaby/{parents_id}/{num}")
     fun mybaby(
         @Path("parents_id") parents_id: String?,
-        @Path("num") num: Int
+        @Path("num") num: Int?
     ): Observable<String>
 
     // 아기 등록하기.
@@ -85,12 +86,12 @@ interface INodeJS {
     @Multipart
     fun uploadFile(
         @Part file: MultipartBody.Part,
-        @Part("babyname") babyname: String,
-        @Part("babybirth") babybirth: String,
-        @Part("babygender") babygender: String,
-        @Part("baby_kindergarten") baby_kindergarten: String,
-        @Part("baby_class") baby_class: String,
-        @Part("parents_id") parents_id: String,
+        @Part("babyname") babyname: String?,
+        @Part("babybirth") babybirth: String?,
+        @Part("babygender") babygender: String?,
+        @Part("baby_kindergarten") baby_kindergarten: String?,
+        @Part("baby_class") baby_class: String?,
+        @Part("parents_id") parents_id: String?,
         @Part("state") state: String?
     ): Call<String>
 
@@ -103,12 +104,12 @@ interface INodeJS {
     @Multipart
     fun uploadNotice(
         @Part file: MultipartBody.Part,
-        @Part("notice_title") notice_title: String,
-        @Part("notice_content") notice_content: String,
-        @Part("notice_writer") notice_writer: String,
-        @Part("notice_nickname") notice_nickname: String,
-        @Part("kindergarten") kindergarten: String,
-        @Part("classname") classname: String
+        @Part("notice_title") notice_title: String?,
+        @Part("notice_content") notice_content: String?,
+        @Part("notice_writer") notice_writer: String?,
+        @Part("notice_nickname") notice_nickname: String?,
+        @Part("kindergarten") kindergarten: String?,
+        @Part("classname") classname: String?
     ): Call<String>
 
     // 공지사항 글 리스트 불러오기
@@ -143,13 +144,13 @@ interface INodeJS {
     fun notice_modify(
         @Part file: MultipartBody.Part,
         @Part("notice_num") notice_num: Int?,
-        @Part("notice_title") notice_title: String,
-        @Part("notice_content") notice_content: String,
-        @Part("notice_time") notice_time: String,
-        @Part("notice_writer") notice_writer: String,
-        @Part("notice_nickname") notice_nickname: String,
-        @Part("kindergarten") kindergarten: String,
-        @Part("classname") classname: String
+        @Part("notice_title") notice_title: String?,
+        @Part("notice_content") notice_content: String?,
+        @Part("notice_time") notice_time: String?,
+        @Part("notice_writer") notice_writer: String?,
+        @Part("notice_nickname") notice_nickname: String?,
+        @Part("kindergarten") kindergarten: String?,
+        @Part("classname") classname: String?
     ): Call<String>
 
     // 공지사항 댓글 수정
@@ -174,10 +175,10 @@ interface INodeJS {
     @Multipart
     fun uploadAlbum(
         @Part file: MultipartBody.Part,
-        @Part("album_writer") album_writer: String,
-        @Part("album_nickname") album_nickname: String,
-        @Part("kindergarten") kindergarten: String,
-        @Part("classname") classname: String
+        @Part("album_writer") album_writer: String?,
+        @Part("album_nickname") album_nickname: String?,
+        @Part("kindergarten") kindergarten: String?,
+        @Part("classname") classname: String?
     ): Call<String>
 
     // 앨범 사진 리스트 불러오기
@@ -480,7 +481,8 @@ interface INodeJS {
         @Part("advice_writer") advice_writer: String?,
         @Part("advice_nickname") advice_nickname: String?,
         @Part("kindergarten") kindergarten: String?,
-        @Part("classname") classname: String?
+        @Part("classname") classname: String?,
+        @Part("baby_image") baby_image : String?
     ): Call<String>
 
     // 알림장 글 리스트  전체 불러오기 ( 선생님 )
@@ -497,6 +499,65 @@ interface INodeJS {
         @Path("classname") classname: String?,
         @Path("advice_baby") advice_baby: String?
     ): Observable<List<advice_list>>
+
+    // 알림장 수정하기.
+    @POST("advice_modify")
+    @Multipart
+    fun advice_modify(
+        @Part("num") num: Int?,
+        @Part("advice_baby") advice_baby: String?,
+        @Part ("advice_content") advice_content: String?,
+        @Part file: MultipartBody.Part,
+        @Part("feel") feel: String?,
+        @Part("health") health: String?,
+        @Part("temperature") temperature: String?,
+        @Part("MealorNot") MealorNot: String?,
+        @Part("sleep") sleep: String?,
+        @Part("poop") poop: String?,
+        @Part("advice_writer") advice_writer: String?,
+        @Part("advice_nickname") advice_nickname: String?,
+        @Part("kindergarten") kindergarten: String?,
+        @Part("classname") classname: String?,
+        @Part("advice_time") advice_time: String?,
+        @Part("advice_write_time") advice_write_time: String?,
+        @Part("baby_image") baby_image: String?
+    ): Call<String>
+
+    // 알림장 글 삭제
+    @POST("advice_delete")
+    @FormUrlEncoded
+    fun advice_text_delete(@Field("num") num: Int?): Observable<String>
+
+    // 알림장 댓글 읽어오기
+    @GET("advice_comment_read/{advice_num}")
+    fun advice_comment_read(@Path("advice_num") advice_num: Int?): Observable<List<advice_comment_list>>
+
+    // 알림장 댓글 작성
+    @POST("advice_comment_write")
+    @FormUrlEncoded
+    fun advice_comment_write(
+        @Field("advice_num") advice_num: Int?,
+        @Field("comment_writer") comment_writer: String?,
+        @Field("comment_nickname") comment_nickname: String?,
+        @Field("comment_content") comment_content: String?
+    ): Observable<String>
+
+    // 알림장 댓글 수정
+    @POST("advice_modify_comment")
+    @FormUrlEncoded
+    fun advice_modify_comment(
+        @Field("num") num: Int?,
+        @Field("advice_num") advice_num: Int?,
+        @Field("comment_writer") comment_writer: String?,
+        @Field("comment_nickname") comment_nickname: String?,
+        @Field("comment_content") comment_content: String?,
+        @Field("comment_time") comment_time: String?
+    ): Observable<String>
+
+    // 알림장 댓글 삭제
+    @POST("advice_comment_delete")
+    @FormUrlEncoded
+    fun advice_comment_delete(@Field("num") num: Int?): Observable<String>
 
 
 }

@@ -226,19 +226,19 @@ class carte_modify : Activity(), ProgressRequestBody.UploadCallbacks {
             if (requestCode == PICK_IMAGE_REQUEST1) {
                 if (data != null) {
                     selectedFileUri1 = data.data
-                    if (selectedFileUri1 != null && !selectedFileUri1!!.path.isEmpty())
+                    if (selectedFileUri1 != null && !selectedFileUri1!!.path!!.isEmpty())
                         carte_modify_image_1.setImageURI(selectedFileUri1)
                 }
             } else if (requestCode == PICK_IMAGE_REQUEST2) {
                 if (data != null) {
                     selectedFileUri2 = data.data
-                    if (selectedFileUri2 != null && !selectedFileUri2!!.path.isEmpty())
+                    if (selectedFileUri2 != null && !selectedFileUri2!!.path!!.isEmpty())
                         carte_modify_image_2.setImageURI(selectedFileUri2)
                 }
             } else if (requestCode == PICK_IMAGE_REQUEST3) {
                 if (data != null) {
                     selectedFileUri3 = data.data
-                    if (selectedFileUri3 != null && !selectedFileUri3!!.path.isEmpty())
+                    if (selectedFileUri3 != null && !selectedFileUri3!!.path!!.isEmpty())
                         carte_modify_image_3.setImageURI(selectedFileUri3)
                 }
             }

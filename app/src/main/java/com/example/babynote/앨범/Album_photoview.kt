@@ -138,13 +138,11 @@ class Album_photoview : AppCompatActivity() {
 
     override fun onResume() {
         album_comment_read(Common.selected_album?.num)
-        album_comment_recyclerview.adapter?.notifyDataSetChanged()
         super.onResume()
     }
 
     override fun onPause() {
         album_comment_read(Common.selected_album?.num)
-        album_comment_recyclerview.adapter?.notifyDataSetChanged()
         super.onPause()
     }
 

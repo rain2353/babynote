@@ -1,13 +1,13 @@
 package com.example.babynote.알림장
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import com.example.babynote.Api.IRecyclerOnClick
 import com.example.babynote.Common.Common
 import com.example.babynote.R
@@ -37,11 +37,8 @@ class advice_recyclerviewAdapter(internal val context: Context, internal val adv
 
             override fun onClick(view: View, position: Int) {
                 Common.selected_advice = advice_list[position]
-                Toast.makeText(view.context,advice_list[position].advice_content + "클릭"+"("+position+")",Toast.LENGTH_SHORT).show()
-//                val intent = Intent(view.context, Notice_Text::class.java)
-//                intent.putExtra("num",position)
-
-//                view.context.startActivity(intent)
+                val intent = Intent(view.context, advice_text::class.java)
+                view.context.startActivity(intent)
 
             }
 

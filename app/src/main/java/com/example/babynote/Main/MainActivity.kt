@@ -12,10 +12,10 @@ import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import com.example.babynote.*
 import com.example.babynote.Add_baby.Add_baby
 import com.example.babynote.Api.INodeJS
 import com.example.babynote.Common.Common
+import com.example.babynote.R
 import com.example.babynote.User.User
 import com.example.babynote.공지사항.Notice
 import com.example.babynote.귀가동의서.Consent_form
@@ -185,7 +185,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 drawerLayout.openDrawer(GravityCompat.START)    // 네비게이션 드로어 열기
                 // 로그인한 아이디를 네비게이션 드로어 아이디에 입력한다.
                 val pref = getSharedPreferences("UserId", Context.MODE_PRIVATE)
-                var userID = pref.getString("id", 0.toString())
+                var userID: String? = pref.getString("id", 0.toString())
                 this.MyName.text = userID
                 UserInfo(userID)
                 val pref1 = getSharedPreferences("UserInfo", Context.MODE_PRIVATE)
@@ -295,7 +295,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return false
     }
 
-    private fun UserInfo(id: String) {
+    private fun UserInfo(id: String?) {
         compositeDisposable.add(myAPI.userInfo(id)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

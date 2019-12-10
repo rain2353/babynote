@@ -40,7 +40,7 @@ class Album_write : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
     lateinit var dialog: ProgressDialog
     var compositeDisposable = CompositeDisposable()
 
-    var userID = ""
+    var userID : String? = null
     var kindergarten: String? = null
     var classname: String? = null
     var writer_nickname: String? = null
@@ -151,7 +151,7 @@ class Album_write : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
             if (requestCode == PICK_IMAGE_REQUEST) {
                 if (data != null) {
                     selectedFileUri = data.data
-                    if (selectedFileUri != null && !selectedFileUri!!.path.isEmpty())
+                    if (selectedFileUri != null && !selectedFileUri!!.path!!.isEmpty())
                         image_album_write.setImageURI(selectedFileUri)
                 }
             }

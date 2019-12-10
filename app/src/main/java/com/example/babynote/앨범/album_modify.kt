@@ -205,7 +205,7 @@ class album_modify : Activity(), ProgressRequestBody.UploadCallbacks {
             if (requestCode == PICK_IMAGE_REQUEST) {
                 if (data != null) {
                     selectedFileUri = data.data
-                    if (selectedFileUri != null && !selectedFileUri!!.path.isEmpty())
+                    if (selectedFileUri != null && !selectedFileUri!!.path!!.isEmpty())
                         modify_image.setImageURI(selectedFileUri)
                 }
             }

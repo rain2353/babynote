@@ -1,9 +1,8 @@
-package com.example.babynote.공지사항
+package com.example.babynote.알림장
 
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
-import android.graphics.Paint
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
@@ -24,18 +23,16 @@ import com.squareup.picasso.Picasso
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_notice__text.*
+import kotlinx.android.synthetic.main.activity_advice_text.*
 
-
-class Notice_Text : AppCompatActivity() {
+class advice_text : AppCompatActivity() {
     lateinit var myAPI: INodeJS
     var compositeDisposable = CompositeDisposable()
     var num: Int = 0
     var writer: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.example.babynote.R.layout.activity_notice__text)
+        setContentView(R.layout.activity_advice_text)
         setToolbar()
         //Init API
         val retrofit = RetrofitClient.instance
@@ -50,57 +47,62 @@ class Notice_Text : AppCompatActivity() {
         var UserDTO = gson.fromJson(userEmail, User::class.java)
         writer = UserDTO.id.toString()
 
-        mybaby(Common.selected_notice?.notice_writer, num)
-        notice_text_title.setPaintFlags(notice_text_title.getPaintFlags() or Paint.UNDERLINE_TEXT_FLAG)
-        notice_text_title.text = Common.selected_notice?.notice_title
-        notice_text_content.text = Common.selected_notice?.notice_content
-        notice_text_write_time.text = Common.selected_notice?.notice_time
-        notice_text_writer_nickname.text = Common.selected_notice?.notice_nickname
-        Picasso.get().load(Common.selected_notice?.notice_image).into(notice_text_image)
-        notice_text_comment(Common.selected_notice?.num)
-        val lm = LinearLayoutManager(this)
-        notice_text_recyclerview.layoutManager = lm as RecyclerView.LayoutManager?
-        notice_text_recyclerview.setHasFixedSize(true)
-//        notice_text_recyclerview.adapter = notice_text_Adapter(this,notice_comment_list)
+        // 알림장에 정보 채우기.
+        mybaby(Common.selected_advice?.advice_writer, num)
+        advice_text_writer_nickname.text = Common.selected_advice?.advice_nickname
+        advice_text_write_time.text = Common.selected_advice?.advice_write_time
+        Picasso.get().load(Common.selected_advice?.file).into(imageView15)
+        textView101.text = Common.selected_advice?.advice_content
+        textView103.text = Common.selected_advice?.feel
+        textView105.text = Common.selected_advice?.health
+        textView107.text = Common.selected_advice?.temperature
+        textView109.text = Common.selected_advice?.MealorNot
+        textView111.text = Common.selected_advice?.sleep
+        textView113.text = Common.selected_advice?.poop
 
-        notice_text_image.setOnClickListener {
-            var intent = Intent(this, PhotoView::class.java)
+        // 이미지 클릭시 확대해서 보기.
+        imageView15.setOnClickListener {
+            var intent = Intent(this, advice_photoview::class.java)
             startActivity(intent)
         }
-        notice_comment_button.setOnClickListener {
-            if (notice_text_comment.text.isEmpty()) {
+
+        // 알림장 댓글 리사이클러뷰 설정하고 아이템 불러오기.
+        advice_comment(Common.selected_advice?.num)
+        val lm = LinearLayoutManager(this)
+        advice_comment_recyclerview.layoutManager = lm as RecyclerView.LayoutManager?
+        advice_comment_recyclerview.setHasFixedSize(true)
+
+        // 알림장 댓글작성 버튼 누르면 댓글을 작성한다. 하지만 댓글이 없을시엔 댓글 작성이 안된다.
+        advice_comment_button.setOnClickListener {
+            if (advice_text_comment.text.isEmpty()) {
+                Toast.makeText(this,"댓글을 작성해주세요.",Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             } else {
                 Log.d("nickname", Common.selected_baby?.baby_name + UserDTO.nickname)
-                notice_text_comment_read(
-                    Common.selected_notice?.num,
+                advice_comment_write(
+                    Common.selected_advice?.num,
                     UserDTO.id,
                     Common.selected_baby?.baby_name + " " + UserDTO.nickname,
-                    notice_text_comment.text.toString()
+                    advice_text_comment.text.toString()
                 )
                 // 키보드를 내린다.
                 val imm = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                imm.hideSoftInputFromWindow(notice_text_comment.windowToken, 0)
+                imm.hideSoftInputFromWindow(advice_text_comment.windowToken, 0)
             }
         }
     }
 
-
-
     // 툴바 사용 설정
     private fun setToolbar() {
-        setSupportActionBar(notice_text_toolbar)
+        setSupportActionBar(advice_text_toolbar)
 
         // 툴바 왼쪽 버튼 설정
-//        supportActionBar!!.setDisplayHomeAsUpEnabled(true)  // 왼쪽 버튼 사용 여부 true
-//        supportActionBar!!.setHomeAsUpIndicator(com.example.babynote.R.drawable.ic_arrow_back_white_24dp)  // 왼쪽 버튼 이미지 설정
-        supportActionBar!!.setTitle("공지사항 내용")
+        supportActionBar!!.setTitle("알림장 내용")
         supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
-
     // 툴바 메뉴 버튼을 설정
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        if (Common.selected_notice?.notice_writer == writer) {
+        if (Common.selected_advice?.advice_writer == writer) {
             val menuInflater = menuInflater
             menuInflater.inflate(R.menu.text_item, menu)       // main_menu 메뉴를 toolbar 메뉴 버튼으로 설정
 
@@ -115,7 +117,7 @@ class Notice_Text : AppCompatActivity() {
         when (item!!.getItemId()) {
 
             R.id.text_modify -> {
-                var intent = Intent(this@Notice_Text, notice_modify::class.java)
+                var intent = Intent(this, advice_modify::class.java)
 //                intent.putExtra("유치원이름", kindergarten)
 //                intent.putExtra("유치원반이름", classname)
 //                intent.putExtra("작성자", babyname)
@@ -135,7 +137,7 @@ class Notice_Text : AppCompatActivity() {
 
                 fun toast_n() {
 
-                    notice_text_delete(Common.selected_notice?.num)
+                    advice_text_delete(Common.selected_advice?.num)
                 }
 
                 var dialog_listener = object : DialogInterface.OnClickListener {
@@ -158,7 +160,6 @@ class Notice_Text : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
     // 작성자 정보 가져오는 메소드
     private fun mybaby(parents_id: String?, num: Int) {
         compositeDisposable.add(myAPI.mybaby(parents_id, num)
@@ -170,7 +171,7 @@ class Notice_Text : AppCompatActivity() {
                 var Main_babys =
                     gson.fromJson(message, com.example.babynote.Kiz.Main_Kiz::class.java)
                 Picasso.get().load(Main_babys.baby_imagepath).resize(100, 100)
-                    .into(notice_text_writer_image)
+                    .into(advice_text_writer_image)
 
             }
                 , { thr ->
@@ -181,29 +182,9 @@ class Notice_Text : AppCompatActivity() {
 
             ))
     }
-
-
-    // 글 번호에 따른 댓글 가져오기
-    private fun notice_text_comment(notice_num: Int?) {
-        compositeDisposable.add(myAPI.notice_text_comment_read(notice_num)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ notice_comment_list ->
-                notice_text_recyclerview.adapter =
-                    notice_text_Adapter(baseContext, notice_comment_list)
-                notice_text_recyclerview.adapter?.notifyDataSetChanged()
-//
-            }
-                , { thr ->
-                    Log.d("notice_text_comment", thr.message.toString())
-                }
-
-            ))
-    }
-
-    // 공지사항 글 삭제하기.
-    private fun notice_text_delete(num: Int?) {
-        compositeDisposable.add(myAPI.notice_text_delete(num)
+    // 알림장 글 삭제하기.
+    private fun advice_text_delete(num: Int?) {
+        compositeDisposable.add(myAPI.advice_text_delete(num)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ message ->
@@ -220,16 +201,32 @@ class Notice_Text : AppCompatActivity() {
 
             ))
     }
+    // 글 번호에 따른 댓글 가져오기
+    private fun advice_comment(advice_num: Int?) {
+        compositeDisposable.add(myAPI.advice_comment_read(advice_num)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ advice_comment_list ->
+                advice_comment_recyclerview.adapter =
+                    advice_comment_Adapter(baseContext, advice_comment_list)
+                advice_comment_recyclerview.adapter?.notifyDataSetChanged()
+            }
+                , { thr ->
+                    Log.d("notice_text_comment", thr.message.toString())
+                }
+
+            ))
+    }
 
     // 댓글 쓰기
-    private fun notice_text_comment_read(
-        notice_num: Int?,
+    private fun advice_comment_write(
+        advice_num: Int?,
         comment_writer: String?,
         comment_nickname: String?,
         comment_content: String?
     ) {
-        compositeDisposable.add(myAPI.notice_text_comment_write(
-            notice_num,
+        compositeDisposable.add(myAPI.advice_comment_write(
+            advice_num,
             comment_writer,
             comment_nickname,
             comment_content
@@ -238,10 +235,10 @@ class Notice_Text : AppCompatActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { message ->
                 if (message.contains("affectedRows")) {
-                    notice_text_comment.setText("")
+                    advice_text_comment.setText("")
                     Toast.makeText(this, "댓글이 등록되었습니다.", Toast.LENGTH_SHORT).show()
-                    notice_text_comment(Common.selected_notice?.num)
-//                    notice_text_recyclerview.adapter?.notifyDataSetChanged()
+                    advice_comment(Common.selected_advice?.num)
+                    advice_comment_recyclerview.adapter?.notifyDataSetChanged()
                 } else {
                     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
                 }
@@ -249,12 +246,12 @@ class Notice_Text : AppCompatActivity() {
     }
 
     override fun onResume() {
-        notice_text_comment(Common.selected_notice?.num)
+        advice_comment(Common.selected_advice?.num)
         super.onResume()
     }
 
     override fun onPause() {
-        notice_text_comment(Common.selected_notice?.num)
+        advice_comment(Common.selected_advice?.num)
         super.onPause()
     }
 }

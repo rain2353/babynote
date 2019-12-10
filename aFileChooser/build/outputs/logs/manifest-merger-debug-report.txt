@@ -1,25 +1,25 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml:16:1-19:12
-INJECTED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml:16:1-19:12
-INJECTED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml:16:1-19:12
+ADDED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml:16:1-19:12
+INJECTED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml:16:1-19:12
+INJECTED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml:16:1-19:12
 	package
-		ADDED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml:17:9-44
-		INJECTED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml
-		INJECTED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml
+		ADDED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml:17:9-44
+		INJECTED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml
+		INJECTED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml:16:11-69
+		ADDED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml:16:11-69
 uses-sdk
-INJECTED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml
-INJECTED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml
-INJECTED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml
-INJECTED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml
+INJECTED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml
+INJECTED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml
+INJECTED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml
+INJECTED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml
-		ADDED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml
-		INJECTED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml
+		INJECTED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml
+		ADDED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml
+		INJECTED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml
-		ADDED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml
-		INJECTED from D:\Program Files\Android\Babynote\aFileChooser\src\main\AndroidManifest.xml
+		INJECTED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml
+		ADDED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml
+		INJECTED from C:\Babynote\aFileChooser\src\main\AndroidManifest.xml
