@@ -8,6 +8,7 @@ node js , mysql , kotlin
 
 node js 코드
 
+
 var crypto = require('crypto');
 var uuid = require('uuid');
 var express = require('express');
@@ -19,7 +20,7 @@ var newDate = require('date-utils');
 var con = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '**********',
+    password: 'gustp1107!',
     database: 'babynote'
 });
 
@@ -827,7 +828,7 @@ app.post('/album_comment_delete/', (req, res, next) => {
             console.log('The solution is: ', result);
             res.send({
                 "code": 200,
-                "success": "앨범 댓글을 삭제하였습니다.",
+                "success": "댓글을 삭제하였습니다.",
             })
 
         }
@@ -1493,9 +1494,9 @@ app.post('/add_advice/',upload.single("file"),(req,res,next) => {
     let advice_nickname = req.body.advice_nickname;
     let kindergarten = req.body.kindergarten;
     let classname = req.body.classname;
- 
-    var sql = 'INSERT INTO advice (advice_baby, advice_content, file, feel, health, temperature, MealorNot, sleep, poop, advice_writer, advice_nickname, kindergarten, classname, advice_time, advice_write_time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-    con.query(sql,[advice_baby,advice_content,"http://10.0.2.2:3000/"+ req.file.filename,feel,health,temperature,MealorNot,sleep,poop,advice_writer,advice_nickname,kindergarten,classname,advice_time,advice_write_time], function (error, result, fields) {
+    let baby_image = req.body.baby_image;
+    var sql = 'INSERT INTO advice (advice_baby, advice_content, file, feel, health, temperature, MealorNot, sleep, poop, advice_writer, advice_nickname, kindergarten, classname, advice_time, advice_write_time, baby_image) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    con.query(sql,[advice_baby,advice_content,"http://10.0.2.2:3000/"+ req.file.filename,feel,health,temperature,MealorNot,sleep,poop,advice_writer,advice_nickname,kindergarten,classname,advice_time,advice_write_time, baby_image], function (error, result, fields) {
         if (error) {
             console.log("error ocurred", error);
             res.send({
@@ -1553,6 +1554,167 @@ app.get("/advice_list/:kindergarten/:classname/:advice_baby",(req,res,next)=>{
     })
 });
 // ----------------------------------------------------------알림장 리스트 ( 학부모 )------------------------------------------------------------------
+
+ // ---------------------------------------------------------알림장 수정하기------------------------------------------------------------------
+ app.post('/advice_modify/',upload.single("file"),(req,res,next) => {
+
+    let num = req.body.num;
+    let advice_baby = req.body.advice_baby;
+    let advice_content = req.body.advice_content;
+    let file = req.file;
+    let feel = req.body.feel;
+    let health = req.body.health;
+    let temperature = req.body.temperature;
+    let MealorNot = req.body.MealorNot;
+    let sleep = req.body.sleep;
+    let poop = req.body.poop;
+    let advice_time = req.body.advice_time;
+    let advice_write_time =  req.body.advice_write_time;
+    let advice_writer = req.body.advice_writer;
+    let advice_nickname = req.body.advice_nickname;
+    let kindergarten = req.body.kindergarten;
+    let classname = req.body.classname;
+    let baby_image = req.body.baby_image;
+    
+    var sql = 'UPDATE advice SET advice_baby = ?, advice_content = ?, file = ?, feel = ?, health = ?, temperature = ?, MealorNot = ?, sleep = ?, poop = ?, advice_writer = ?, advice_nickname = ?, kindergarten = ?, classname = ?, advice_time = ?, advice_write_time = ?, baby_image = ? WHERE num = ?';
+    con.query(sql,[advice_baby,advice_content,"http://10.0.2.2:3000/"+ file.filename,feel,health,temperature,MealorNot,sleep,poop,advice_writer,advice_nickname,kindergarten,classname, advice_time, advice_write_time,baby_image,num], function (error, result, fields) {
+        if (error) {
+            console.log("error ocurred", error);
+            res.send({
+                "code": 400,
+                "failed": "error ocurred"
+            })
+        } else {
+            console.log('The solution is: ', result);
+            res.send({
+                "code": 200,
+                "success": "알림장을 수정하였습니다.",
+            })
+            
+        }
+    })
+});
+// ----------------------------------------------------------알림장 수정하기------------------------------------------------------------------
+
+// ----------------------------------------------------------알림장 글 삭제하기------------------------------------------------------------------
+app.post('/advice_delete/',(req,res,next) => {
+
+    var num = req.body.num;
+   
+     
+     var sql = 'DELETE FROM advice where num=?';
+     con.query(sql,[num], function (error, result, fields) {
+         if (error) {
+             console.log("error ocurred", error);
+             res.send({
+                 "code": 400,
+                 "failed": "error ocurred"
+             })
+         } else {
+             console.log('The solution is: ', result);
+             res.send({
+                 "code": 200,
+                 "success": "투약의뢰서 글을 삭제하였습니다.",
+             })
+             
+         }
+     })
+ });
+ // ----------------------------------------------------------알림장 글 삭제하기------------------------------------------------------------------
+
+ // ----------------------------------------------------------알림장 댓글 읽기------------------------------------------------------------------
+ app.get("/advice_comment_read/:advice_num",(req,res,next)=>{
+    con.query('SELECT * FROM advice_comment where advice_num=?',[req.params.advice_num],function(error,result,fields){
+        con.on('error',function(err){
+            console.log('[MY SQL ERROR]',err);
+        });
+
+        if(result && result.length){
+            res.end(JSON.stringify(result));
+            // console.log(result);
+        } else {
+        }
+    })
+});
+// ----------------------------------------------------------알림장 댓글 읽기------------------------------------------------------------------
+// ----------------------------------------------------------알림장 댓글 쓰기------------------------------------------------------------------
+app.post('/advice_comment_write/', (req, res, next) => {
+    var post_data = req.body; // Get POST params
+    var advice_num = post_data.advice_num;
+    var comment_writer = post_data.comment_writer;
+    var comment_nickname = post_data.comment_nickname;
+    var comment_content = post_data.comment_content;
+    let newDate = new Date();
+    var week = new Array('일','월','화','수','목','금','토');
+    let comment_time = newDate.toFormat('YYYY-MM-DD ')+ week[newDate.getDay()] + '요일 '+ newDate.toFormat('HH:MI:SS');
+    
+    var sql = 'INSERT INTO advice_comment (advice_num, comment_writer, comment_nickname, comment_content, comment_time) VALUES(?, ?, ?, ?, ?)';
+    con.query(sql,[advice_num,comment_writer,comment_nickname,comment_content,comment_time], function (error, result, fields) {
+        if (error) {
+            console.log("error ocurred", error);
+            res.send({
+                "code": 400,
+                "failed": "error ocurred"
+            })
+        } else {
+            console.log('The solution is: ', result);
+            res.end(JSON.stringify(result));
+        }
+    })
+
+})
+// ----------------------------------------------------------알림장 댓글 쓰기------------------------------------------------------------------
+// ----------------------------------------------------------알림장 댓글 수정하기------------------------------------------------------------------
+app.post('/advice_modify_comment/', (req, res, next) => {
+    var post_data = req.body; // Get POST params
+    var num = post_data.num;
+    var advice_num = post_data.advice_num;
+    var comment_writer = post_data.comment_writer;
+    var comment_nickname = post_data.comment_nickname;
+    var comment_content = post_data.comment_content;
+    let comment_time = post_data.comment_time;
+    
+    var sql = 'UPDATE advice_comment SET advice_num = ?, comment_writer = ?, comment_nickname = ?, comment_content = ?, comment_time = ? WHERE num = ?';
+    con.query(sql,[advice_num,comment_writer,comment_nickname,comment_content,comment_time,num], function (error, result, fields) {
+        if (error) {
+            console.log("error ocurred", error);
+            res.send({
+                "code": 400,
+                "failed": "error ocurred"
+            })
+        } else {
+            console.log('The solution is: ', result);
+            res.end(JSON.stringify(result));
+        }
+    })
+
+})
+// ----------------------------------------------------------알림장 댓글 수정하기------------------------------------------------------------------
+// ----------------------------------------------------------알림장 댓글 삭제하기------------------------------------------------------------------
+app.post('/advice_comment_delete/',(req,res,next) => {
+
+    var num = req.body.num;
+   
+     
+     var sql = 'DELETE FROM advice_comment where num=?';
+     con.query(sql,[num], function (error, result, fields) {
+         if (error) {
+             console.log("error ocurred", error);
+             res.send({
+                 "code": 400,
+                 "failed": "error ocurred"
+             })
+         } else {
+             console.log('The solution is: ', result);
+             res.send({
+                 "code": 200,
+                 "success": "댓글을 삭제하였습니다.",
+             })
+             
+         }
+     })
+ });
+ // ----------------------------------------------------------알림장 댓글 삭제하기------------------------------------------------------------------
 // Start Server
 app.listen(3000, () => {
     console.log('서버 가동 Restful running on port 3000');
