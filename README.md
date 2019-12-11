@@ -9,6 +9,7 @@ node js , mysql , kotlin
 node js 코드
 
 
+
 var crypto = require('crypto');
 var uuid = require('uuid');
 var express = require('express');
@@ -234,8 +235,6 @@ app.post('/change_password/', (req, res, next) => {
 
     //Extract email and password from request
     var user_id = post_data.id;
-
-    
     // var uid = uuid.v4(); // Get UUID v4 like '110abacsasas-af0x-90333-casasjkajksk
     var plaint_password = post_data.password; // Get password from post params
     var hash_data = saltHashPassword(plaint_password);
@@ -277,6 +276,37 @@ app.post('/change_password/', (req, res, next) => {
     });
 })
 // ----------------------------------------------------------비밀번호 변경------------------------------------------------------------------
+
+// ----------------------------------------------------------내정보 이름,이메일,휴대전화번호,호칭 변경------------------------------------------------------------------
+app.post('/modify_myInfo/', (req, res, next) => {
+    var post_data = req.body;
+    var num = post_data.num;
+    var unique_id = post_data.unique_id;
+    var id = post_data.id;
+    var name = post_data.name;
+    var phone_number = post_data.phone_number;
+    var email = post_data.email;
+    var encrypted_password = post_data.encrypted_password;
+    var state = post_data.state;
+    var nickname = post_data.nickname;
+    var salt = post_data.salt;
+    var created_at = post_data.created_at;
+    var updated_at = post_data.updated_at;
+
+    var sql = 'UPDATE user SET unique_id=?,id=?,name=?,phone_number=?,email=?,encrypted_password=?,state=?,nickname=?,salt=?,created_at=?,updated_at=? WHERE num=?';
+    con.query(sql,[unique_id,id,name,phone_number,email,encrypted_password,state,nickname,salt,created_at,updated_at,num] , function (err, result, fields) {
+        if (err) {
+            console.log(err);
+            res.status(500).send('Internal Server Error,이름 변경에 실패하였습니다.');
+        } else {
+            res.end(JSON.stringify('이름 변경이 완료되었습니다.'));
+        }
+    });    
+});
+
+// ----------------------------------------------------------내정보 이름,이메일,휴대전화번호 변경------------------------------------------------------------------
+
+
 var path = require('path');
 var upload = multer({ 
     storage : multer.diskStorage({
