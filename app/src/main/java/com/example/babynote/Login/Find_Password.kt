@@ -79,21 +79,26 @@ class Find_Password : AppCompatActivity() {
                             dialog_find_password.findViewById<View>(R.id.editText_password) as EditText
                         val passMatches = Regex("^(?=.*[a-zA-Z0-9])(?=.*[!@#\$%^*+=-]).{8,20}$")
                         //비밀번호 유효성
-                        if (edit_password.text.toString().matches(passMatches)){
-                            compositeDisposable.add(myAPI.change_userPassword(id,name,phonenumber,edit_password.text.toString())
+                        if (edit_password.text.toString().matches(passMatches)) {
+                            compositeDisposable.add(myAPI.change_userPassword(
+                                id,
+                                name,
+                                phonenumber,
+                                edit_password.text.toString()
+                            )
                                 .subscribeOn(Schedulers.io())
                                 .observeOn(AndroidSchedulers.mainThread())
                                 .subscribe { message ->
                                     if (message.contains("비밀번호 변경이 완료되었습니다.")) {
                                         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-                                        var intent = Intent(this,Login::class.java)
+                                        var intent = Intent(this, Login::class.java)
                                         startActivity(intent)
                                         finish()
                                     } else {
                                         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
                                     }
                                 })
-                        }else{
+                        } else {
                             Toast.makeText(this, "비밀번호 형식을 지켜주세요.", Toast.LENGTH_SHORT).show()
                             edit_password.requestFocus()
                             return
@@ -124,7 +129,7 @@ class Find_Password : AppCompatActivity() {
         // 툴바 왼쪽 버튼 설정
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)  // 왼쪽 버튼 사용 여부 true
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_arrow_back_black_24dp)  // 왼쪽 버튼 이미지 설정
-        supportActionBar!!.setTitle("비밀번호 찾기")
+        supportActionBar!!.title = "비밀번호 찾기"
         supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
 }

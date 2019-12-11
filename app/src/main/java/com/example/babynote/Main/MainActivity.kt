@@ -19,6 +19,7 @@ import com.example.babynote.R
 import com.example.babynote.User.User
 import com.example.babynote.공지사항.Notice
 import com.example.babynote.귀가동의서.Consent_form
+import com.example.babynote.내정보.MyInfo
 import com.example.babynote.식단표.Carte
 import com.example.babynote.알림장.Advice_note
 import com.example.babynote.앨범.Album
@@ -157,7 +158,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     fun Myinfo_Click(v: View?) {
-        Snackbar.make(toolbar, "내 정보", Snackbar.LENGTH_SHORT).show()
+//        Snackbar.make(toolbar, "내 정보", Snackbar.LENGTH_SHORT).show()
+        val intent = Intent(this, MyInfo::class.java)
+        startActivity(intent)
         drawerLayout.closeDrawers() // 기능을 수행하고 네비게이션을 닫아준다.
     }
 

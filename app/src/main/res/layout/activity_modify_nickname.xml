@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".내정보.modify_nickname">
+    <TextView
+            android:text="글을 작성할떄 표시되는 호칭을 설정해주세요."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView9" android:textColor="@color/colorAccent"
+            android:gravity="center" android:layout_marginTop="20dp" android:textSize="16dp"/>
+    <TextView
+            android:text="(예시)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView11" android:gravity="center"/>
+    <TextView
+            android:text="김철수"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView10" android:textSize="30dp"
+            android:gravity="center"/>
+    <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:id="@+id/nicknameGroup">
+        <RadioButton
+                android:text="엄마"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/mother" android:layout_weight="0"
+                android:layout_marginLeft="30dp"
+                android:textSize="20dp"/>
+        <RadioButton
+                android:text="아빠"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/father" android:layout_weight="0"
+                android:layout_marginLeft="30dp"
+                android:textSize="20dp"/>
+        <RadioButton
+                android:text="할머니"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/grand_mother"
+                android:layout_marginLeft="30dp" android:textSize="20dp"/>
+        <RadioButton
+                android:text="할아버지"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/grand_father"
+                android:layout_marginLeft="30dp" android:textSize="20dp"/>
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/radioButton"
+                android:layout_marginLeft="30dp"
+                android:editable="true"
+                android:autoText="false" android:textSize="20dp" android:hint="직접입력" android:checked="false"
+                android:freezesText="false" android:inputType="textPersonName|text" android:textIsSelectable="true"
+                android:singleLine="false"/>
+        <Button
+                android:text="변경하기"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/modify_nickname_button" android:layout_gravity="center"/>
+    </RadioGroup>
+</LinearLayout>

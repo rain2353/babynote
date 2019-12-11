@@ -16,7 +16,24 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".알림장.advice_modify"></activity>
+        <activity android:name=".내정보.modify_nickname"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"></activity>
+        <activity
+                android:name=".내정보.modify_password"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity
+                android:name=".내정보.modify_phone_number"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity
+                android:name=".내정보.modify_email"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity
+                android:name=".내정보.modify_name"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity
+                android:name=".내정보.MyInfo"
+                android:parentActivityName=".Main.MainActivity" />
+        <activity android:name=".알림장.advice_modify" />
         <activity
                 android:name=".알림장.advice_comment_modify"
                 android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />

@@ -559,5 +559,22 @@ interface INodeJS {
     @FormUrlEncoded
     fun advice_comment_delete(@Field("num") num: Int?): Observable<String>
 
+    // 내정보 이름,이메일,휴대전화번호 변경
+    @POST("modify_myInfo")
+    @FormUrlEncoded
+    fun modify_myInfo(
+        @Field("num") num : Int?,
+        @Field("unique_id") unique_id: String?,
+        @Field("id") id: String?,
+        @Field("name") name: String?,
+        @Field("phone_number") phone_number: String?,
+        @Field("email") email: String?,
+        @Field("encrypted_password") encrypted_password: String?,
+        @Field("state") state: String?,
+        @Field("nickname") nickname: String?,
+        @Field("salt") salt: String?,
+        @Field("created_at") created_at: String?,
+        @Field("updated_at") updated_at: String?
+    ): Observable<String>
 
 }
