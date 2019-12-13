@@ -304,9 +304,34 @@ app.post('/modify_myInfo/', (req, res, next) => {
     });    
 });
 
-// ----------------------------------------------------------내정보 이름,이메일,휴대전화번호 변경------------------------------------------------------------------
+// ----------------------------------------------------------내정보 이름,이메일,휴대전화번호,호칭 변경------------------------------------------------------------------
 
+// ----------------------------------------------------------회원 탈퇴하기------------------------------------------------------------------
+app.post('/membership_withdrawal/',(req,res,next) => {
 
+    var num = req.body.num;
+    var id = req.body.id;
+   
+     
+     var sql = 'DELETE FROM user where num=? AND id=?';
+     con.query(sql,[num,id], function (error, result, fields) {
+         if (error) {
+             console.log("error ocurred", error);
+             res.send({
+                 "code": 400,
+                 "failed": "error ocurred"
+             })
+         } else {
+             console.log('The solution is: ', result);
+             res.send({
+                 "code": 200,
+                 "success": "회원을 탈퇴하였습니다.",
+             })
+             
+         }
+     })
+ });
+ // ----------------------------------------------------------회원 탈퇴하기------------------------------------------------------------------
 var path = require('path');
 var upload = multer({ 
     storage : multer.diskStorage({
@@ -370,6 +395,81 @@ app.post('/add_baby/',upload.single("file"),(req,res,next) => {
     })
 });
 // ----------------------------------------------------------애기 등록------------------------------------------------------------------
+
+// ----------------------------------------------------------수정할 아이 정보------------------------------------------------------------------
+app.post('/select_baby/', (req,res,next) => {  
+    var post_data = req.body; // Get POST BODY
+    var num = post_data.num;  // GET field 'num' from post data
+
+   
+    con.query('SELECT * FROM add_baby where num=?', [num], function (err, result, fields) {
+
+        con.on('error', function (err) {
+            console.log('[MySQL ERROR]', err);
+        });
+
+        if (result && result.length) {
+
+                res.end(JSON.stringify(result[0])) // If password is true , return all info of user
+            
+        }
+    });
+});
+// ----------------------------------------------------------수정할 아이 정보------------------------------------------------------------------
+
+// ----------------------------------------------------------아기 이름, 생일, 성별 변경------------------------------------------------------------------
+app.post('/modify_baby/', (req, res, next) => {
+    var post_data = req.body;
+    var num = post_data.num;
+    let babyname = post_data.babyname;
+    let babybirth = post_data.babybirth;
+    let babygender = post_data.babygender;
+    let baby_kindergarten = post_data.baby_kindergarten;
+    let baby_class = post_data.baby_class;
+    let baby_imagepath = post_data.baby_imagepath;
+    let parents_id = post_data.parents_id;
+    let state = post_data.state;
+
+    var sql = 'UPDATE add_baby SET baby_name=?,baby_birth=?,baby_gender=?,baby_kindergarten=?,baby_class=?,baby_imagepath=?,parents_id=?,state=? WHERE num=? ';
+    con.query(sql,[babyname,babybirth,babygender,baby_kindergarten,baby_class,baby_imagepath,parents_id,state,num] , function (err, result, fields) {
+        if (err) {
+            console.log(err);
+            res.status(500).send('아이 정보수정에 실패하였습니다.');
+        } else {
+            res.end(JSON.stringify('아이 정보수정이 완료되었습니다.'));
+        }
+    });    
+});
+
+// ----------------------------------------------------------아기 이름, 생일, 성별 변경------------------------------------------------------------------
+
+// ----------------------------------------------------------등록한 아이 삭제하기------------------------------------------------------------------
+app.post('/delete_baby/',(req,res,next) => {
+
+    var num = req.body.num;
+    var babyname = req.body.babyname;
+   
+     
+     var sql = 'DELETE FROM add_baby where num=? AND baby_name=?';
+     con.query(sql,[num,babyname], function (error, result, fields) {
+         if (error) {
+             console.log("error ocurred", error);
+             res.send({
+                 "code": 400,
+                 "failed": "error ocurred"
+             })
+         } else {
+             console.log('The solution is: ', result);
+             res.send({
+                 "code": 200,
+                 "success": "아이를 삭제하였습니다.",
+             })
+             
+         }
+     })
+ });
+ // ----------------------------------------------------------등록한 아이 삭제하기------------------------------------------------------------------
+
 var publicDir = (__dirname + '/uploads/');
 app.use(express.static(publicDir));
 app.use(bodyParser.json());
