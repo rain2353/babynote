@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.babynote.Api.INodeJS
 import com.example.babynote.Api.IRecyclerOnClick
-import com.example.babynote.Api.RetrofitClient
 import com.example.babynote.Common.Common
 import com.example.babynote.R
 import io.reactivex.disposables.CompositeDisposable
@@ -48,9 +47,6 @@ class notice_text_Adapter(
 
             override fun onLongClick(view: View, Position: Int) {
                 Common.selected_comment = notice_comment_list[Position]
-                //Init API
-                val retrofit = RetrofitClient.instance
-                myAPI = retrofit.create(INodeJS::class.java)
 
                 if (notice_comment_list[p1].comment_writer == Common.selected_baby?.parents_id) {
                     val intent = Intent(view.context, notice_comment::class.java)

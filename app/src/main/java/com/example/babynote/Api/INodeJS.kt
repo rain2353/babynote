@@ -74,6 +74,33 @@ interface INodeJS {
     @FormUrlEncoded
     fun userInfo(@Field("id") id: String?): Observable<String>
 
+    // 내정보 이름,이메일,휴대전화번호, 호칭 변경
+    @POST("modify_myInfo")
+    @FormUrlEncoded
+    fun modify_myInfo(
+        @Field("num") num : Int?,
+        @Field("unique_id") unique_id: String?,
+        @Field("id") id: String?,
+        @Field("name") name: String?,
+        @Field("phone_number") phone_number: String?,
+        @Field("email") email: String?,
+        @Field("encrypted_password") encrypted_password: String?,
+        @Field("state") state: String?,
+        @Field("nickname") nickname: String?,
+        @Field("salt") salt: String?,
+        @Field("created_at") created_at: String?,
+        @Field("updated_at") updated_at: String?
+    ): Observable<String>
+
+    // 회원 탈퇴하기.
+    @POST("membership_withdrawal")
+    @FormUrlEncoded
+    fun membership_withdrawal(
+        @Field("num") num : Int?,
+        @Field("id") id: String?
+    ): Observable<String>
+
+
     // 자신이 등록한 아기 선택하기.
     @GET("mybaby/{parents_id}/{num}")
     fun mybaby(
@@ -98,6 +125,36 @@ interface INodeJS {
     // 자신이 등록한 아기 리스트 불러오기
     @GET("babys/{parents_id}")
     fun getbabysList(@Path("parents_id") parents_id: String?): Observable<List<Kiz>>
+
+    // 수정할 아이 정보 불러오기.
+    @POST("select_baby")
+    @FormUrlEncoded
+    fun select_baby(
+        @Field("num") num : Int?
+    ): Observable<String>
+
+    // 내가 등록한 아이 이름, 생일, 성별 변경
+    @POST("modify_baby")
+    @FormUrlEncoded
+    fun modify_baby(
+        @Field("num") num : Int?,
+        @Field("babyname") babyname: String?,
+        @Field("babybirth") babybirth: String?,
+        @Field("babygender") babygender: String?,
+        @Field("baby_kindergarten") baby_kindergarten: String?,
+        @Field("baby_class") baby_class: String?,
+        @Field("baby_imagepath") baby_imagepath: String?,
+        @Field("parents_id") parents_id: String?,
+        @Field("state") state: String?
+    ): Observable<String>
+
+    // 내가 등록한 아이 삭제하기.
+    @POST("delete_baby")
+    @FormUrlEncoded
+    fun delete_baby(
+        @Field("num") num : Int?,
+        @Field("babyname") babyname: String?
+    ): Observable<String>
 
     // 공지사항 글 작성하기
     @POST("add_notice")
@@ -559,22 +616,6 @@ interface INodeJS {
     @FormUrlEncoded
     fun advice_comment_delete(@Field("num") num: Int?): Observable<String>
 
-    // 내정보 이름,이메일,휴대전화번호 변경
-    @POST("modify_myInfo")
-    @FormUrlEncoded
-    fun modify_myInfo(
-        @Field("num") num : Int?,
-        @Field("unique_id") unique_id: String?,
-        @Field("id") id: String?,
-        @Field("name") name: String?,
-        @Field("phone_number") phone_number: String?,
-        @Field("email") email: String?,
-        @Field("encrypted_password") encrypted_password: String?,
-        @Field("state") state: String?,
-        @Field("nickname") nickname: String?,
-        @Field("salt") salt: String?,
-        @Field("created_at") created_at: String?,
-        @Field("updated_at") updated_at: String?
-    ): Observable<String>
+
 
 }

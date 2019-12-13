@@ -5,36 +5,44 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".내정보.MyInfo">
-    <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_light"
-            android:theme="?attr/actionBarTheme"
-            android:minHeight="?attr/actionBarSize" android:id="@+id/myInfo_toolbar" app:titleTextColor="@color/backbaby"/>
+        tools:context=".Add_baby.modify_baby">
 
-    <TextView
-            android:id="@+id/myinfo_id"
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/modify_baby_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_dark"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:titleTextColor="@color/backbaby" />
+
+    <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars"
             android:layout_marginStart="10dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="30dp"
-            android:text="TextView"
-            android:textColor="@android:color/black"
-            android:textSize="15dp" />
+            android:layout_marginBottom="30dp"/>
+
+    <Button
+            android:id="@+id/button33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="사진 변경하기" />
 
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/item_border"
-            android:id="@+id/name"
-            >
+            android:layout_marginTop="5dp"
+            android:id="@+id/select_modify_babyname">
 
         <TextView
-                android:id="@+id/textView115"
+                android:id="@+id/textView114"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="이름"
@@ -42,18 +50,17 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                />
+                android:layout_marginEnd="10dp"/>
 
         <TextView
-                android:id="@+id/myInfo_name"
+                android:id="@+id/modify_babyname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
                 android:text="TextView"
                 android:layout_marginBottom="10dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:drawableEnd="@drawable/ic_chevron_right_black_24dp"/>
+                android:layout_marginEnd="10dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -61,13 +68,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/item_border"
-            android:id="@+id/email">
+            android:layout_marginTop="5dp"
+            android:id="@+id/select_modify_babybirth">
 
         <TextView
-                android:id="@+id/textView117"
+                android:id="@+id/textView120"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="이메일"
+                android:text="생일"
                 android:textColor="@android:color/black"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
@@ -75,108 +83,66 @@
                 android:layout_marginEnd="10dp"/>
 
         <TextView
-                android:id="@+id/myInfo_email"
+                android:id="@+id/modify_babybirth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
                 android:text="TextView"
                 android:layout_marginBottom="10dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:drawableEnd="@drawable/ic_chevron_right_black_24dp"/>
+                android:layout_marginEnd="10dp"/>
     </LinearLayout>
+
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/item_border"
-            android:id="@+id/phone_number">
+            android:layout_marginTop="5dp"
+            android:id="@+id/select_modify_babygender">
 
         <TextView
-                android:id="@+id/textView118"
+                android:id="@+id/textView122"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="휴대전화번호"
+                android:text="성별"
                 android:textColor="@android:color/black"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"/>
-
         <TextView
-                android:id="@+id/myInfo_phonenumber"
+                android:id="@+id/modify_babygender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
                 android:text="TextView"
                 android:layout_marginBottom="10dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:drawableEnd="@drawable/ic_chevron_right_black_24dp"/>
+                android:layout_marginEnd="10dp"/>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"/>
     </LinearLayout>
+
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/item_border"
-            android:id="@+id/nickname">
+            android:layout_marginTop="5dp">
 
         <TextView
-                android:id="@+id/textView119"
+                android:id="@+id/textView123"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="호칭 설정"
+                android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
+                android:text="삭제하기"
                 android:textColor="@android:color/black"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"/>
-
-        <TextView
-                android:id="@+id/myInfo_nickname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:layout_marginBottom="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:drawableEnd="@drawable/ic_chevron_right_black_24dp"/>
     </LinearLayout>
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/item_border">
-
-        <TextView
-                android:id="@+id/modify_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="5dp"
-                android:text="비밀번호 재설정"
-                android:textColor="@android:color/black"
-                android:drawableEnd="@drawable/ic_chevron_right_black_24dp"/>
-    </LinearLayout>
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/item_border">
-
-        <TextView
-                android:id="@+id/membership_withdrawal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="5dp"
-                android:text="회원 탈퇴하기"
-                android:textColor="@android:color/black"
-                android:drawableEnd="@drawable/ic_chevron_right_black_24dp"/>
-    </LinearLayout>
-
-
 </LinearLayout>

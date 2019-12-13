@@ -16,8 +16,14 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".내정보.modify_nickname"
+        <activity android:name=".Add_baby.modify_babyname"
                 android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"></activity>
+        <activity
+                android:name=".Add_baby.modify_baby"
+                android:parentActivityName=".Main.MainActivity" />
+        <activity
+                android:name=".내정보.modify_nickname"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
         <activity
                 android:name=".내정보.modify_password"
                 android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />

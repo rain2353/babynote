@@ -1,12 +1,16 @@
 package com.example.babynote.내정보
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.widget.Toast
 import com.example.babynote.Api.INodeJS
 import com.example.babynote.Api.RetrofitClient
+import com.example.babynote.Login.Login
 import com.example.babynote.R
 import com.example.babynote.User.User
 import com.google.gson.Gson
@@ -75,6 +79,48 @@ class MyInfo : AppCompatActivity() {
         modify_password.setOnClickListener {
             var intent = Intent(this, com.example.babynote.내정보.modify_password::class.java)
             startActivity(intent)
+        }
+        // 회원 탈퇴하기
+        membership_withdrawal.setOnClickListener {
+            var dialog = AlertDialog.Builder(this)
+            dialog.setTitle("회원 탈퇴하기")
+            dialog.setMessage("회원을 탈퇴하시겠습니까?")
+
+
+            fun toast_p() {
+                compositeDisposable.add(myAPI.membership_withdrawal(
+                    UserDTO.num,UserDTO.id
+                )
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe { message ->
+                        if (message.contains("회원을 탈퇴하였습니다.")) {
+                            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+                            finishAffinity()
+                            val intent = Intent(this, Login::class.java)
+                            startActivity(intent)
+                            System.exit(0)
+                        } else {
+                            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+                        }
+                    })
+            }
+            fun toast_n(){
+            }
+
+            var dialog_listener = object : DialogInterface.OnClickListener {
+                override fun onClick(dialog: DialogInterface?, which: Int) {
+                    when (which) {
+                        DialogInterface.BUTTON_POSITIVE ->
+                            toast_p()
+                        DialogInterface.BUTTON_NEGATIVE ->
+                            toast_n()
+                    }
+                }
+            }
+            dialog.setPositiveButton("탈퇴하기", dialog_listener)
+            dialog.setNegativeButton("취소",dialog_listener)
+            dialog.show()
         }
 
 

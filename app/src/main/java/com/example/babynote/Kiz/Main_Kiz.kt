@@ -1,5 +1,6 @@
 package com.example.babynote.Kiz
 class Main_Kiz {
+    var num : String? = null
     var baby_name: String? = null
     var baby_birth: String? = null
     var baby_gender: String? = null
