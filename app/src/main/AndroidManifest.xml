@@ -16,8 +16,23 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".Add_baby.modify_babyname"
+        <activity android:name=".Add_baby.modify_babyimage"
                 android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"></activity>
+        <activity
+                android:name=".Add_baby.modify_babyclass"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity
+                android:name=".Add_baby.modify_kindergarten"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity
+                android:name=".Add_baby.modify_babygender"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity
+                android:name=".Add_baby.modify_babybirth"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity
+                android:name=".Add_baby.modify_babyname"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
         <activity
                 android:name=".Add_baby.modify_baby"
                 android:parentActivityName=".Main.MainActivity" />

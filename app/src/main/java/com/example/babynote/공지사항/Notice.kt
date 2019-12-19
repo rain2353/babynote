@@ -44,10 +44,7 @@ class Notice : AppCompatActivity() {
         kindergarten = intent.getStringExtra("kindergarten")
         classname = intent.getStringExtra("classname")
         babyname = intent.getStringExtra("babyname")
-        kiz_name.text = kindergarten + " . " + classname + " . " + babyname
-//        Log.d("kindergarten",kindergarten)
-//        Log.d("classname",classname)
-//        Log.d("babyname",babyname)
+
         notice_list(kindergarten, classname)
         val lm = LinearLayoutManager(this)
         lm.reverseLayout = true   // 리사이클러뷰 역순 출력.
@@ -116,7 +113,6 @@ class Notice : AppCompatActivity() {
                 (notice_recyclerview.adapter as notice_recyclerviewAdapter).notifyDataSetChanged()
             }
                 , { thr ->
-                    Toast.makeText(this, "Error babys_drawer load", Toast.LENGTH_SHORT).show()
                     Log.d("notice_recyclerview", thr.message.toString())
                 }
 

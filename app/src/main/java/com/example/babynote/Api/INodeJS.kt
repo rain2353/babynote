@@ -148,6 +148,21 @@ interface INodeJS {
         @Field("state") state: String?
     ): Observable<String>
 
+    // 아기 프로필 사진 변경하기.
+    @POST("modify_baby_image")
+    @Multipart
+    fun modify_baby_image(
+        @Part file: MultipartBody.Part,
+        @Part("num") num: Int?,
+        @Part("babyname") babyname: String?,
+        @Part("babybirth") babybirth: String?,
+        @Part("babygender") babygender: String?,
+        @Part("baby_kindergarten") baby_kindergarten: String?,
+        @Part("baby_class") baby_class: String?,
+        @Part("parents_id") parents_id: String?,
+        @Part("state") state: String?
+    ): Call<String>
+
     // 내가 등록한 아이 삭제하기.
     @POST("delete_baby")
     @FormUrlEncoded

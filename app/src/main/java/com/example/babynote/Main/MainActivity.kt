@@ -11,7 +11,6 @@ import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import com.example.babynote.Add_baby.Add_baby
 import com.example.babynote.Api.INodeJS
 import com.example.babynote.Common.Common
@@ -41,7 +40,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var myAPI: INodeJS
     var compositeDisposable = CompositeDisposable()
     var num: Int = 0
-
+    var son: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -73,19 +72,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         mybaby(UserDTO.id.toString(), num)
 
 //        if (SonName.text.toString() == "자녀 이름") {
-//            babyphoto.visibility = View.INVISIBLE
-//            SonName.visibility = View.INVISIBLE
-//            kindergartenName.visibility = View.INVISIBLE
-//            ClassName.visibility = View.INVISIBLE
-//        } else {
-//            babyphoto.visibility = View.VISIBLE
-//            SonName.visibility = View.VISIBLE
-//            kindergartenName.visibility = View.VISIBLE
-//            ClassName.visibility = View.VISIBLE
+//            babyphoto.visibility = View.GONE
+//            SonName.visibility = View.GONE
+//            kindergartenName.visibility = View.GONE
+//            ClassName.visibility = View.GONE
 //        }
-//        SonName.text = Main_babys.baby_name
-//        kindergartenName.text = Main_babys.baby_kindergarten
-//        ClassName.text = Main_babys.baby_class
         // 알림장 버튼 눌렀을때 알림장으로 이동.
 
         advice_note_move.setOnClickListener {
@@ -217,7 +208,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ message ->
-                Log.d("Main_kiz", message.toString())
+                Log.d("Main_kiz1", message.toString())
                 var gson = Gson()
                 var Main_babys =
                     gson.fromJson(message, com.example.babynote.Kiz.Main_Kiz::class.java)
@@ -226,6 +217,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val pref1 = getSharedPreferences("UserInfo", Context.MODE_PRIVATE)
                 var userEmail = pref1.getString(userID, null)
                 var UserDTO = gson.fromJson(userEmail, User::class.java)
+                son = Main_babys.baby_name
+                Log.d(son, son)
                 if (UserDTO.state == "선생님") {
                     Picasso.get().load(Main_babys.baby_imagepath).resize(200, 200).into(babyphoto)
                     SonName.text = Main_babys.baby_name + " " + UserDTO.nickname
@@ -233,29 +226,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     ClassName.text = Main_babys.baby_class
 
                 } else {
-                    Picasso.get().load(Main_babys.baby_imagepath).resize(200, 200).into(babyphoto)
+                    Picasso.get().load(Main_babys.baby_imagepath).resize(200, 200)
+                        .into(babyphoto)
                     SonName.text = Main_babys.baby_name
                     kindergartenName.text = Main_babys.baby_kindergarten
                     ClassName.text = Main_babys.baby_class
                 }
 
-//                if (SonName.text.toString() == "자녀 이름") {
-//                    babyphoto.visibility = View.INVISIBLE
-//                    SonName.visibility = View.INVISIBLE
-//                    kindergartenName.visibility = View.INVISIBLE
-//                    ClassName.visibility = View.INVISIBLE
-//                } else {
-//                    babyphoto.visibility = View.VISIBLE
-//                    SonName.visibility = View.VISIBLE
-//                    kindergartenName.visibility = View.VISIBLE
-//                    ClassName.visibility = View.VISIBLE
-//                }
 
             }
                 , { thr ->
-                    Toast.makeText(this, "Error mybaby load", Toast.LENGTH_SHORT).show()
-                    Log.d("Main_kiz", thr.message.toString())
-
+                    Log.d("Main_kiz2", thr.message.toString())
+                    babyphoto.visibility = View.GONE
+                    SonName.visibility = View.GONE
+                    kindergartenName.visibility = View.GONE
+                    ClassName.visibility = View.GONE
                 }
 
             ))
@@ -271,7 +256,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
                 , { thr ->
-                    Toast.makeText(this, "Error babys_drawer load", Toast.LENGTH_SHORT).show()
                     Log.d("babys_drawer", thr.message.toString())
                 }
 

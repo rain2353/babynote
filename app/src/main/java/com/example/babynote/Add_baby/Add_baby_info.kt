@@ -40,7 +40,6 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
 
 
     lateinit var myAPI: INodeJS
-    //    lateinit var mService: INodeJS
     lateinit var dialog: ProgressDialog
     var compositeDisposable = CompositeDisposable()
     var year = ""
@@ -113,17 +112,17 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
         var add_baby_day = findViewById(R.id.add_baby_day) as Spinner
         val adapter1 = ArrayAdapter.createFromResource(
             this,
-            R.array.태어난해,
+            R.array.생년,
             android.R.layout.simple_spinner_item
         )
         val adapter2 = ArrayAdapter.createFromResource(
             this,
-            R.array.태어난월,
+            R.array.월,
             android.R.layout.simple_spinner_item
         )
         val adapter3 = ArrayAdapter.createFromResource(
             this,
-            R.array.태어난일,
+            R.array.일,
             android.R.layout.simple_spinner_item
         )
         add_baby_year.adapter = adapter1

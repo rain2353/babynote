@@ -64,7 +64,7 @@ class album_modify : Activity(), ProgressRequestBody.UploadCallbacks {
                 PERMISSION_REQUEST
             )
 
-        // --------------------------- 갤러리에서 이미지 가져오기 -------------------------------------
+        // --------------------------- 갤러리에서 이미지 가져오기 ----------------------------------
         button_image.setOnClickListener { openGallery() }
         //------------------------------------------------------------------------------------------
         // 삭제하기 버튼
@@ -187,14 +187,9 @@ class album_modify : Activity(), ProgressRequestBody.UploadCallbacks {
     // ---------------------------------------------------------------------------------------------
     // ------------------------------------갤러리에서 이미지 가져오기 -----------------------------
     private fun openGallery() {
-//        val getContentIntent = FileUtils.createGetContentIntent()
-//        val intent = Intent.createChooser(getContentIntent,"Select a file")
         val intent = Intent(Intent.ACTION_PICK)
         intent.setType(MediaStore.Images.Media.CONTENT_TYPE)
         startActivityForResult(intent, PICK_IMAGE_REQUEST)
-//        val intent = Intent(Intent.ACTION_GET_CONTENT)
-//        intent.type = "image/*"
-//        startActivityForResult(Intent.createChooser(intent, "Select image"), OPEN_GALLERY)
     }
 
     @Override
@@ -209,18 +204,7 @@ class album_modify : Activity(), ProgressRequestBody.UploadCallbacks {
                         modify_image.setImageURI(selectedFileUri)
                 }
             }
-//            if (requestCode == OPEN_GALLERY) {
-//
-//                var currentImageUrl: Uri? = data!!.data
-//                try {
-//                    val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, currentImageUrl)
-//                    //val rotatedBitmap = bitmap.rotate(90F) // value must be float
-//                    baby_image.setImageBitmap(bitmap)
-//
-//                } catch (e: Exception) {
-//                    e.printStackTrace()
-//                }
-//            }
+
         } else {
             Log.d("ActivityResult", "something wrong")
         }

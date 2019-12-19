@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.example.babynote.Api.INodeJS
 import com.example.babynote.Api.RetrofitClient
@@ -35,6 +36,12 @@ class modify_baby : AppCompatActivity() {
         // 수정할 아이 정보 불러오기.
         select_baby(Common.selected_baby?.num)
 
+        // 아이 사진 변경
+        button33.setOnClickListener {
+            var intent = Intent (this, modify_babyimage::class.java)
+            startActivity(intent)
+        }
+
         // 이름 변경
         select_modify_babyname.setOnClickListener {
             var intent = Intent(this,com.example.babynote.Add_baby.modify_babyname::class.java)
@@ -43,12 +50,20 @@ class modify_baby : AppCompatActivity() {
 
         // 생일 변경
         select_modify_babybirth.setOnClickListener {
-
+            var intent = Intent(this,com.example.babynote.Add_baby.modify_babybirth::class.java)
+            startActivity(intent)
         }
 
         // 성별 변경
         select_modify_babygender.setOnClickListener {
+            var intent = Intent(this,com.example.babynote.Add_baby.modify_babygender::class.java)
+            startActivity(intent)
+        }
 
+        // 소속 변경
+        select_modify_kindergarten.setOnClickListener {
+            var intent = Intent(this,com.example.babynote.Add_baby.modify_kindergarten::class.java)
+            startActivity(intent)
         }
 
         // 아이 삭제하기 눌렀을때 다이얼로그가 나오고 삭제하기를 누르면 삭제, 취소를 누르면 삭제가 되지 않는다.
@@ -119,7 +134,11 @@ class modify_baby : AppCompatActivity() {
                 modify_babyname.text = select_babys.baby_name
                 modify_babybirth.text = select_babys.baby_birth
                 modify_babygender.text = select_babys.baby_gender
-
+                modify_babykindergarten.text = select_babys.baby_kindergarten + " . " + select_babys.baby_class
+                if (select_babys.state == "선생님"){
+                    select_modify_babybirth.visibility = View.GONE
+                    select_modify_babygender.visibility = View.GONE
+                }
                 val pref = getSharedPreferences("babyinfo", Context.MODE_PRIVATE)
                 val ed = pref.edit()
                 ed.putString("babyinfo", message.toString())

@@ -110,7 +110,6 @@ class Carte : AppCompatActivity() {
 
             }
                 , { thr ->
-                    Toast.makeText(this, "Error babys_drawer load", Toast.LENGTH_SHORT).show()
                     Log.d("notice_recyclerview", thr.message.toString())
                 }
 
