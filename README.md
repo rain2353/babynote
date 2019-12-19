@@ -417,7 +417,7 @@ app.post('/select_baby/', (req,res,next) => {
 });
 // ----------------------------------------------------------수정할 아이 정보------------------------------------------------------------------
 
-// ----------------------------------------------------------아기 이름, 생일, 성별 변경------------------------------------------------------------------
+// ----------------------------------------------------------아기 이름, 생일, 성별 , 유치원, 반이름 변경------------------------------------------------------------------
 app.post('/modify_baby/', (req, res, next) => {
     var post_data = req.body;
     var num = post_data.num;
@@ -442,6 +442,32 @@ app.post('/modify_baby/', (req, res, next) => {
 });
 
 // ----------------------------------------------------------아기 이름, 생일, 성별 변경------------------------------------------------------------------
+
+// ----------------------------------------------------------아기 프로필 사진 변경------------------------------------------------------------------
+app.post('/modify_baby_image/',upload.single("file"),(req, res, next) => {
+    let file = req.file
+    var post_data = req.body;
+    var num = post_data.num;
+    let babyname = post_data.babyname;
+    let babybirth = post_data.babybirth;
+    let babygender = post_data.babygender;
+    let baby_kindergarten = post_data.baby_kindergarten;
+    let baby_class = post_data.baby_class;
+    let parents_id = post_data.parents_id;
+    let state = post_data.state;
+
+    var sql = 'UPDATE add_baby SET baby_name=?,baby_birth=?,baby_gender=?,baby_kindergarten=?,baby_class=?,baby_imagepath=?,parents_id=?,state=? WHERE num=? ';
+    con.query(sql,[babyname,babybirth,babygender,baby_kindergarten,baby_class,"http://10.0.2.2:3000/"+ req.file.filename,parents_id,state,num] , function (err, result, fields) {
+        if (err) {
+            console.log(err);
+            res.status(500).send('사진 변경에 실패하였습니다.');
+        } else {
+            res.end(JSON.stringify('사진 변경이 완료되었습니다.'));
+        }
+    });    
+});
+
+// ----------------------------------------------------------아기 프로필 사진 변경------------------------------------------------------------------
 
 // ----------------------------------------------------------등록한 아이 삭제하기------------------------------------------------------------------
 app.post('/delete_baby/',(req,res,next) => {
