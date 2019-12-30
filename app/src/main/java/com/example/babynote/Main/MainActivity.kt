@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         num = intent.getIntExtra("num", 0)
         mybaby(UserDTO.id.toString(), num)
-        
+
         // 알림장 버튼 눌렀을때 알림장으로 이동.
 
         advice_note_move.setOnClickListener {
@@ -155,11 +155,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
 
-    // 툴바 메뉴 버튼을 설정
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.main_menu, menu)       // main_menu 메뉴를 toolbar 메뉴 버튼으로 설정
-//        return true
-//    }
 
     // 툴바 메뉴 버튼이 클릭 됐을 때 콜백
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -186,9 +181,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
             }
-//            R.id.menu_search-> Snackbar.make(toolbar,"Search menu pressed",Snackbar.LENGTH_SHORT).show()
-//            R.id.menu_account-> Snackbar.make(toolbar,"Account menu pressed",Snackbar.LENGTH_SHORT).show()
-//            R.id.menu_logout-> Snackbar.make(toolbar,"Logout menu pressed",Snackbar.LENGTH_SHORT).show()
+
         }
         return super.onOptionsItemSelected(item)
     }
