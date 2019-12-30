@@ -34,6 +34,8 @@ object Common {
     var selected_baby_list: select_baby_list? = null // 알림장 작성할때 선택한 원아 정보
     var selected_advice: advice_list? = null    // 알림장 리스트에서 선택한 알림장 글 정보
     var selected_advice_comment: advice_comment_list? = null // 알림장 글에서 선택한 댓글 정보
+
+
 //    fun isConnectedToInternet(context: Context?): Boolean {
 //        val cm = context!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 //        if (cm != null) {
