@@ -64,19 +64,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         var UserDTO = gson.fromJson(userEmail, User::class.java)
 
 
-//        if (UserDTO.state == "선생님") {
-//            SonName.text = UserDTO.name + UserDTO.nickname
-//        }
-
         num = intent.getIntExtra("num", 0)
         mybaby(UserDTO.id.toString(), num)
-
-//        if (SonName.text.toString() == "자녀 이름") {
-//            babyphoto.visibility = View.GONE
-//            SonName.visibility = View.GONE
-//            kindergartenName.visibility = View.GONE
-//            ClassName.visibility = View.GONE
-//        }
+        
         // 알림장 버튼 눌렀을때 알림장으로 이동.
 
         advice_note_move.setOnClickListener {
