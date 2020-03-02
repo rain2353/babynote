@@ -17,7 +17,7 @@ import java.net.URL
 import java.net.URLEncoder
 
 
-class Add_baby : AppCompatActivity() {
+class Add_baby : AppCompatActivity()  {
 
 
     // 네이버 api 클라이언트 ID , 클라이언트 secret
@@ -55,8 +55,8 @@ class Add_baby : AppCompatActivity() {
         }
 
         // --------------------------------------------- 이중 스피너 ------------------------------------------------
-        var spn = findViewById(R.id.spinner) as Spinner
-        var spn2 = findViewById(R.id.spinner2) as Spinner
+        var spn = findViewById<Spinner>(R.id.spinner)
+        var spn2 = findViewById<Spinner>(R.id.spinner2)
         val adapter = ArrayAdapter.createFromResource(
             this,
             R.array.city,
@@ -545,7 +545,7 @@ class Add_baby : AppCompatActivity() {
         // 툴바 왼쪽 버튼 설정
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)  // 왼쪽 버튼 사용 여부 true
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)  // 왼쪽 버튼 이미지 설정
-        supportActionBar!!.setTitle("원 찾기")
+        supportActionBar!!.title = "원 찾기"
         supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
 
