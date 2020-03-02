@@ -33,6 +33,10 @@ class carte_comment_modify : Activity() {
         val retrofit = RetrofitClient.instance
         myAPI = retrofit.create(INodeJS::class.java)
 
+        // 자신이 작성한 댓글 확인하게끔 EditText에 뿌려놓는다.
+        var coment = intent.getStringExtra("댓글")
+        editText_comment.setText(coment)
+
         button_delete.setOnClickListener {
             compositeDisposable.add(myAPI.carte_comment_delete(Common.selected_carte_comment?.num)
                 .subscribeOn(Schedulers.io())

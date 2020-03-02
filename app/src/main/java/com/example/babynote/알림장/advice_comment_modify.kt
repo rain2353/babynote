@@ -29,6 +29,9 @@ class advice_comment_modify : Activity() {
         window.attributes = layoutParams
         setContentView(R.layout.activity_advice_comment_modify)
 
+        var coment = intent.getStringExtra("댓글")
+        editText_comment.setText(coment)
+
         //Init API
         val retrofit = RetrofitClient.instance
         myAPI = retrofit.create(INodeJS::class.java)

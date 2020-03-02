@@ -9,7 +9,7 @@
     <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_light"
+            android:background="#f6416c"
             android:theme="?attr/actionBarTheme"
             android:minHeight="?attr/actionBarSize" android:id="@+id/carte_write_toolbar" app:titleTextColor="@color/backbaby"/>
 
@@ -20,6 +20,9 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
+            android:background="@drawable/trumpet"
+            android:backgroundTint="#BBDED6"
+            android:textColor="#000000"
             android:text="날짜를 지정해주세요." />
 
     <LinearLayout
@@ -47,7 +50,10 @@
                     android:id="@+id/button_image_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="사진 선택" />
+                    android:text="사진 선택"
+                    android:background="@drawable/trumpet"
+                    android:backgroundTint="#BBDED6"
+                    android:textColor="#000000"/>
         </LinearLayout>
 
         <EditText
@@ -90,7 +96,10 @@
                     android:id="@+id/button_image_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="사진 선택" />
+                    android:text="사진 선택"
+                    android:background="@drawable/trumpet"
+                    android:backgroundTint="#BBDED6"
+                    android:textColor="#000000"/>
         </LinearLayout>
 
         <EditText
@@ -132,7 +141,10 @@
                     android:id="@+id/button_image_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="사진 선택" />
+                    android:text="사진 선택"
+                    android:background="@drawable/trumpet"
+                    android:backgroundTint="#BBDED6"
+                    android:textColor="#000000"/>
         </LinearLayout>
 
         <EditText

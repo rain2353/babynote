@@ -7,7 +7,7 @@
         android:orientation="vertical"
         tools:context=".알림장.advice_text">
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -19,7 +19,7 @@
                     android:id="@+id/advice_text_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/holo_red_light"
+                    android:background="#f6416c"
                     android:minHeight="?attr/actionBarSize"
                     android:theme="?attr/actionBarTheme"
                     app:titleTextColor="@color/backbaby" />
@@ -53,14 +53,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="TextView" />
+                            android:text="TextView"
+                            android:textColor="#000000"/>
 
                     <TextView
                             android:id="@+id/advice_text_write_time"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="TextView" />
+                            android:text="TextView"
+                            android:textColor="#000000"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -82,7 +84,8 @@
                     android:text="TextView"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#000000"/>
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -100,7 +103,8 @@
                         android:text="º 기분"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"/>
+                        android:layout_marginBottom="5dp"
+                        android:textColor="#000000"/>
 
                 <TextView
                         android:id="@+id/textView103"
@@ -130,7 +134,9 @@
                         android:text="º 건강"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"/>
+                        android:layout_marginBottom="5dp"
+                        android:textColor="#000000"/>
+
 
                 <TextView
                         android:id="@+id/textView105"
@@ -160,7 +166,8 @@
                         android:text="º 체온체크"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"/>
+                        android:layout_marginBottom="5dp"
+                        android:textColor="#000000"/>
 
                 <TextView
                         android:id="@+id/textView107"
@@ -190,7 +197,8 @@
                         android:text="º 식사여부"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"/>
+                        android:layout_marginBottom="5dp"
+                        android:textColor="#000000"/>
 
                 <TextView
                         android:id="@+id/textView109"
@@ -220,7 +228,8 @@
                         android:text="º 수면시간"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"/>
+                        android:layout_marginBottom="5dp"
+                        android:textColor="#000000"/>
 
                 <TextView
                         android:id="@+id/textView111"
@@ -250,7 +259,8 @@
                         android:text="º 배변상태"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"/>
+                        android:layout_marginBottom="5dp"
+                        android:textColor="#000000"/>
 
                 <TextView
                         android:id="@+id/textView113"
@@ -274,6 +284,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
                         android:ems="14"
                         android:hint="댓글 쓰기"
                         android:inputType="textPersonName" />
@@ -282,7 +293,11 @@
                         android:id="@+id/advice_comment_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/trumpet"
+                        android:backgroundTint="#BBDED6"
+                        android:textColor="#000000"
                         android:text="댓글 등록" />
             </LinearLayout>
 
@@ -290,19 +305,22 @@
                     android:id="@+id/textView20"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="자신이 작성한 댓글을 길게 누르면 수정, 삭제가 가능합니다."
                     android:layout_marginStart="30dp"/>
 
+
             <android.support.v7.widget.RecyclerView
                     android:id="@+id/advice_comment_recyclerview"
+                    android:nestedScrollingEnabled="false"
                     android:layout_width="match_parent"
-                    android:layout_height="330dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="15dp"/>
-
+                    android:layout_marginBottom="15dp" />
         </LinearLayout>
 
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
+
 </LinearLayout>

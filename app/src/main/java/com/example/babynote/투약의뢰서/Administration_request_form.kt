@@ -71,7 +71,7 @@ class Administration_request_form : AppCompatActivity() {
         // 툴바 왼쪽 버튼 설정
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)  // 왼쪽 버튼 사용 여부 true
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)  // 왼쪽 버튼 이미지 설정
-        supportActionBar!!.setTitle("투약의뢰서")
+        supportActionBar!!.title = "투약의뢰서"
         supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
 
@@ -89,11 +89,10 @@ class Administration_request_form : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 
-        when (item!!.getItemId()) {
+        when (item!!.itemId) {
 
             R.id.menu_write -> {
                 if (state == "학부모") {
-                    Toast.makeText(this, "글쓰기 클릭", Toast.LENGTH_SHORT).show()
                     var intent = Intent(this, request_write::class.java)
                     intent.putExtra("유치원이름", kindergarten)
                     intent.putExtra("유치원반이름", classname)

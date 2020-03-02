@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import com.example.babynote.Api.IRecyclerOnClick
 import com.example.babynote.Common.Common
 import com.example.babynote.R
@@ -47,8 +46,6 @@ class carte_recyclerviewAdapter(internal val context: Context, internal val cart
 
             override fun onClick(view: View, position: Int) {
                 Common.selected_carte = carte_list[position]
-                Toast.makeText(view.context,
-                    carte_list[position].writer_nickname + "클릭"+"("+position+")",Toast.LENGTH_SHORT).show()
                 val intent = Intent(view.context, carte_read::class.java)
 //                intent.putExtra("num",position)
 

@@ -51,6 +51,7 @@ class advice_comment_Adapter(
 
                 if (advice_comment_list[p1].comment_writer == Common.selected_baby?.parents_id) {
                     val intent = Intent(view.context, advice_comment_modify::class.java)
+                    intent.putExtra("댓글",advice_comment_list[p1].comment_content)
                     view.context.startActivity(intent)
                 }
 

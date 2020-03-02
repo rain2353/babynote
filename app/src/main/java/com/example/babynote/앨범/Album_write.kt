@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import com.example.babynote.Api.INodeJS
 import com.example.babynote.Api.RetrofitClient
@@ -85,7 +86,7 @@ class Album_write : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
         // 툴바 왼쪽 버튼 설정
 //        supportActionBar!!.setDisplayHomeAsUpEnabled(true)  // 왼쪽 버튼 사용 여부 true
 //        supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)  // 왼쪽 버튼 이미지 설정
-        supportActionBar!!.setTitle("앨범 사진 등록하기")
+        supportActionBar!!.title = "앨범 사진 등록하기"
         supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
 
@@ -98,7 +99,7 @@ class Album_write : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 
-        when (item!!.getItemId()) {
+        when (item!!.itemId) {
 
             R.id.write_ok -> {
                 if (selectedFileUri == null) {
@@ -136,7 +137,7 @@ class Album_write : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
 //        val getContentIntent = FileUtils.createGetContentIntent()
 //        val intent = Intent.createChooser(getContentIntent,"Select a file")
         val intent = Intent(Intent.ACTION_PICK)
-        intent.setType(MediaStore.Images.Media.CONTENT_TYPE)
+        intent.type = MediaStore.Images.Media.CONTENT_TYPE
         startActivityForResult(intent, PICK_IMAGE_REQUEST)
 //        val intent = Intent(Intent.ACTION_GET_CONTENT)
 //        intent.type = "image/*"
@@ -152,6 +153,7 @@ class Album_write : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
                 if (data != null) {
                     selectedFileUri = data.data
                     if (selectedFileUri != null && !selectedFileUri!!.path!!.isEmpty())
+                        image_album_write.visibility = View.VISIBLE
                         image_album_write.setImageURI(selectedFileUri)
                 }
             }
@@ -204,7 +206,7 @@ class Album_write : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
                 .enqueue(object : retrofit2.Callback<String> {
                     override fun onFailure(call: Call<String>, t: Throwable) {
                         dialog.dismiss()
-                        Toast.makeText(this@Album_write, t!!.message, Toast.LENGTH_SHORT)
+                        Toast.makeText(this@Album_write, t.message, Toast.LENGTH_SHORT)
                             .show()
                         finish()
                     }

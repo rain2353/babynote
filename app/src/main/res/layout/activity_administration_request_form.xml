@@ -8,11 +8,13 @@
         tools:context=".투약의뢰서.Administration_request_form" android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_light"
+            android:background="#F6416C"
+            android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
-            android:minHeight="?attr/actionBarSize" android:id="@+id/toolbar6" app:titleTextColor="@color/backbaby"/>
+            app:titleTextColor="@color/backbaby" />
 
     <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"

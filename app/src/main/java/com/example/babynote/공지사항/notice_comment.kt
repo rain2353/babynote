@@ -29,7 +29,8 @@ class notice_comment : Activity() {
         window.attributes = layoutParams
 
         setContentView(com.example.babynote.R.layout.activity_notice_comment)
-
+        var coment = intent.getStringExtra("댓글")
+        editText_comment.setText(coment)
 
         //Init API
         val retrofit = RetrofitClient.instance

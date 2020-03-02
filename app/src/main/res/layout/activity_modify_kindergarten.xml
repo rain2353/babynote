@@ -13,7 +13,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:text="원 위치를 설정해 주세요."
-            android:textColor="@color/design_default_color_primary"
+            android:textColor="#000"
             android:textSize="20dp" />
 
     <LinearLayout
@@ -55,14 +55,20 @@
                 android:layout_weight="5"
                 android:ems="10"
                 android:hint="원 이름 검색"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="#000"
+                android:layout_marginTop="10dp"/>
 
         <Button
                 android:id="@+id/search_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="검색" />
+                android:text="검색"
+                android:background="@drawable/trumpet"
+                android:backgroundTint="#00b8a9"
+                android:textColor="#FFFFFF"
+                app:srcCompat="@drawable/ic_search_white_24dp" />
 
     </LinearLayout>
 

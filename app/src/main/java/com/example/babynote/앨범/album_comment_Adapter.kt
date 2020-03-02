@@ -51,6 +51,7 @@ class album_comment_Adapter(
 
                 if (album_comment_list[p1].comment_writer == Common.selected_baby?.parents_id) {
                     val intent = Intent(view.context, album_comment_modify::class.java)
+                    intent.putExtra("댓글",album_comment_list[p1].comment_content)
                     view.context.startActivity(intent)
                 }
 

@@ -19,7 +19,7 @@
                     android:id="@+id/consent_write_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/holo_red_light"
+                    android:background="#f6416c"
                     android:minHeight="?attr/actionBarSize"
                     android:theme="?attr/actionBarTheme"
                     app:subtitleTextColor="#FFFFFF"
@@ -74,7 +74,8 @@
                     android:layout_height="wrap_content"
                     android:text="날짜"
                     android:layout_marginTop="15dp"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="20dp"
+                    android:textColor="#000000"/>
 
             <Button
                     android:id="@+id/button6"
@@ -83,7 +84,10 @@
                     android:text="날짜지정하기"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/trumpet"
+                    android:backgroundTint="#BBDED6"
+                    android:textColor="#000000"/>
 
             <TextView
                     android:id="@+id/textView68"
@@ -91,7 +95,8 @@
                     android:layout_height="wrap_content"
                     android:text="귀가 시간"
                     android:layout_marginTop="15dp"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="20dp"
+                    android:textColor="#000000"/>
 
             <Button
                     android:id="@+id/button7"
@@ -100,7 +105,11 @@
                     android:text="귀가시간 선택하기"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/trumpet"
+                    android:backgroundTint="#BBDED6"
+                    android:textColor="#000000"
+                    />
 
             <TextView
                     android:id="@+id/textView69"
@@ -108,7 +117,8 @@
                     android:layout_height="wrap_content"
                     android:text="귀가방법"
                     android:layout_marginTop="15dp"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="20dp"
+                    android:textColor="#000000"/>
 
             <EditText
                     android:id="@+id/editText6"
@@ -119,7 +129,8 @@
                     android:layout_marginEnd="20dp"
                     android:ems="10"
                     android:hint="예 ) 도보, 자가용, 통학버스, 자전거, 기타등등"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textColor="#000000"/>
 
             <TextView
                     android:id="@+id/textView70"
@@ -127,7 +138,8 @@
                     android:layout_height="wrap_content"
                     android:text="보호자"
                     android:layout_marginTop="15dp"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="20dp"
+                    android:textColor="#000000"/>
 
             <EditText
                     android:id="@+id/editText7"
@@ -138,7 +150,8 @@
                     android:inputType="textPersonName"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#000000"/>
 
             <EditText
                     android:id="@+id/editText8"
@@ -149,7 +162,8 @@
                     android:inputType="phone"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#000000"/>
 
             <TextView
                     android:id="@+id/textView71"
@@ -157,7 +171,8 @@
                     android:layout_height="wrap_content"
                     android:text="비상연락망"
                     android:layout_marginTop="15dp"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="20dp"
+                    android:textColor="#000000"/>
 
             <EditText
                     android:id="@+id/editText9"
@@ -168,7 +183,8 @@
                     android:inputType="textPersonName"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#000000"/>
 
             <EditText
                     android:id="@+id/editText10"
@@ -179,7 +195,8 @@
                     android:inputType="phone"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#000000"/>
 
             <TextView
                     android:id="@+id/textView72"

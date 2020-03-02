@@ -50,6 +50,7 @@ class notice_text_Adapter(
 
                 if (notice_comment_list[p1].comment_writer == Common.selected_baby?.parents_id) {
                     val intent = Intent(view.context, notice_comment::class.java)
+                    intent.putExtra("댓글",notice_comment_list[p1].comment_content)
                     view.context.startActivity(intent)
                 }
 

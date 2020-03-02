@@ -11,7 +11,7 @@
     <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_blue_dark"
+            android:background="#00b8a9"
             android:theme="?attr/actionBarTheme"
             android:minHeight="?attr/actionBarSize" android:id="@+id/toolbar10" app:titleTextColor="@color/backbaby"/>
     <TextView
@@ -22,8 +22,10 @@
     <TextView
             android:text="(예시)"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/textView11" android:gravity="center"/>
+            android:layout_height="wrap_content" android:id="@+id/textView11" android:gravity="center"
+            android:layout_marginTop="10dp"/>
     <TextView
+            android:layout_marginTop="5dp"
             android:text="별님반"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/teacher_nickname_EX" android:textSize="30dp"
@@ -48,6 +50,10 @@
                 android:freezesText="false" android:inputType="textPersonName|text" android:textIsSelectable="true"
                 android:singleLine="false"/>
         <Button
+                android:layout_marginTop="20dp"
+                android:background="@drawable/trumpet"
+                android:backgroundTint="#00b8a9"
+                android:textColor="#FFFFFF"
                 android:text="확인"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/select" android:layout_gravity="center"/>

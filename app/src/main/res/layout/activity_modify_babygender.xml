@@ -5,7 +5,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".Add_baby.modify_babygender">
+        tools:context=".Add_baby.modify_babygender"
+        android:background="#fff">
     <TextView
             android:id="@+id/textView15"
             android:layout_width="match_parent"
@@ -33,7 +34,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginEnd="5dp"
-                android:text="남아" />
+                android:text="남아"
+                android:background="@drawable/trumpet_click"
+                android:textColor="#FFFFFF"
+                />
 
         <Button
                 android:id="@+id/button35"
@@ -41,7 +45,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                  android:layout_marginStart="5dp"
-                android:text="여아" />
+                android:text="여아"
+                android:background="@android:color/transparent"/>
     </LinearLayout>
 
     <LinearLayout

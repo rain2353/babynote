@@ -14,6 +14,7 @@ class administration_request_list {
     var kindergarten: String? = null
     var classname: String? = null
     var parents_id: String? = null
+    var parents_name: String? = null
     var write_time: String? = null
     var baby_image: String? = null
 

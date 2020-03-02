@@ -26,14 +26,17 @@ class Join_membership : AppCompatActivity() {
         val retrofit = RetrofitClient.instance
         myAPI = retrofit.create(INodeJS::class.java)
 
-        // 취소 버튼 눌렀을때 로그인으로 이동.
-
-        cancel.setOnClickListener {
-            onBackPressed()
-        }
 
         // 확인 눌렀을때 다이얼로그 팝업창이 나와서 학부모인지 선생님인지 선택.
         select.setOnClickListener {
+
+            // 아이디를 적었는지 확인.
+            if(edit_id.text.isEmpty()){
+                Toast.makeText(this, "아이디를 작성하지 않으셨습니다.", Toast.LENGTH_SHORT).show()
+                edit_id.requestFocus()
+                return@setOnClickListener
+            }
+
             val passMatches = Regex("^(?=.*[a-zA-Z0-9])(?=.*[!@#\$%^*+=-]).{8,20}$")
             //비밀번호 유효성
             if (edit_password.text.toString().matches(passMatches)){
@@ -41,6 +44,13 @@ class Join_membership : AppCompatActivity() {
             }else{
                 Toast.makeText(this, "비밀번호 형식을 지켜주세요.", Toast.LENGTH_SHORT).show()
                 edit_password.requestFocus()
+                return@setOnClickListener
+            }
+
+            // 이름 적었는지 확인.
+            if(edit_name.text.isEmpty()){
+                Toast.makeText(this, "이름을 작성하지 않으셨습니다.", Toast.LENGTH_SHORT).show()
+                edit_name.requestFocus()
                 return@setOnClickListener
             }
             //핸드폰번호 유효성
@@ -68,7 +78,7 @@ class Join_membership : AppCompatActivity() {
             selector(title = "누구신가요?", items = people) { _, selection ->
 
                 // 항목을 선택했을 때 수행할 동작을 구현합니다.
-                toast("You selected ${people[selection]}")
+                toast(" ${people[selection]} 을/를 선택하였습니다.")
                 if (people[selection] == "학부모") {
                     var intent = Intent(this, Family_Title_set::class.java)
                     intent.putExtra("id",edit_id.text.toString())
@@ -103,7 +113,7 @@ class Join_membership : AppCompatActivity() {
         // 툴바 왼쪽 버튼 설정
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)  // 왼쪽 버튼 사용 여부 true
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_arrow_back_black_24dp)  // 왼쪽 버튼 이미지 설정
-        supportActionBar!!.setTitle("회원가입")
+        supportActionBar!!.title = "회원가입"
         supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
     override fun onStop() {

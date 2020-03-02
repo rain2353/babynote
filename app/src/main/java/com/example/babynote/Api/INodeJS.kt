@@ -404,6 +404,7 @@ interface INodeJS {
         @Field("kindergarten") kindergarten: String?,
         @Field("classname") classname: String?,
         @Field("parents_id") parents_id: String?,
+        @Field("parents_name") parents_name: String?,
         @Field("baby_image") baby_image: String?
      ): Observable<String>
 

@@ -7,7 +7,7 @@
         android:orientation="vertical"
         tools:context=".투약의뢰서.request_text">
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -20,27 +20,73 @@
                     android:id="@+id/request_text_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/holo_red_light"
+                    android:background="#f6416c"
                     android:minHeight="?attr/actionBarSize"
                     android:theme="?attr/actionBarTheme"
                     app:titleTextColor="@color/backbaby" />
-
-            <TextView
-                    android:id="@+id/baby_name"
+            <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    android:gravity="center"
-                    android:text="TextView" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/item_border">
+
+                <ImageView
+                        android:id="@+id/baby_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:srcCompat="@tools:sample/avatars"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp">
+
+                    <TextView
+                            android:id="@+id/baby_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="TextView"
+                            android:textColor="#000"/>
+
+                    <TextView
+                            android:id="@+id/baby_class"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="TextView"
+                            android:layout_marginTop="8dp"
+                            android:textColor="#000"/>
+                </LinearLayout>
+            </LinearLayout>
+<!--            <TextView-->
+<!--                    android:id="@+id/baby_name"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="TextView"-->
+<!--                    android:textColor="#000"/>-->
 
             <TextView
                     android:id="@+id/textView35"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:text="금일 자녀의 투약을 선생님께 의뢰합니다." />
+                    android:text="금일 자녀의 투약을 선생님께 의뢰합니다."
+                    android:textColor="#000"/>
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -53,7 +99,8 @@
                         android:id="@+id/textView48"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="증상 : " />
+                        android:text="증상 : "
+                        android:textColor="#000"/>
 
                 <TextView
                         android:id="@+id/textView49"
@@ -62,7 +109,8 @@
                         android:layout_weight="1"
                         android:text="TextView"
                         android:layout_marginStart="15dp"
-                        android:layout_marginEnd="10dp"/>
+                        android:layout_marginEnd="10dp"
+                        android:textColor="#000"/>
             </LinearLayout>
 
             <TextView
@@ -72,7 +120,8 @@
                     android:text="투약 내용"
                     android:textSize="18dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="10dp"
+                    android:textColor="#000"/>
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -85,7 +134,8 @@
                         android:id="@+id/textView51"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="약의 종류 : " />
+                        android:text="약의 종류 : "
+                        android:textColor="#000"/>
 
                 <TextView
                         android:id="@+id/textView52"
@@ -94,7 +144,8 @@
                         android:layout_weight="1"
                         android:text="TextView"
                         android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"/>
+                        android:layout_marginEnd="10dp"
+                        android:textColor="#000"/>
             </LinearLayout>
 
             <LinearLayout
@@ -108,7 +159,8 @@
                         android:id="@+id/textView53"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="투약 용량 : " />
+                        android:text="투약 용량 : "
+                        android:textColor="#000"/>
 
                 <TextView
                         android:id="@+id/textView54"
@@ -117,7 +169,8 @@
                         android:layout_weight="1"
                         android:text="TextView"
                         android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"/>
+                        android:layout_marginEnd="10dp"
+                        android:textColor="#000"/>
             </LinearLayout>
 
             <LinearLayout
@@ -131,7 +184,8 @@
                         android:id="@+id/textView55"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="투약 횟수 : " />
+                        android:text="투약 횟수 : "
+                        android:textColor="#000"/>
 
                 <TextView
                         android:id="@+id/textView56"
@@ -140,7 +194,8 @@
                         android:layout_weight="1"
                         android:text="TextView"
                         android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"/>
+                        android:layout_marginEnd="10dp"
+                        android:textColor="#000"/>
             </LinearLayout>
 
             <LinearLayout
@@ -154,7 +209,8 @@
                         android:id="@+id/textView57"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="투약 시간 : " />
+                        android:text="투약 시간 : "
+                        android:textColor="#000"/>
 
                 <TextView
                         android:id="@+id/textView58"
@@ -163,7 +219,8 @@
                         android:layout_weight="1"
                         android:text="TextView"
                         android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"/>
+                        android:layout_marginEnd="10dp"
+                        android:textColor="#000"/>
             </LinearLayout>
 
             <LinearLayout
@@ -177,7 +234,8 @@
                         android:id="@+id/textView59"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="보관 방법 : " />
+                        android:text="보관 방법 : "
+                        android:textColor="#000"/>
 
                 <TextView
                         android:id="@+id/textView60"
@@ -186,7 +244,8 @@
                         android:layout_weight="1"
                         android:text="TextView"
                         android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"/>
+                        android:layout_marginEnd="10dp"
+                        android:textColor="#000"/>
             </LinearLayout>
 
             <LinearLayout
@@ -200,7 +259,8 @@
                         android:id="@+id/textView61"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="특이 사항 : " />
+                        android:text="특이 사항 : "
+                        android:textColor="#000"/>
 
                 <TextView
                         android:id="@+id/textView62"
@@ -209,7 +269,8 @@
                         android:layout_weight="1"
                         android:text="TextView"
                         android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"/>
+                        android:layout_marginEnd="10dp"
+                        android:textColor="#000"/>
             </LinearLayout>
 
             <TextView
@@ -218,7 +279,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="투약으로 인한 책임은 의뢰자가 집니다."
-                    android:layout_marginTop="30dp"/>
+                    android:layout_marginTop="30dp"
+                    android:textColor="#000"/>
 
             <TextView
                     android:id="@+id/textView64"
@@ -226,7 +288,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="날짜"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000"/>
 
             <TextView
                     android:id="@+id/textView65"
@@ -234,7 +297,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:text="부모님 성함"
-                    android:layout_marginEnd="20dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#000"/>
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -246,6 +310,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
                         android:ems="14"
                         android:hint="댓글 쓰기"
                         android:inputType="textPersonName" />
@@ -255,21 +320,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="10dp"
-                        android:text="댓글 등록" />
+                        android:text="댓글 등록"
+                        android:background="@drawable/trumpet"
+                        android:backgroundTint="#BBDED6"
+                        android:textColor="#000000"/>
             </LinearLayout>
 
             <TextView
                     android:id="@+id/textView20"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="자신이 작성한 댓글을 길게 누르면 수정, 삭제가 가능합니다."
                     android:layout_marginStart="30dp"/>
 
             <android.support.v7.widget.RecyclerView
                     android:id="@+id/request_text_recyclerview"
+                    android:nestedScrollingEnabled="false"
                     android:layout_width="match_parent"
-                    android:layout_height="277dp" />
+                    android:layout_height="wrap_content" />
         </LinearLayout>
 
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

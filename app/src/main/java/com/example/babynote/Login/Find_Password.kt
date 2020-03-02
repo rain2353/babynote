@@ -54,10 +54,7 @@ class Find_Password : AppCompatActivity() {
                 editText_phonenumber.text.toString()
             )
         }
-        button4.setOnClickListener {
-            var intent = Intent(this, Login::class.java)
-            startActivity(intent)
-        }
+
     }
 
     private fun find_userPassword(id: String, name: String, phonenumber: String) {

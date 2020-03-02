@@ -12,10 +12,12 @@
             android:layout_height="wrap_content" android:id="@+id/textView9" android:textColor="@color/colorAccent"
             android:gravity="center" android:layout_marginTop="20dp" android:textSize="16dp"/>
     <TextView
+            android:layout_marginTop="10dp"
             android:text="(예시)"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/textView11" android:gravity="center"/>
     <TextView
+            android:layout_marginTop="5dp"
             android:text="김철수"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/textView10" android:textSize="30dp"
@@ -56,8 +58,13 @@
                 android:freezesText="false" android:inputType="textPersonName|text" android:textIsSelectable="true"
                 android:singleLine="false"/>
         <Button
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="8dp"
                 android:text="변경하기"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/modify_nickname_button" android:layout_gravity="center"/>
+                android:layout_height="wrap_content" android:id="@+id/modify_nickname_button" android:layout_gravity="center"
+                android:background="@drawable/trumpet"
+                android:backgroundTint="#00b8a9"
+                android:textColor="#FFFFFF"/>
     </RadioGroup>
 </LinearLayout>

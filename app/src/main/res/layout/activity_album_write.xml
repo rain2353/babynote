@@ -9,7 +9,7 @@
     <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_light"
+            android:background="#f6416c"
             android:theme="?attr/actionBarTheme"
             android:minHeight="?attr/actionBarSize" android:id="@+id/album_write_toolbar" app:titleTextColor="@color/backbaby"/>
 
@@ -21,7 +21,8 @@
             tools:srcCompat="@tools:sample/avatars"
             android:layout_marginTop="30dp"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"/>
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"/>
 
     <Button
             android:id="@+id/button_album_image"
@@ -32,5 +33,8 @@
             android:layout_marginTop="30dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/trumpet"
+            android:backgroundTint="#BBDED6"
+            android:textColor="#000000"/>
 </LinearLayout>

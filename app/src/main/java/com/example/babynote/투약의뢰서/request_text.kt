@@ -17,6 +17,7 @@ import com.example.babynote.Common.Common
 import com.example.babynote.R
 import com.example.babynote.User.User
 import com.google.gson.Gson
+import com.squareup.picasso.Picasso
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -45,7 +46,9 @@ class request_text : AppCompatActivity() {
         var UserDTO = gson.fromJson(userEmail, User::class.java)
         writer = UserDTO.id.toString()
 
-        baby_name.text = Common.selected_administration_request_form?.babyname + " ( " + Common.selected_administration_request_form?.classname + " )"
+        Picasso.get().load(Common.selected_baby?.baby_imagepath).into(baby_image)
+        baby_class.text = Common.selected_administration_request_form?.classname
+        baby_name.text = Common.selected_administration_request_form?.babyname
         textView49.text = Common.selected_administration_request_form?.symptom
         textView52.text = Common.selected_administration_request_form?.medicine
         textView54.text = Common.selected_administration_request_form?.cc
@@ -54,7 +57,7 @@ class request_text : AppCompatActivity() {
         textView60.text = Common.selected_administration_request_form?.storage
         textView62.text = Common.selected_administration_request_form?.baby_comment
         textView64.text = Common.selected_administration_request_form?.request_day
-        textView65.text = Common.selected_administration_request_form?.parents_id
+        textView65.text = Common.selected_administration_request_form?.parents_name
 
         val lm = LinearLayoutManager(this)
         request_text_recyclerview.layoutManager = lm
@@ -84,7 +87,7 @@ class request_text : AppCompatActivity() {
         // 툴바 왼쪽 버튼 설정
 //        supportActionBar!!.setDisplayHomeAsUpEnabled(true)  // 왼쪽 버튼 사용 여부 true
 //        supportActionBar!!.setHomeAsUpIndicator(com.example.babynote.R.drawable.ic_arrow_back_white_24dp)  // 왼쪽 버튼 이미지 설정
-        supportActionBar!!.setTitle("투약의뢰서 내용")
+        supportActionBar!!.title = "투약의뢰서 내용"
         supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
 
@@ -102,7 +105,7 @@ class request_text : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 
-        when (item!!.getItemId()) {
+        when (item!!.itemId) {
 
             R.id.text_delete -> {
 

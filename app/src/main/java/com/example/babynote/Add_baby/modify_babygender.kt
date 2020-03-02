@@ -47,33 +47,33 @@ class modify_babygender : Activity() {
 
         // 아이 성별에 따라서 버튼이 눌러있는걸 보여준다.
         if (gender == "남아") {
-            button34.backgroundColor = Color.rgb(0, 153, 204)
+            button34.setBackgroundResource(R.drawable.trumpet_click)
             button34.textColor = Color.WHITE
-            button35.backgroundColor = Color.WHITE
-            button35.textColor = Color.rgb(50, 50, 50)
+            button35.backgroundColor = Color.TRANSPARENT
+            button35.textColor = Color.BLACK
 
         } else {
-            button35.backgroundColor = Color.rgb(0, 153, 204)
+            button35.setBackgroundResource(R.drawable.trumpet_click)
             button35.textColor = Color.WHITE
-            button34.backgroundColor = Color.WHITE
-            button34.textColor = Color.rgb(50, 50, 50)
+            button34.backgroundColor = Color.TRANSPARENT
+            button34.textColor = Color.BLACK
         }
 
         // 버튼을 클릭하면 색상이 바뀌고 선택이 된다.
         button34.setOnClickListener {
-            button34.backgroundColor = Color.rgb(0, 153, 204)
+            button34.setBackgroundResource(R.drawable.trumpet_click)
             button34.textColor = Color.WHITE
             gender = "남아"
-            button35.backgroundColor = Color.WHITE
-            button35.textColor = Color.rgb(50, 50, 50)
+            button35.backgroundColor = Color.TRANSPARENT
+            button35.textColor = Color.BLACK
 
         }
         button35.setOnClickListener {
-            button35.backgroundColor = Color.rgb(0, 153, 204)
+            button35.setBackgroundResource(R.drawable.trumpet_click)
             button35.textColor = Color.WHITE
             gender = "여아"
-            button34.backgroundColor = Color.WHITE
-            button34.textColor = Color.rgb(50, 50, 50)
+            button34.backgroundColor = Color.TRANSPARENT
+            button34.textColor = Color.BLACK
         }
         modify_babygender_button.setOnClickListener {
             compositeDisposable.add(myAPI.modify_baby(

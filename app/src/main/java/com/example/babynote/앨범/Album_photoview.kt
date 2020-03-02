@@ -28,6 +28,7 @@ class Album_photoview : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_album_photoview)
+        setToolbar()
         //Init API
         val retrofit = RetrofitClient.instance
         myAPI = retrofit.create(INodeJS::class.java)
@@ -68,6 +69,14 @@ class Album_photoview : AppCompatActivity() {
                 imm.hideSoftInputFromWindow(album_photo_comment.windowToken, 0)
             }
         }
+    }
+    // 툴바 사용 설정
+    private fun setToolbar() {
+        setSupportActionBar(album_photoview_toolbar)
+
+        // 툴바 왼쪽 버튼 설정
+        supportActionBar!!.title = "앨범 내용"
+        supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
     // 작성자 정보 가져오는 메소드
     private fun mybaby(parents_id: String?, num: Int) {

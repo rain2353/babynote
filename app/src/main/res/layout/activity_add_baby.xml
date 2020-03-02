@@ -11,7 +11,7 @@
             android:id="@+id/toolbar10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_blue_dark"
+            android:background="#00b8a9"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             app:titleTextColor="@color/backbaby" />
@@ -23,7 +23,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:text="원 위치를 설정해 주세요."
-            android:textColor="@color/design_default_color_primary"
+            android:textColor="#000"
             android:textSize="20dp" />
 
     <LinearLayout
@@ -68,10 +68,14 @@
                 android:inputType="textPersonName" />
 
         <ImageButton
+                android:layout_marginTop="5dp"
                 android:id="@+id/search_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/trumpet"
+                android:backgroundTint="#00b8a9"
+                android:textColor="#FFFFFF"
                 app:srcCompat="@drawable/ic_search_white_24dp" />
 
     </LinearLayout>

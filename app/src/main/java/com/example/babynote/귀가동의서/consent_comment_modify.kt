@@ -32,6 +32,9 @@ class consent_comment_modify : Activity() {
         //Init API
         val retrofit = RetrofitClient.instance
         myAPI = retrofit.create(INodeJS::class.java)
+        // 자신이 작성한 댓글을 확인하고 수정할수있게끔 한다.
+        var coment = intent.getStringExtra("댓글")
+        editText_comment.setText(coment)
 
         button_delete.setOnClickListener {
             compositeDisposable.add(myAPI.consent_comment_delete(Common.selected_consent_comment?.num)

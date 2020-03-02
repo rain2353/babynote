@@ -9,7 +9,7 @@
     <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_light"
+            android:background="#f6416c"
             android:theme="?attr/actionBarTheme"
             android:minHeight="?attr/actionBarSize" android:id="@+id/Notice_modify_toolbar" app:titleTextColor="#FFFFFF"
             app:subtitleTextColor="#FFFFFF"/>
@@ -24,7 +24,8 @@
             android:layout_marginTop="15dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_weight="0"/>
+            android:layout_weight="0"
+            android:textColor="#000"/>
 
     <EditText
             android:id="@+id/notice_modify_content"
@@ -37,7 +38,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:textColor="#000"/>
 
     <ImageView
             android:id="@+id/notice_modify_image"
@@ -52,6 +54,9 @@
             android:text="사진등록"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/trumpet"
+            android:backgroundTint="#BBDED6"
+            android:textColor="#000000"/>
 
 </LinearLayout>

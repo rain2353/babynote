@@ -5,7 +5,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".Add_baby.modify_babyimage">
+        tools:context=".Add_baby.modify_babyimage"
+        android:background="#fff">
     <TextView
             android:id="@+id/textView15"
             android:layout_width="match_parent"
@@ -34,7 +35,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-            android:background="#00F1EBEB"
+            android:background="@android:color/transparent"
             android:text="변경할 사진 고르기" />
 
 

@@ -28,7 +28,6 @@ import com.ipaulpro.afilechooser.utils.FileUtils
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_teacher_image_info.*
 import okhttp3.MultipartBody
-import org.jetbrains.anko.backgroundColor
 import org.jetbrains.anko.textColor
 import retrofit2.Call
 import retrofit2.Response
@@ -88,20 +87,20 @@ class Teacher_image_info : AppCompatActivity(), ProgressRequestBody.UploadCallba
         // --------------------------- 갤러리에서 이미지 가져오기 -----------------------------------
         teacher_image_button.setOnClickListener { openGallery() }
 
-        // ---------------------------아이 성별 선택------------------------------------------------
+        // ---------------------------선생님 성별 선택------------------------------------------------
 
         button.setOnClickListener {
-            button.backgroundColor = Color.rgb(0, 153, 204)
+            button.setBackgroundResource(R.drawable.trumpet_click)
             button.textColor = Color.WHITE
-            button2.backgroundColor = Color.WHITE
+            button2.setBackgroundResource(R.drawable.trumpet)
             button2.textColor = Color.BLACK
             gender = button.text.toString()
             Log.d("남자 선택", gender)
         }
         button2.setOnClickListener {
-            button2.backgroundColor = Color.rgb(0, 153, 204)
+            button2.setBackgroundResource(R.drawable.trumpet_click)
             button2.textColor = Color.WHITE
-            button.backgroundColor = Color.WHITE
+            button.setBackgroundResource(R.drawable.trumpet)
             button.textColor = Color.BLACK
             gender = button2.text.toString()
             Log.d("여자 선택", gender)
@@ -109,9 +108,9 @@ class Teacher_image_info : AppCompatActivity(), ProgressRequestBody.UploadCallba
         //-----------------------------------------------------------------------------------------
         // ----------------------------- 3중 스피너 ------------------------------------------------
 
-        var add_teacher_year = findViewById(R.id.add_teacher_year) as Spinner
-        var add_teacher_month = findViewById(R.id.add_teacher_month) as Spinner
-        var add_teacher_day = findViewById(R.id.add_teacher_day) as Spinner
+        var add_teacher_year = findViewById<Spinner>(R.id.add_teacher_year)
+        var add_teacher_month = findViewById<Spinner>(R.id.add_teacher_month)
+        var add_teacher_day = findViewById<Spinner>(R.id.add_teacher_day)
         val adapter1 = ArrayAdapter.createFromResource(
             this,
             R.array.태어난해,
@@ -243,7 +242,7 @@ class Teacher_image_info : AppCompatActivity(), ProgressRequestBody.UploadCallba
                     .enqueue(object : retrofit2.Callback<String> {
                         override fun onFailure(call: Call<String>, t: Throwable) {
                             dialog.dismiss()
-                            Toast.makeText(this@Teacher_image_info, t!!.message, Toast.LENGTH_SHORT)
+                            Toast.makeText(this@Teacher_image_info, t.message, Toast.LENGTH_SHORT)
                                 .show()
                             finish()
                         }
@@ -272,7 +271,7 @@ class Teacher_image_info : AppCompatActivity(), ProgressRequestBody.UploadCallba
         // 툴바 왼쪽 버튼 설정
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)  // 왼쪽 버튼 사용 여부 true
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)  // 왼쪽 버튼 이미지 설정
-        supportActionBar!!.setTitle("선생님 프로필")
+        supportActionBar!!.title = "선생님 프로필"
         supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
 
@@ -299,7 +298,7 @@ class Teacher_image_info : AppCompatActivity(), ProgressRequestBody.UploadCallba
 //        val getContentIntent = FileUtils.createGetContentIntent()
 //        val intent = Intent.createChooser(getContentIntent,"Select a file")
         val intent = Intent(Intent.ACTION_PICK)
-        intent.setType(MediaStore.Images.Media.CONTENT_TYPE)
+        intent.type = MediaStore.Images.Media.CONTENT_TYPE
         startActivityForResult(intent, PICK_IMAGE_REQUEST)
 //        val intent = Intent(Intent.ACTION_GET_CONTENT)
 //        intent.type = "image/*"
@@ -315,6 +314,7 @@ class Teacher_image_info : AppCompatActivity(), ProgressRequestBody.UploadCallba
                 if (data != null) {
                     selectedFileUri = data.data
                     if (selectedFileUri != null && !selectedFileUri!!.path!!.isEmpty())
+                        teacher_image.visibility = View.VISIBLE
                         teacher_image.setImageURI(selectedFileUri)
                 }
             }

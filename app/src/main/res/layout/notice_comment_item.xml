@@ -5,8 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/item_border"
-        android:layout_marginTop="5dp"
+        android:background="@drawable/item_border_top_bottom"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp">
 
@@ -20,6 +19,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="닉네임"
+                android:textSize="17dp"
                 android:textColor="@android:color/black"
                 android:layout_marginStart="5dp"/>
 
@@ -37,7 +37,9 @@
             android:layout_height="wrap_content"
             android:text="댓글 내용"
             android:textColor="@android:color/black"
+            android:textSize="19dp"
             android:layout_marginTop="5dp"
-            android:layout_marginStart="5dp"/>
+            android:layout_marginStart="5dp"
+            android:paddingBottom="8dp"/>
 
 </LinearLayout>

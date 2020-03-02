@@ -23,6 +23,7 @@ import com.example.babynote.Api.INodeJS
 import com.example.babynote.Api.RetrofitClient
 import com.example.babynote.Main.MainActivity
 import com.example.babynote.R
+import com.example.babynote.R.drawable.trumpet_click
 import com.example.babynote.Utils.ProgressRequestBody
 import com.ipaulpro.afilechooser.utils.FileUtils
 import io.reactivex.disposables.CompositeDisposable
@@ -46,7 +47,7 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
     var month = ""
     var day = ""
     var gender: String = "남아"
-    var userID : String? = null
+    var userID: String? = null
     var kindergartenName = ""
     private val OPEN_GALLERY = 1
     private val PERMISSION_REQUEST: Int = 1000
@@ -89,7 +90,7 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
         // ---------------------------아이 성별 선택------------------------------------------------
 
         button.setOnClickListener {
-            button.backgroundColor = Color.rgb(0, 153, 204)
+            button.setBackgroundResource(trumpet_click)
             button.textColor = Color.WHITE
             button2.backgroundColor = Color.WHITE
             button2.textColor = Color.BLACK
@@ -97,7 +98,7 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
             Log.d("남아 선택", gender)
         }
         button2.setOnClickListener {
-            button2.backgroundColor = Color.rgb(0, 153, 204)
+            button2.setBackgroundResource(trumpet_click)
             button2.textColor = Color.WHITE
             button.backgroundColor = Color.WHITE
             button.textColor = Color.BLACK
@@ -107,9 +108,9 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
         //-----------------------------------------------------------------------------------------
         // ----------------------------- 3중 스피너 ------------------------------------------------
 
-        var add_baby_year = findViewById(R.id.add_baby_year) as Spinner
-        var add_baby_month = findViewById(R.id.add_baby_month) as Spinner
-        var add_baby_day = findViewById(R.id.add_baby_day) as Spinner
+        var add_baby_year = findViewById<Spinner>(R.id.add_baby_year)
+        var add_baby_month = findViewById<Spinner>(R.id.add_baby_month)
+        var add_baby_day = findViewById<Spinner>(R.id.add_baby_day)
         val adapter1 = ArrayAdapter.createFromResource(
             this,
             R.array.생년,
@@ -241,7 +242,7 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
                     .enqueue(object : retrofit2.Callback<String> {
                         override fun onFailure(call: Call<String>, t: Throwable) {
                             dialog.dismiss()
-                            Toast.makeText(this@Add_baby_info, t!!.message, Toast.LENGTH_SHORT)
+                            Toast.makeText(this@Add_baby_info, t.message, Toast.LENGTH_SHORT)
                                 .show()
                             finish()
                         }
@@ -270,7 +271,7 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
         // 툴바 왼쪽 버튼 설정
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)  // 왼쪽 버튼 사용 여부 true
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)  // 왼쪽 버튼 이미지 설정
-        supportActionBar!!.setTitle("우리 아이 프로필")
+        supportActionBar!!.title = "우리 아이 프로필"
         supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
 
@@ -297,7 +298,7 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
 //        val getContentIntent = FileUtils.createGetContentIntent()
 //        val intent = Intent.createChooser(getContentIntent,"Select a file")
         val intent = Intent(Intent.ACTION_PICK)
-        intent.setType(MediaStore.Images.Media.CONTENT_TYPE)
+        intent.type = MediaStore.Images.Media.CONTENT_TYPE
         startActivityForResult(intent, PICK_IMAGE_REQUEST)
 //        val intent = Intent(Intent.ACTION_GET_CONTENT)
 //        intent.type = "image/*"
@@ -313,7 +314,8 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
                 if (data != null) {
                     selectedFileUri = data.data
                     if (selectedFileUri != null && !selectedFileUri!!.path!!.isEmpty())
-                        baby_image.setImageURI(selectedFileUri)
+                        baby_image.visibility = View.VISIBLE
+                    baby_image.setImageURI(selectedFileUri)
                 }
             }
 //            if (requestCode == OPEN_GALLERY) {

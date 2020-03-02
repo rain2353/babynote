@@ -7,7 +7,7 @@
         android:orientation="vertical"
         tools:context=".귀가동의서.consent_text">
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -20,7 +20,7 @@
                     android:id="@+id/consent_text_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/holo_red_light"
+                    android:background="#f6416c"
                     android:minHeight="?attr/actionBarSize"
                     android:theme="?attr/actionBarTheme"
                     app:titleTextColor="@color/backbaby" />
@@ -57,14 +57,16 @@
                             android:id="@+id/textView75"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="TextView"
+                            android:textColor="#000"/>
 
                     <TextView
                             android:id="@+id/textView76"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="TextView"
-                            android:layout_marginTop="8dp"/>
+                            android:layout_marginTop="8dp"
+                            android:textColor="#000"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -86,7 +88,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="귀가 날짜" />
+                            android:text="귀가 날짜"
+                            android:textColor="#000000"/>
 
                     <TextView
                             android:id="@+id/textView79"
@@ -95,7 +98,8 @@
                             android:layout_weight="1"
                             android:text="TextView"
                             android:layout_marginTop="8dp"
-                            android:textSize="17dp"/>
+                            android:textSize="17dp"
+                            android:textColor="#000000"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -109,7 +113,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="귀가 시간" />
+                            android:text="귀가 시간"
+                            android:textColor="#000000"/>
 
                     <TextView
                             android:id="@+id/textView80"
@@ -118,7 +123,8 @@
                             android:layout_weight="1"
                             android:text="TextView"
                             android:layout_marginTop="8dp"
-                            android:textSize="17dp"/>
+                            android:textSize="17dp"
+                            android:textColor="#000000"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -129,7 +135,8 @@
                     android:layout_height="wrap_content"
                     android:text="귀가 방법"
                     android:layout_marginTop="15dp"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="20dp"
+                    android:textColor="#000000"/>
 
             <TextView
                     android:id="@+id/textView82"
@@ -138,7 +145,8 @@
                     android:text="TextView"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#000000"/>
 
             <TextView
                     android:id="@+id/textView83"
@@ -146,7 +154,8 @@
                     android:layout_height="wrap_content"
                     android:text="보호자"
                     android:layout_marginTop="15dp"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="20dp"
+                    android:textColor="#000000"/>
 
             <TextView
                     android:id="@+id/textView84"
@@ -155,7 +164,8 @@
                     android:text="TextView"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#000000"/>
 
             <TextView
                     android:id="@+id/textView85"
@@ -165,7 +175,8 @@
                     android:text="TextView"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#000000"/>
 
             <TextView
                     android:id="@+id/textView86"
@@ -173,7 +184,8 @@
                     android:layout_height="wrap_content"
                     android:text="비상연락망"
                     android:layout_marginTop="15dp"
-                    android:layout_marginStart="20dp"/>
+                    android:layout_marginStart="20dp"
+                    android:textColor="#000000"/>
 
             <TextView
                     android:id="@+id/textView87"
@@ -182,7 +194,8 @@
                     android:text="TextView"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#000000"/>
 
             <TextView
                     android:id="@+id/textView88"
@@ -192,7 +205,8 @@
                     android:text="TextView"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#000000"/>
 
             <TextView
                     android:id="@+id/textView89"
@@ -201,7 +215,8 @@
                     android:gravity="center"
                     android:text="영유아의 귀가 시 보호자에게 인도하여 주세요.                                                         위 보호자 이외의 다른 사람에게 인계할 때는 사전에 반드시 연락을                                                                                                                                     취하겠습니다.                                                                                                                          원에서는 부모가 희망하더라도 영유아를 혼자 귀가시키지 않습니다. "
                     android:textSize="14dp"
-                    android:layout_marginTop="15dp"/>
+                    android:layout_marginTop="15dp"
+                    android:textColor="#000"/>
 
             <TextView
                     android:id="@+id/textView90"
@@ -209,7 +224,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="금일 자녀의 귀가를 선생님께 의뢰합니다."
-                    android:layout_marginTop="15dp" />
+                    android:layout_marginTop="15dp"
+                    android:textColor="#000"/>
 
             <TextView
                     android:id="@+id/textView91"
@@ -218,7 +234,8 @@
                     android:gravity="center"
                     android:text="날짜"
                     android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"/>
+                    android:layout_marginBottom="15dp"
+                    android:textColor="#000"/>
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -230,16 +247,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
                         android:ems="14"
                         android:hint="댓글 쓰기"
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:textColor="#000"/>
 
                 <Button
                         android:id="@+id/consent_comment_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="10dp"
-                        android:text="댓글 등록" />
+                        android:text="댓글 등록"
+                        android:background="@drawable/trumpet"
+                        android:backgroundTint="#BBDED6"
+                        android:textColor="#000000"/>
             </LinearLayout>
 
             <TextView
@@ -247,14 +269,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="자신이 작성한 댓글을 길게 누르면 수정, 삭제가 가능합니다."
-                    android:layout_marginStart="30dp"/>
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"/>
             <android.support.v7.widget.RecyclerView
                     android:id="@+id/consent_text_recyclerview"
+                    android:nestedScrollingEnabled="false"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"/>
 
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>

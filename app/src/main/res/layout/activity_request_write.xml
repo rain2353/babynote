@@ -20,7 +20,7 @@
                     android:id="@+id/request_write_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/holo_red_light"
+                    android:background="#f6416c"
                     android:minHeight="?attr/actionBarSize"
                     android:theme="?attr/actionBarTheme"
                     app:subtitleTextColor="#FFFFFF"
@@ -38,7 +38,8 @@
                         android:id="@+id/textView32"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="대상 아이" />
+                        android:text="대상 아이"
+                        android:textColor="#000"/>
 
                 <TextView
                         android:id="@+id/babyname"
@@ -46,7 +47,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textColor="#000"/>
             </LinearLayout>
 
             <LinearLayout
@@ -61,7 +63,8 @@
                         android:id="@+id/textView34"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="투약일" />
+                        android:text="투약일"
+                        android:textColor="#000"/>
 
                 <Button
                         android:id="@+id/requset_day"
@@ -69,7 +72,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="66dp"
                         android:layout_weight="1"
-                        android:hint="날짜를 지정해주세요." />
+                        android:text="날짜를 지정해주세요."
+                        android:background="@drawable/trumpet"
+                        android:backgroundTint="#BBDED6"
+                        android:textColor="#000000"/>
 
             </LinearLayout>
 
@@ -86,7 +92,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="증상" />
+                        android:text="증상"
+                        android:textColor="#000"/>
 
                 <EditText
                         android:id="@+id/editText"
@@ -95,7 +102,8 @@
                         android:layout_weight="1"
                         android:ems="10"
                         android:hint="예) 감기, 몸살"
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:textColor="#000"/>
             </LinearLayout>
 
             <TextView
@@ -105,7 +113,7 @@
                     android:background="@android:color/darker_gray"
                     android:text="   투약내용"
                     android:layout_marginTop="8dp"
-                    />
+                    android:textColor="#000"/>
 
             <TextView
                     android:id="@+id/textView38"
@@ -114,15 +122,19 @@
                     android:text="약의 종류"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"/>
+                    android:layout_marginEnd="8dp"
+                    android:textColor="#000"/>
 
             <Button
                     android:id="@+id/button5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="약의 종류를 선택해주세요."
+                    android:text="약의 종류를 선택해주세요."
                     android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"/>
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/trumpet"
+                    android:backgroundTint="#BBDED6"
+                    android:textColor="#000000"/>
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -137,7 +149,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="투약 용량" />
+                        android:text="투약 용량"
+                        android:textColor="#000"/>
 
                 <EditText
                         android:id="@+id/editText3"
@@ -147,14 +160,16 @@
                         android:layout_weight="1"
                         android:ems="10"
                         android:hint="1회분 입력"
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:textColor="#000"/>
 
                 <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="cc/ml" />
+                        android:text="cc/ml"
+                        android:textColor="#000"/>
             </LinearLayout>
 
             <LinearLayout
@@ -169,14 +184,16 @@
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="투약 횟수" />
+                        android:text="투약 횟수"
+                        android:textColor="#000"/>
 
                 <Spinner
                         android:id="@+id/spinner3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textColor="#000"/>
             </LinearLayout>
 
             <LinearLayout
@@ -191,7 +208,8 @@
                         android:id="@+id/textView42"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="투약 시간" />
+                        android:text="투약 시간"
+                        android:textColor="#000"/>
 
                 <EditText
                         android:id="@+id/editText4"
@@ -201,7 +219,8 @@
                         android:layout_weight="1"
                         android:ems="10"
                         android:hint="예) 오전간식 후/점심 후/ 오후간식 후"
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:textColor="#000"/>
             </LinearLayout>
 
             <LinearLayout
@@ -216,14 +235,16 @@
                         android:id="@+id/textView43"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="보관 방법" />
+                        android:text="보관 방법"
+                        android:textColor="#000"/>
 
                 <Spinner
                         android:id="@+id/spinner4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:textColor="#000"/>
             </LinearLayout>
 
             <LinearLayout
@@ -238,7 +259,8 @@
                         android:id="@+id/textView44"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="특이사항" />
+                        android:text="특이사항"
+                        android:textColor="#000"/>
 
                 <EditText
                         android:id="@+id/editText5"
@@ -249,7 +271,8 @@
                         android:ems="10"
                         android:gravity="start|top"
                         android:inputType="textMultiLine"
-                        android:hint="예)약을 먹기 싫어해요."/>
+                        android:hint="예)약을 먹기 싫어해요."
+                        android:textColor="#000"/>
 
 
             </LinearLayout>
@@ -262,14 +285,16 @@
                     android:text="금일 자녀의 투약을 선생님께 의뢰합니다."
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="30dp"
-                    android:layout_marginEnd="8dp"/>
+                    android:layout_marginEnd="8dp"
+                    android:textColor="#000"/>
 
             <TextView
                     android:id="@+id/textView46"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="날짜와 선생님이름" />
+                    android:text="날짜"
+                    android:textColor="#000"/>
 
             <TextView
                     android:id="@+id/textView47"
@@ -277,7 +302,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="right|end"
                     android:text="부모님 성함"
-                    android:layout_marginEnd="20dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#000"/>
 
         </LinearLayout>
     </ScrollView>

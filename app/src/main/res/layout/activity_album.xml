@@ -10,7 +10,7 @@
     <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_light"
+            android:background="#f6416c"
             android:theme="?attr/actionBarTheme"
             android:minHeight="?attr/actionBarSize" android:id="@+id/toolbar4" app:titleTextColor="@color/backbaby"/>
 
@@ -19,7 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="작성한 사진을 길게 누르면 수정 , 삭제가 가능합니다."
-            android:layout_marginStart="50dp"/>
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"/>
 
     <android.support.v7.widget.RecyclerView
             android:id="@+id/album_recyclerview"

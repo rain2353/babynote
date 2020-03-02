@@ -106,271 +106,271 @@ class advice_write : AppCompatActivity(), ProgressRequestBody.UploadCallbacks  {
 
         //--------------------------- 기분 선택 -------------------------
         button9.setOnClickListener {
-            button9.backgroundColor = Color.rgb(0, 153, 204)
+            button9.setBackgroundResource(R.drawable.trumpet_click)
             button9.textColor = Color.WHITE
             feel = "좋음"
             button10.backgroundColor = Color.WHITE
-            button10.textColor = Color.rgb(50, 50, 50)
+            button10.textColor = Color.BLACK
             button11.backgroundColor = Color.WHITE
-            button11.textColor = Color.rgb(50, 50, 50)
+            button11.textColor = Color.BLACK
         }
         button10.setOnClickListener {
-            button10.backgroundColor = Color.rgb(0, 153, 204)
+            button10.setBackgroundResource(R.drawable.trumpet_click)
             button10.textColor = Color.WHITE
             feel = "보통"
             button9.backgroundColor = Color.WHITE
-            button9.textColor = Color.rgb(50, 50, 50)
+            button9.textColor = Color.BLACK
             button11.backgroundColor = Color.WHITE
-            button11.textColor = Color.rgb(50, 50, 50)
+            button11.textColor = Color.BLACK
         }
         button11.setOnClickListener {
-            button11.backgroundColor = Color.rgb(0, 153, 204)
+            button11.setBackgroundResource(R.drawable.trumpet_click)
             button11.textColor = Color.WHITE
             feel = "나쁨"
             button9.backgroundColor = Color.WHITE
-            button9.textColor = Color.rgb(50, 50, 50)
+            button9.textColor = Color.BLACK
             button10.backgroundColor = Color.WHITE
-            button10.textColor = Color.rgb(50, 50, 50)
+            button10.textColor = Color.BLACK
         }
         //---------------------------------------------------------------
         //------------------------건강 선택 ------------------------------
         button12.setOnClickListener {
-            button12.backgroundColor = Color.rgb(0, 153, 204)
+            button12.setBackgroundResource(R.drawable.trumpet_click)
             button12.textColor = Color.WHITE
             health = "좋음"
             button13.backgroundColor = Color.WHITE
-            button13.textColor = Color.rgb(50, 50, 50)
+            button13.textColor = Color.BLACK
             button14.backgroundColor = Color.WHITE
-            button14.textColor = Color.rgb(50, 50, 50)
+            button14.textColor = Color.BLACK
         }
         button13.setOnClickListener {
-            button13.backgroundColor = Color.rgb(0, 153, 204)
+            button13.setBackgroundResource(R.drawable.trumpet_click)
             button13.textColor = Color.WHITE
             health = "보통"
             button12.backgroundColor = Color.WHITE
-            button12.textColor = Color.rgb(50, 50, 50)
+            button12.textColor = Color.BLACK
             button14.backgroundColor = Color.WHITE
-            button14.textColor = Color.rgb(50, 50, 50)
+            button14.textColor = Color.BLACK
         }
         button14.setOnClickListener {
-            button14.backgroundColor = Color.rgb(0, 153, 204)
+            button14.setBackgroundResource(R.drawable.trumpet_click)
             button14.textColor = Color.WHITE
             health = "나쁨"
             button12.backgroundColor = Color.WHITE
-            button12.textColor = Color.rgb(50, 50, 50)
+            button12.textColor = Color.BLACK
             button13.backgroundColor = Color.WHITE
-            button13.textColor = Color.rgb(50, 50, 50)
+            button13.textColor = Color.BLACK
         }
         //---------------------------------------------------------------
         //------------------------체온체크 선택 ------------------------------
         button15.setOnClickListener {
-            button15.backgroundColor = Color.rgb(0, 153, 204)
+            button15.setBackgroundResource(R.drawable.trumpet_click)
             button15.textColor = Color.WHITE
             temperature = "정상"
             button16.backgroundColor = Color.WHITE
-            button16.textColor = Color.rgb(50, 50, 50)
+            button16.textColor = Color.BLACK
             button17.backgroundColor = Color.WHITE
-            button17.textColor = Color.rgb(50, 50, 50)
+            button17.textColor = Color.BLACK
         }
         button16.setOnClickListener {
-            button16.backgroundColor = Color.rgb(0, 153, 204)
+            button16.setBackgroundResource(R.drawable.trumpet_click)
             button16.textColor = Color.WHITE
             temperature = "미열"
             button15.backgroundColor = Color.WHITE
-            button15.textColor = Color.rgb(50, 50, 50)
+            button15.textColor = Color.BLACK
             button17.backgroundColor = Color.WHITE
-            button17.textColor = Color.rgb(50, 50, 50)
+            button17.textColor = Color.BLACK
         }
         button17.setOnClickListener {
-            button17.backgroundColor = Color.rgb(0, 153, 204)
+            button17.setBackgroundResource(R.drawable.trumpet_click)
             button17.textColor = Color.WHITE
             temperature = "고열"
             button15.backgroundColor = Color.WHITE
-            button15.textColor = Color.rgb(50, 50, 50)
+            button15.textColor = Color.BLACK
             button16.backgroundColor = Color.WHITE
-            button16.textColor = Color.rgb(50, 50, 50)
+            button16.textColor = Color.BLACK
         }
         //---------------------------------------------------------------
         //------------------------식사여부 선택 ------------------------------
         button18.setOnClickListener {
-            button18.backgroundColor = Color.rgb(0, 153, 204)
+            button18.setBackgroundResource(R.drawable.trumpet_click)
             button18.textColor = Color.WHITE
             MealorNot = "정량"
             button19.backgroundColor = Color.WHITE
-            button19.textColor = Color.rgb(50, 50, 50)
+            button19.textColor = Color.BLACK
             button20.backgroundColor = Color.WHITE
-            button20.textColor = Color.rgb(50, 50, 50)
+            button20.textColor = Color.BLACK
             button21.backgroundColor = Color.WHITE
-            button21.textColor = Color.rgb(50, 50, 50)
+            button21.textColor = Color.BLACK
         }
         button19.setOnClickListener {
-            button19.backgroundColor = Color.rgb(0, 153, 204)
+            button19.setBackgroundResource(R.drawable.trumpet_click)
             button19.textColor = Color.WHITE
             MealorNot = "많이"
             button18.backgroundColor = Color.WHITE
-            button18.textColor = Color.rgb(50, 50, 50)
+            button18.textColor = Color.BLACK
             button20.backgroundColor = Color.WHITE
-            button20.textColor = Color.rgb(50, 50, 50)
+            button20.textColor = Color.BLACK
             button21.backgroundColor = Color.WHITE
-            button21.textColor = Color.rgb(50, 50, 50)
+            button21.textColor = Color.BLACK
         }
         button20.setOnClickListener {
-            button20.backgroundColor = Color.rgb(0, 153, 204)
+            button20.setBackgroundResource(R.drawable.trumpet_click)
             button20.textColor = Color.WHITE
             MealorNot = "적게"
             button18.backgroundColor = Color.WHITE
-            button18.textColor = Color.rgb(50, 50, 50)
+            button18.textColor = Color.BLACK
             button19.backgroundColor = Color.WHITE
-            button19.textColor = Color.rgb(50, 50, 50)
+            button19.textColor = Color.BLACK
             button21.backgroundColor = Color.WHITE
-            button21.textColor = Color.rgb(50, 50, 50)
+            button21.textColor = Color.BLACK
         }
         button21.setOnClickListener {
-            button21.backgroundColor = Color.rgb(0, 153, 204)
+            button21.setBackgroundResource(R.drawable.trumpet_click)
             button21.textColor = Color.WHITE
             MealorNot = "안했음"
             button18.backgroundColor = Color.WHITE
-            button18.textColor = Color.rgb(50, 50, 50)
+            button18.textColor = Color.BLACK
             button19.backgroundColor = Color.WHITE
-            button19.textColor = Color.rgb(50, 50, 50)
+            button19.textColor = Color.BLACK
             button20.backgroundColor = Color.WHITE
-            button20.textColor = Color.rgb(50, 50, 50)
+            button20.textColor = Color.BLACK
         }
         //---------------------------------------------------------------
 
         //------------------------수면시간 선택 ------------------------------
         button22.setOnClickListener {
-            button22.backgroundColor = Color.rgb(0, 153, 204)
+            button22.setBackgroundResource(R.drawable.trumpet_click)
             button22.textColor = Color.WHITE
             sleep = "잠을 안잤어요"
             button23.backgroundColor = Color.WHITE
-            button23.textColor = Color.rgb(50, 50, 50)
+            button23.textColor = Color.BLACK
             button24.backgroundColor = Color.WHITE
-            button24.textColor = Color.rgb(50, 50, 50)
+            button24.textColor = Color.BLACK
             button25.backgroundColor = Color.WHITE
-            button25.textColor = Color.rgb(50, 50, 50)
+            button25.textColor = Color.BLACK
             button26.backgroundColor = Color.WHITE
-            button26.textColor = Color.rgb(50, 50, 50)
+            button26.textColor = Color.BLACK
         }
         button23.setOnClickListener {
-            button23.backgroundColor = Color.rgb(0, 153, 204)
+            button23.setBackgroundResource(R.drawable.trumpet_click)
             button23.textColor = Color.WHITE
             sleep = "1시간 미만"
             button22.backgroundColor = Color.WHITE
-            button22.textColor = Color.rgb(50, 50, 50)
+            button22.textColor = Color.BLACK
             button24.backgroundColor = Color.WHITE
-            button24.textColor = Color.rgb(50, 50, 50)
+            button24.textColor = Color.BLACK
             button25.backgroundColor = Color.WHITE
-            button25.textColor = Color.rgb(50, 50, 50)
+            button25.textColor = Color.BLACK
             button26.backgroundColor = Color.WHITE
-            button26.textColor = Color.rgb(50, 50, 50)
+            button26.textColor = Color.BLACK
         }
         button24.setOnClickListener {
-            button24.backgroundColor = Color.rgb(0, 153, 204)
+            button24.setBackgroundResource(R.drawable.trumpet_click)
             button24.textColor = Color.WHITE
             sleep = "1시간~1시간30분"
             button22.backgroundColor = Color.WHITE
-            button22.textColor = Color.rgb(50, 50, 50)
+            button22.textColor = Color.BLACK
             button23.backgroundColor = Color.WHITE
-            button23.textColor = Color.rgb(50, 50, 50)
+            button23.textColor = Color.BLACK
             button25.backgroundColor = Color.WHITE
-            button25.textColor = Color.rgb(50, 50, 50)
+            button25.textColor = Color.BLACK
             button26.backgroundColor = Color.WHITE
-            button26.textColor = Color.rgb(50, 50, 50)
+            button26.textColor = Color.BLACK
         }
         button25.setOnClickListener {
-            button25.backgroundColor = Color.rgb(0, 153, 204)
+            button25.setBackgroundResource(R.drawable.trumpet_click)
             button25.textColor = Color.WHITE
             sleep = "1시간30분~2시간"
             button22.backgroundColor = Color.WHITE
-            button22.textColor = Color.rgb(50, 50, 50)
+            button22.textColor = Color.BLACK
             button23.backgroundColor = Color.WHITE
-            button23.textColor = Color.rgb(50, 50, 50)
+            button23.textColor = Color.BLACK
             button24.backgroundColor = Color.WHITE
-            button24.textColor = Color.rgb(50, 50, 50)
+            button24.textColor = Color.BLACK
             button26.backgroundColor = Color.WHITE
-            button26.textColor = Color.rgb(50, 50, 50)
+            button26.textColor = Color.BLACK
         }
         button26.setOnClickListener {
-            button26.backgroundColor = Color.rgb(0, 153, 204)
+            button26.setBackgroundResource(R.drawable.trumpet_click)
             button26.textColor = Color.WHITE
             sleep = "2시간 이상"
             button22.backgroundColor = Color.WHITE
-            button22.textColor = Color.rgb(50, 50, 50)
+            button22.textColor = Color.BLACK
             button23.backgroundColor = Color.WHITE
-            button23.textColor = Color.rgb(50, 50, 50)
+            button23.textColor = Color.BLACK
             button24.backgroundColor = Color.WHITE
-            button24.textColor = Color.rgb(50, 50, 50)
+            button24.textColor = Color.BLACK
             button25.backgroundColor = Color.WHITE
-            button25.textColor = Color.rgb(50, 50, 50)
+            button25.textColor = Color.BLACK
         }
         //---------------------------------------------------------------
 
         //------------------------배변상태 선택 ------------------------------
         button27.setOnClickListener {
-            button27.backgroundColor = Color.rgb(0, 153, 204)
+            button27.setBackgroundResource(R.drawable.trumpet_click)
             button27.textColor = Color.WHITE
             poop = "보통"
             button28.backgroundColor = Color.WHITE
-            button28.textColor = Color.rgb(50, 50, 50)
+            button28.textColor = Color.BLACK
             button29.backgroundColor = Color.WHITE
-            button29.textColor = Color.rgb(50, 50, 50)
+            button29.textColor = Color.BLACK
             button30.backgroundColor = Color.WHITE
-            button30.textColor = Color.rgb(50, 50, 50)
+            button30.textColor = Color.BLACK
             button31.backgroundColor = Color.WHITE
-            button31.textColor = Color.rgb(50, 50, 50)
+            button31.textColor = Color.BLACK
         }
         button28.setOnClickListener {
-            button28.backgroundColor = Color.rgb(0, 153, 204)
+            button28.setBackgroundResource(R.drawable.trumpet_click)
             button28.textColor = Color.WHITE
             poop = "딱딱"
             button27.backgroundColor = Color.WHITE
-            button27.textColor = Color.rgb(50, 50, 50)
+            button27.textColor = Color.BLACK
             button29.backgroundColor = Color.WHITE
-            button29.textColor = Color.rgb(50, 50, 50)
+            button29.textColor = Color.BLACK
             button30.backgroundColor = Color.WHITE
-            button30.textColor = Color.rgb(50, 50, 50)
+            button30.textColor = Color.BLACK
             button31.backgroundColor = Color.WHITE
-            button31.textColor = Color.rgb(50, 50, 50)
+            button31.textColor = Color.BLACK
         }
         button29.setOnClickListener {
-            button29.backgroundColor = Color.rgb(0, 153, 204)
+            button29.setBackgroundResource(R.drawable.trumpet_click)
             button29.textColor = Color.WHITE
             poop = "묽음"
             button27.backgroundColor = Color.WHITE
-            button27.textColor = Color.rgb(50, 50, 50)
+            button27.textColor = Color.BLACK
             button28.backgroundColor = Color.WHITE
-            button28.textColor = Color.rgb(50, 50, 50)
+            button28.textColor = Color.BLACK
             button30.backgroundColor = Color.WHITE
-            button30.textColor = Color.rgb(50, 50, 50)
+            button30.textColor = Color.BLACK
             button31.backgroundColor = Color.WHITE
-            button31.textColor = Color.rgb(50, 50, 50)
+            button31.textColor = Color.BLACK
         }
         button30.setOnClickListener {
-            button30.backgroundColor = Color.rgb(0, 153, 204)
+            button30.setBackgroundResource(R.drawable.trumpet_click)
             button30.textColor = Color.WHITE
             poop = "설사"
             button27.backgroundColor = Color.WHITE
-            button27.textColor = Color.rgb(50, 50, 50)
+            button27.textColor = Color.BLACK
             button28.backgroundColor = Color.WHITE
-            button28.textColor = Color.rgb(50, 50, 50)
+            button28.textColor = Color.BLACK
             button29.backgroundColor = Color.WHITE
-            button29.textColor = Color.rgb(50, 50, 50)
+            button29.textColor = Color.BLACK
             button31.backgroundColor = Color.WHITE
-            button31.textColor = Color.rgb(50, 50, 50)
+            button31.textColor = Color.BLACK
         }
         button31.setOnClickListener {
-            button31.backgroundColor = Color.rgb(0, 153, 204)
+            button31.setBackgroundResource(R.drawable.trumpet_click)
             button31.textColor = Color.WHITE
             poop = "안했음"
             button27.backgroundColor = Color.WHITE
-            button27.textColor = Color.rgb(50, 50, 50)
+            button27.textColor = Color.BLACK
             button28.backgroundColor = Color.WHITE
-            button28.textColor = Color.rgb(50, 50, 50)
+            button28.textColor = Color.BLACK
             button29.backgroundColor = Color.WHITE
-            button29.textColor = Color.rgb(50, 50, 50)
+            button29.textColor = Color.BLACK
             button30.backgroundColor = Color.WHITE
-            button30.textColor = Color.rgb(50, 50, 50)
+            button30.textColor = Color.BLACK
         }
         //---------------------------------------------------------------
 
@@ -380,7 +380,7 @@ class advice_write : AppCompatActivity(), ProgressRequestBody.UploadCallbacks  {
         setSupportActionBar(Advice_note_write_toolbar)
 
         // 툴바 왼쪽 버튼 설정
-        supportActionBar!!.setTitle("알림장 글 작성하기")
+        supportActionBar!!.title = "알림장 글 작성하기"
         supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
     // 툴바 메뉴 버튼을 설정
@@ -392,7 +392,7 @@ class advice_write : AppCompatActivity(), ProgressRequestBody.UploadCallbacks  {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 
-        when (item!!.getItemId()) {
+        when (item!!.itemId) {
 
             R.id.write_ok -> {
                 if (Common.selected_baby_list?.baby_name == null ){
@@ -452,7 +452,7 @@ class advice_write : AppCompatActivity(), ProgressRequestBody.UploadCallbacks  {
     // ------------------------------------갤러리에서 이미지 가져오기 -----------------------------
     private fun openGallery() {
         val intent = Intent(Intent.ACTION_PICK)
-        intent.setType(MediaStore.Images.Media.CONTENT_TYPE)
+        intent.type = MediaStore.Images.Media.CONTENT_TYPE
         startActivityForResult(intent, PICK_IMAGE_REQUEST)
     }
 
@@ -465,6 +465,7 @@ class advice_write : AppCompatActivity(), ProgressRequestBody.UploadCallbacks  {
                 if (data != null) {
                     selectedFileUri = data.data
                     if (selectedFileUri != null && !selectedFileUri!!.path!!.isEmpty())
+                        imageView12.visibility = View.VISIBLE
                         imageView12.setImageURI(selectedFileUri)
                 }
             }
@@ -518,7 +519,7 @@ class advice_write : AppCompatActivity(), ProgressRequestBody.UploadCallbacks  {
                 .enqueue(object : retrofit2.Callback<String> {
                     override fun onFailure(call: Call<String>, t: Throwable) {
                         dialog.dismiss()
-                        Toast.makeText(this@advice_write, t!!.message, Toast.LENGTH_SHORT)
+                        Toast.makeText(this@advice_write, t.message, Toast.LENGTH_SHORT)
                             .show()
                         finish()
                     }

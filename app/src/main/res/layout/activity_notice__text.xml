@@ -7,7 +7,7 @@
         android:orientation="vertical"
         tools:context=".공지사항.Notice_Text">
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -20,7 +20,7 @@
                     android:id="@+id/notice_text_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/holo_red_light"
+                    android:background="#f6416c"
                     android:minHeight="?attr/actionBarSize"
                     android:theme="?attr/actionBarTheme"
                     app:titleTextColor="@color/backbaby" />
@@ -55,14 +55,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="TextView" />
+                            android:text="TextView"
+                            android:textColor="#000"/>
 
                     <TextView
                             android:id="@+id/notice_text_write_time"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="TextView" />
+                            android:text="TextView"
+                            android:textColor="#000"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -86,7 +88,8 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
                     android:text="TextView"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:textColor="#000"/>
 
             <ImageView
                     android:id="@+id/notice_text_image"
@@ -107,6 +110,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
                         android:ems="14"
                         android:hint="댓글 쓰기"
                         android:inputType="textPersonName" />
@@ -116,33 +120,30 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="10dp"
-                        android:text="댓글 등록" />
+                        android:text="댓글 등록"
+                        android:background="@drawable/trumpet"
+                        android:backgroundTint="#BBDED6"
+                        android:textColor="#000000"/>
             </LinearLayout>
 
             <TextView
                     android:id="@+id/textView20"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text="자신이 작성한 댓글을 길게 누르면 수정, 삭제가 가능합니다."
                     android:layout_marginStart="30dp"/>
 
             <android.support.v7.widget.RecyclerView
+                    android:layout_marginTop="10dp"
+                    android:nestedScrollingEnabled="false"
                     android:id="@+id/notice_text_recyclerview"
                     android:layout_width="match_parent"
-                    android:layout_height="454dp" />
+                    android:layout_height="wrap_content" />
 
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
-    <!--    <EditText-->
-<!--            android:id="@+id/notice_text_content"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:ems="10"-->
-<!--            android:gravity="start|top"-->
-<!--            android:inputType="textMultiLine"-->
-<!--            android:layout_marginStart="20dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:layout_marginEnd="20dp"/>-->
+
 
 </LinearLayout>

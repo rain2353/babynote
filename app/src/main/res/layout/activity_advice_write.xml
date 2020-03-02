@@ -21,7 +21,7 @@
                     android:id="@+id/Advice_note_write_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/holo_red_light"
+                    android:background="#f6416c"
                     android:minHeight="?attr/actionBarSize"
                     android:theme="?attr/actionBarTheme"
                     app:subtitleTextColor="#FFFFFF"
@@ -73,7 +73,8 @@
                     tools:srcCompat="@tools:sample/avatars"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="15dp"
-                    android:layout_marginEnd="15dp"/>
+                    android:layout_marginEnd="15dp"
+                    android:visibility="gone"/>
 
             <Button
                     android:id="@+id/button8"
@@ -84,8 +85,10 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="15dp"
                     android:layout_marginEnd="15dp"
-                    android:backgroundTint="@android:color/holo_blue_dark"
-                    android:textColor="@color/backbaby"/>
+                    android:background="@drawable/trumpet"
+                    android:backgroundTint="#BBDED6"
+                    android:textColor="#000000"
+                    />
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -139,7 +142,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="좋음"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                         <Button
                                 android:id="@+id/button10"
@@ -148,7 +151,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="보통"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                         <Button
                                 android:id="@+id/button11"
@@ -157,7 +160,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="나쁨"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                     </LinearLayout>
 
@@ -186,7 +189,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="좋음"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                         <Button
                                 android:id="@+id/button13"
@@ -195,7 +198,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="보통"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                         <Button
                                 android:id="@+id/button14"
@@ -204,7 +207,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="나쁨"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
                     </LinearLayout>
 
                     <TextView
@@ -232,7 +235,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="정상"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                         <Button
                                 android:id="@+id/button16"
@@ -241,7 +244,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="미열"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                         <Button
                                 android:id="@+id/button17"
@@ -250,7 +253,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="고열"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                     </LinearLayout>
 
@@ -279,7 +282,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="정량"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                         <Button
                                 android:id="@+id/button19"
@@ -288,7 +291,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="많이"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                         <Button
                                 android:id="@+id/button20"
@@ -297,7 +300,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="적게"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                         <Button
                                 android:id="@+id/button21"
@@ -306,7 +309,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="안했음"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
                     </LinearLayout>
 
                     <TextView
@@ -335,7 +338,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="잠을 안잤어요"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                         <Button
                                 android:id="@+id/button23"
@@ -344,7 +347,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="1시간 미만"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -361,7 +364,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="1시간~1시간30분"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                         <Button
                                 android:id="@+id/button25"
@@ -370,7 +373,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="1시간30분~2시간"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000"/>
                     </LinearLayout>
 
                     <Button
@@ -383,7 +386,7 @@
                             android:background="@color/backbaby"
                             android:stateListAnimator="@null"
                             android:text="2시간 이상"
-                            android:textColor="@android:color/secondary_text_light" />
+                            android:textColor="#000000" />
 
                     <TextView
                             android:id="@+id/textView99"
@@ -411,7 +414,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="보통"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                         <Button
                                 android:id="@+id/button28"
@@ -420,7 +423,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="딱딱"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                         <Button
                                 android:id="@+id/button29"
@@ -429,7 +432,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="묽음"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -447,7 +450,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="설사"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
 
                         <Button
                                 android:id="@+id/button31"
@@ -456,7 +459,7 @@
                                 android:layout_weight="1"
                                 android:background="@color/backbaby"
                                 android:text="안했음"
-                                android:textColor="@android:color/secondary_text_light" />
+                                android:textColor="#000000" />
                     </LinearLayout>
 
                 </LinearLayout>

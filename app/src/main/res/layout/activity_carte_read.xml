@@ -7,7 +7,7 @@
         android:orientation="vertical"
         tools:context=".식단표.carte_read">
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -20,7 +20,7 @@
                     android:id="@+id/carte_read_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/holo_red_light"
+                    android:background="#f6416c"
                     android:minHeight="?attr/actionBarSize"
                     android:theme="?attr/actionBarTheme"
                     app:titleTextColor="@color/backbaby" />
@@ -82,7 +82,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="10dp"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textColor="@android:color/black" />
 
             <ImageView
                     android:id="@+id/imageView8"
@@ -99,7 +100,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="10dp"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textColor="@android:color/black" />
 
             <ImageView
                     android:id="@+id/imageView9"
@@ -116,7 +118,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="10dp"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textColor="@android:color/black" />
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -128,6 +131,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
                     android:ems="14"
                     android:hint="댓글 쓰기"
                     android:inputType="textPersonName" />
@@ -137,6 +141,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
+                    android:background="@drawable/trumpet"
+                    android:backgroundTint="#BBDED6"
+                    android:textColor="#000000"
                     android:text="댓글 등록" />
         </LinearLayout>
             <TextView
@@ -144,13 +151,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="자신이 작성한 댓글을 길게 누르면 수정, 삭제가 가능합니다."
-                    android:layout_marginStart="30dp"/>
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"/>
             <android.support.v7.widget.RecyclerView
                     android:id="@+id/carte_comment_recyclerview"
+                    android:nestedScrollingEnabled="false"
                     android:layout_width="match_parent"
-                    android:layout_height="428dp" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
 
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>

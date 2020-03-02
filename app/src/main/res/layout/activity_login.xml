@@ -1,76 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Login.Login" android:orientation="vertical" android:background="@android:color/holo_blue_dark">
+        android:background="#00b8a9"
+        android:orientation="vertical"
+        tools:context=".Login.Login">
 
     <FrameLayout
             android:layout_width="422dp"
             android:layout_height="296dp">
 
         <ImageView
-                android:layout_width="412dp"
-                android:layout_height="414dp" app:srcCompat="@mipmap/forebaby" android:id="@+id/imageView"/>
-        <TextView
-                android:text="@string/app_name"
-                android:layout_width="match_parent"
-                android:layout_height="97dp" android:id="@+id/textView3" android:gravity="bottom|center"
-                android:textColor="@color/backbaby" android:textSize="40dp"/>
+                android:id="@+id/imageView"
+                android:layout_width="242dp"
+                android:layout_height="348dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="80dp"
+                app:srcCompat="@drawable/babynote_logo" />
+
+<!--        <TextView-->
+<!--                android:id="@+id/textView3"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="97dp"-->
+<!--                android:gravity="bottom|center"-->
+<!--                android:text="@string/app_name"-->
+<!--                android:textColor="@color/backbaby"-->
+<!--                android:textSize="40dp" />-->
     </FrameLayout>
+
     <EditText
+            android:id="@+id/edit_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/edit_id"
-            android:hint="   ID"
             android:layout_gravity="center"
             android:drawableLeft="@drawable/ic_account_circle_white_24dp"
-            />
+            android:ems="10"
+            android:hint="   ID"
+            android:textColor="#FFFFFF"
+            android:inputType="textPersonName" />
+
     <EditText
+            android:id="@+id/edit_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:ems="10"
-            android:id="@+id/edit_password"
-            android:hint="   Password"
             android:layout_gravity="center"
             android:drawableLeft="@drawable/ic_lock_white_24dp"
-            />
+            android:ems="10"
+            android:hint="   Password"
+            android:textColor="#FFFFFF"
+            android:inputType="textPassword" />
 
     <Button
-            android:text="로그인"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/login_button" android:layout_gravity="center"/>
-    <LinearLayout
-            android:orientation="horizontal"
+            android:id="@+id/login_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:gravity="center">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="95dp"
+            android:layout_marginRight="95dp"
+            android:layout_gravity="center"
+            android:background="@drawable/trumpet"
+            android:backgroundTint="#BBDED6"
+            android:text="로그인" />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
         <Button
-                android:text="아이디 찾기"
+                android:id="@+id/button_find_id"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/button_find_id" android:layout_weight="0"
-        />
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="@android:color/transparent"
+                android:layout_marginRight="5dp"
+                android:text="아이디 찾기" />
+
         <Button
-                android:text="비밀번호 찾기"
+                android:id="@+id/button_find_password"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/button_find_password" android:layout_weight="0"
-        />
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:layout_marginLeft="5dp"
+                android:background="@android:color/transparent"
+                android:text="비밀번호 찾기" />
     </LinearLayout>
+
     <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:gravity="bottom">
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
         <Button
-                android:text="회원가입"
+                android:id="@+id/join_membership_move"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/join_membership_move"
-                android:layout_gravity="bottom" android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#BBDED6"
+                android:gravity="center"
+                android:background="@drawable/trumpet"
+                android:text="회원가입" />
     </LinearLayout>
 </LinearLayout>

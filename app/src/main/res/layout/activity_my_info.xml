@@ -9,7 +9,7 @@
     <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_light"
+            android:background="#f6416c"
             android:theme="?attr/actionBarTheme"
             android:minHeight="?attr/actionBarSize" android:id="@+id/myInfo_toolbar" app:titleTextColor="@color/backbaby"/>
 
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/item_border"
+            android:background="@drawable/item_border_top_bottom"
             android:id="@+id/name"
             >
 
@@ -53,6 +53,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:textColor="@android:color/black"
                 android:drawableEnd="@drawable/ic_chevron_right_black_24dp"/>
     </LinearLayout>
 
@@ -60,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/item_border"
+            android:background="@drawable/item_border_bottom"
             android:id="@+id/email">
 
         <TextView
@@ -82,13 +83,14 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:textColor="@android:color/black"
                 android:drawableEnd="@drawable/ic_chevron_right_black_24dp"/>
     </LinearLayout>
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/item_border"
+            android:background="@drawable/item_border_bottom"
             android:id="@+id/phone_number">
 
         <TextView
@@ -110,13 +112,14 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:textColor="@android:color/black"
                 android:drawableEnd="@drawable/ic_chevron_right_black_24dp"/>
     </LinearLayout>
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/item_border"
+            android:background="@drawable/item_border_bottom"
             android:id="@+id/nickname">
 
         <TextView
@@ -128,7 +131,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"/>
+                android:layout_marginEnd="10dp" />
 
         <TextView
                 android:id="@+id/myInfo_nickname"
@@ -138,6 +141,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:textColor="@android:color/black"
                 android:drawableEnd="@drawable/ic_chevron_right_black_24dp"/>
     </LinearLayout>
 
@@ -145,7 +149,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/item_border">
+            android:background="@drawable/item_border_bottom">
 
         <TextView
                 android:id="@+id/modify_password"
@@ -163,7 +167,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/item_border">
+            android:background="@drawable/item_border_bottom">
 
         <TextView
                 android:id="@+id/membership_withdrawal"

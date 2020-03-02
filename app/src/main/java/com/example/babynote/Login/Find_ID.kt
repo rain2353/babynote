@@ -47,10 +47,7 @@ class Find_ID : AppCompatActivity() {
             }
             find_userid(editText_name.text.toString(), editText_phonenumber.text.toString())
         }
-        button4.setOnClickListener {
-            var intent = Intent(this,Login::class.java)
-            startActivity(intent)
-        }
+
     }
     private fun find_userid(name: String, phonenumber: String) {
         compositeDisposable.add(myAPI.find_userid(name,phonenumber)
@@ -97,7 +94,7 @@ class Find_ID : AppCompatActivity() {
         // 툴바 왼쪽 버튼 설정
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)  // 왼쪽 버튼 사용 여부 true
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_arrow_back_black_24dp)  // 왼쪽 버튼 이미지 설정
-        supportActionBar!!.setTitle("아이디 찾기")
+        supportActionBar!!.title = "아이디 찾기"
         supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
 }

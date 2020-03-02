@@ -34,6 +34,10 @@ class request_comment_modify : Activity() {
         val retrofit = RetrofitClient.instance
         myAPI = retrofit.create(INodeJS::class.java)
 
+        // 작성한 댓글을 받아와서 어떤 댓글인지 확인 시켜준다.
+        var coment = intent.getStringExtra("댓글")
+        editText_comment.setText(coment)
+
         button_delete.setOnClickListener {
             compositeDisposable.add(myAPI.request_comment_delete(Common.selected_request_comment?.num)
                 .subscribeOn(Schedulers.io())

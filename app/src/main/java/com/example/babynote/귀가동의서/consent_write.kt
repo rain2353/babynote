@@ -29,7 +29,8 @@ class consent_write : AppCompatActivity() {
     lateinit var myAPI: INodeJS
     var compositeDisposable = CompositeDisposable()
 
-    var week: String? = null
+    var week = ""
+    var week1 = ""
     var WhatTime: String? = null
     var userID: String? = null
     var kindergarten: String? = null
@@ -56,7 +57,7 @@ class consent_write : AppCompatActivity() {
         textView66.text = Common.selected_baby?.baby_class
         button6.setOnClickListener { showDate() }
         button7.setOnClickListener { showTime() }
-
+        time()
 
     }
 
@@ -67,7 +68,7 @@ class consent_write : AppCompatActivity() {
         // 툴바 왼쪽 버튼 설정
 //        supportActionBar!!.setDisplayHomeAsUpEnabled(true)  // 왼쪽 버튼 사용 여부 true
 //        supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)  // 왼쪽 버튼 이미지 설정
-        supportActionBar!!.setTitle("귀가동의서 작성하기")
+        supportActionBar!!.title = "귀가동의서 작성하기"
         supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
 
@@ -80,7 +81,7 @@ class consent_write : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 
-        when (item!!.getItemId()) {
+        when (item!!.itemId) {
 
             R.id.write_ok -> {
                 if (week == null){
@@ -141,7 +142,7 @@ class consent_write : AppCompatActivity() {
                 val date = Date(year, month, dayOfMonth - 1)
                 val dayOfWeek = simpledateformat.format(date)
 
-                button6.setText("${year}" + "년 " + "${month + 1}" + "월 " + "${dayOfMonth}" + "일 " + "${dayOfWeek}")
+                button6.text = "${year}" + "년 " + "${month + 1}" + "월 " + "${dayOfMonth}" + "일 " + "${dayOfWeek}"
                 textView74.text =
                     "${year}" + "년 " + "${month + 1}" + "월 " + "${dayOfMonth}" + "일 " + "${dayOfWeek}"
                 week =
@@ -154,7 +155,27 @@ class consent_write : AppCompatActivity() {
         var builder = DatePickerDialog(this, date_listener, year, month, day)
         builder.show()
     }
+    //----------------------------------------------------------------------------------------------
+    // 현재 날짜.
+    private fun time() {
+        var calendar = Calendar.getInstance()
+        var year = calendar.get(Calendar.YEAR)
+        var month = calendar.get(Calendar.MONTH)
+        var day = calendar.get(Calendar.DAY_OF_MONTH)
+        var what = calendar.get(Calendar.DAY_OF_WEEK)
 
+        when (what) {
+            1 -> week1 = "일"
+            2 -> week1 = "월"
+            3 -> week1 = "화"
+            4 -> week1 = "수"
+            5 -> week1 = "목"
+            6 -> week1 = "금"
+            7 -> week1 = "토"
+        }
+        textView74.text =
+            "${year}" + "년 " + "${month + 1}" + "월 " + "${day}" + "일 " + "${week1}" + "요일"
+    }
     //----------------------------------------------------------------------------------------------
     // 귀가시간 설정하기
     private fun showTime() {
@@ -166,15 +187,15 @@ class consent_write : AppCompatActivity() {
             override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
                 if (hourOfDay < 12) {
                     var day = "오전"
-                    button7.setText("${day}" + " " + "${hourOfDay}" + " : " + "${minute}")
+                    button7.text = "${day}" + " " + "${hourOfDay}" + " : " + "${minute}"
                     WhatTime = "${day}" + " " + "${hourOfDay}" + " : " + "${minute}"
                 } else if (hourOfDay == 12) {
                     var day = "오후"
-                    button7.setText("${day}" + " " + "${hourOfDay}" + " : " + "${minute}")
+                    button7.text = "${day}" + " " + "${hourOfDay}" + " : " + "${minute}"
                     WhatTime = "${day}" + " " + "${hourOfDay}" + " : " + "${minute}"
                 } else {
                     var day = "오후"
-                    button7.setText("${day}" + " " + "${hourOfDay - 12}" + " : " + "${minute}")
+                    button7.text = "${day}" + " " + "${hourOfDay - 12}" + " : " + "${minute}"
                     WhatTime = "${day}" + " " + "${hourOfDay - 12}" + " : " + "${minute}"
                 }
 

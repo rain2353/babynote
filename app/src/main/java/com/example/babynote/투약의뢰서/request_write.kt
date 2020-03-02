@@ -62,23 +62,23 @@ class request_write : AppCompatActivity() {
         requset_day.setOnClickListener { showDate() }
         button5.setOnClickListener {
             // 다이얼로그에 표시할 목록을 생성합니다.
-            val people = listOf("물약과 가루약", "물약", "가루약","연고")
+            val remedy = listOf("물약과 가루약", "물약", "가루약","연고")
 
             // 리스트 다이얼로그를 생성하고 표시합니다.
-            selector(title = "누구신가요?", items = people) { _, selection ->
+            selector(title = "어떤 약을 투여할까요?", items = remedy) { _, selection ->
 
                 // 항목을 선택했을 때 수행할 동작을 구현합니다.
-                toast("You selected ${people[selection]}")
-                if (people[selection] == "물약과 가루약") {
+                toast(" ${remedy[selection]} 을/를 선택하셨습니다.")
+                if (remedy[selection] == "물약과 가루약") {
                     button5.text = "물약과 가루약"
                     medicine = "물약과 가루약"
-                } else if (people[selection] == "물약") {
+                } else if (remedy[selection] == "물약") {
                     button5.text = "물약"
                     medicine = "물약"
-                } else if (people[selection] == "가루약") {
+                } else if (remedy[selection] == "가루약") {
                     button5.text = "가루약"
                     medicine = "가루약"
-                } else if (people[selection] == "연고") {
+                } else if (remedy[selection] == "연고") {
                     button5.text = "연고"
                     medicine = "연고"
                 }else {
@@ -194,6 +194,7 @@ class request_write : AppCompatActivity() {
                         Common.selected_baby?.baby_kindergarten,
                         Common.selected_baby?.baby_class,
                         Common.selected_baby?.parents_id,
+                        textView47.text.toString(),
                         Common.selected_baby?.baby_imagepath
                     )
                 }
@@ -267,6 +268,7 @@ class request_write : AppCompatActivity() {
         kindergarten: String?,
         classname: String?,
         parents_id: String?,
+        parents_name: String?,
         baby_image: String?
     ) {
         compositeDisposable.add(myAPI.request_medicine(
@@ -282,6 +284,7 @@ class request_write : AppCompatActivity() {
             kindergarten,
             classname,
             parents_id,
+            parents_name,
             baby_image
         )
             .subscribeOn(Schedulers.io())
