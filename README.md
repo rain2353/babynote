@@ -7,3 +7,6 @@
 Android , Kotlin , Node.js , MySQL , Retrofit2를 사용하였습니다.
 
 
+서버 깃헙
+
+https://github.com/rain2353/babynote_server
