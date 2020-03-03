@@ -20,8 +20,8 @@ var newDate = require('date-utils');
 //Connect to MySQL
 var con = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
-    password: 'gustp1107!',
+    user: '@@@@@@@@@',
+    password: '@@@@@@@@@',
     database: 'babynote'
 });
 
