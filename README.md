@@ -37,6 +37,7 @@ https://github.com/rain2353/babynote_server
 <div>
   <img src="https://user-images.githubusercontent.com/48168860/75759915-ac380580-5d79-11ea-9b9b-72ed16350628.png" width="200"></img>
   <img src="https://user-images.githubusercontent.com/48168860/75759921-ae01c900-5d79-11ea-8796-2645f5891593.png" width="200"></img>
+  <img src="https://user-images.githubusercontent.com/48168860/75767661-8402d380-5d86-11ea-9549-6d85e639b522.png" width="200"></img>
 </div>
 
 # 선생님 회원가입
@@ -48,6 +49,16 @@ https://github.com/rain2353/babynote_server
   <img src="https://user-images.githubusercontent.com/48168860/75760183-2ff1f200-5d7a-11ea-962a-c0f6bc61a691.png" width="200"></img>
 </div>
 
-
-
+# 자녀등록
+------------------------------------
+<div>
+  <img src="https://user-images.githubusercontent.com/48168860/75767901-e4921080-5d86-11ea-814e-e40079861427.png" width="200"></img>
+  <img src="https://user-images.githubusercontent.com/48168860/75767959-eb208800-5d86-11ea-88ac-748a8845b69d.png" width="200"></img>
+  <img src="https://user-images.githubusercontent.com/48168860/75767981-eeb40f00-5d86-11ea-9b32-36cdbfadd938.png" width="200"></img>
+  
+</div>
+<div>
+  <img src="https://user-images.githubusercontent.com/48168860/75768000-f2479600-5d86-11ea-879b-f713f3347a4d.png" width="200"></img>
+  <img src="https://user-images.githubusercontent.com/48168860/75768014-f5db1d00-5d86-11ea-9229-4a63ee58b41b.png" width="200"></img>
+</div>
 
