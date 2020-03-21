@@ -21,8 +21,8 @@ class Add_baby : AppCompatActivity()  {
 
 
     // 네이버 api 클라이언트 ID , 클라이언트 secret
-    val clientID = "QOxjMFTWZUPQbXiHFMFU"
-    val clientSecret = "lo5yoS8YSy"
+    val clientID = "@@@@@@@@@@@@@@@@@@"
+    val clientSecret = "@@@@@@@@@@@@@@@@@"
 
     var choice_do = ""   // 선택한 시/도
     var choice_se = ""   // 선택한 지역
