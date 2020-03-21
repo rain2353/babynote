@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.example.babynote.Api.INodeJS
 import com.example.babynote.Api.RetrofitClient
@@ -54,6 +55,11 @@ class MyInfo : AppCompatActivity() {
         // 호칭설정
         myInfo_nickname.text = UserDTO.nickname.toString()
 
+        if(UserDTO.state == "선생님"){
+            nickname.visibility = View.GONE
+        }else{
+            nickname.visibility = View.VISIBLE
+        }
         // 이름 변경
         name.setOnClickListener {
             var intent = Intent(this, com.example.babynote.내정보.modify_name::class.java)
@@ -144,14 +150,13 @@ class MyInfo : AppCompatActivity() {
             .subscribe { message ->
                 Log.d("userinfo", message.toString())
 
-                // 로그인한 아이디를 네비게이션 드로어 아이디에 입력한다.
+                //쉐어드에 저장된 내 정보 불러오기.
                 val pref = getSharedPreferences("UserId", Context.MODE_PRIVATE)
                 var userID = pref.getString("id", 0.toString())
                 val pref1 = getSharedPreferences("UserInfo", Context.MODE_PRIVATE)
                 val ed = pref1.edit()
                 ed.putString(userID, message.toString())
                 ed.apply()
-                //쉐어드에 저장된 내 정보 불러오기.
                 val pref2 = getSharedPreferences("UserId", Context.MODE_PRIVATE)
                 var userID1 = pref2.getString("id", 0.toString())
                 val pref3 = getSharedPreferences("UserInfo", Context.MODE_PRIVATE)

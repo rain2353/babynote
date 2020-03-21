@@ -34,7 +34,7 @@ class Find_ID : AppCompatActivity() {
 
 
 
-        button3.setOnClickListener {
+        button3.setOnClickListener { // 사용자 ID 찾기.
             if (editText_name.text.isEmpty()){
                 Toast.makeText(this,"이름을 입력해주세요.",Toast.LENGTH_SHORT).show()
                 editText_name.requestFocus()
@@ -64,7 +64,7 @@ class Find_ID : AppCompatActivity() {
                     var gson = Gson()
                     var UserDTO = gson.fromJson(userId, User::class.java)
                     Log.d("find_userid", message.toString())
-                    var dialog = AlertDialog.Builder(this)
+                    var dialog = AlertDialog.Builder(this)   // 사용자의 ID를 다이얼로그로 보여준다.
                     dialog.setTitle("아이디 찾기")
                     dialog.setMessage("ID : "+ UserDTO.id + " 입니다.")
                     fun toast_p(){

@@ -24,8 +24,8 @@ class Add_baby : AppCompatActivity() {
     val clientID = "QOxjMFTWZUPQbXiHFMFU"
     val clientSecret = "lo5yoS8YSy"
 
-    var choice_do = ""
-    var choice_se = ""
+    var choice_do = ""   // 선택한 시/도
+    var choice_se = ""   // 선택한 지역
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,8 +55,8 @@ class Add_baby : AppCompatActivity() {
         }
 
         // --------------------------------------------- 이중 스피너 ------------------------------------------------
-        var spn = findViewById(R.id.spinner) as Spinner
-        var spn2 = findViewById(R.id.spinner2) as Spinner
+        var spn = findViewById<Spinner>(R.id.spinner)
+        var spn2 = findViewById<Spinner>(R.id.spinner2)
         val adapter = ArrayAdapter.createFromResource(
             this,
             R.array.city,
@@ -545,7 +545,7 @@ class Add_baby : AppCompatActivity() {
         // 툴바 왼쪽 버튼 설정
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)  // 왼쪽 버튼 사용 여부 true
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)  // 왼쪽 버튼 이미지 설정
-        supportActionBar!!.setTitle("원 찾기")
+        supportActionBar!!.title = "원 찾기"
         supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
 
@@ -582,10 +582,10 @@ class Add_baby : AppCompatActivity() {
 
                 // Gson을 Kotlin 에서 사용 가능한 object로 만든다.
                 val gson = GsonBuilder().create()
-                val homefeed = gson.fromJson(body, Homefeed::class.java)
-                Log.d("검색결과", homefeed.toString())
+                val search_result = gson.fromJson(body, search_result::class.java)
+                Log.d("검색결과", search_result.toString())
                 runOnUiThread {
-                    search.adapter = search_RecyclerViewAdapter(baseContext, homefeed)
+                    search.adapter = search_RecyclerViewAdapter(baseContext, search_result)
                     edit_kindergartenName.setText("")
                 }
 
@@ -595,7 +595,7 @@ class Add_baby : AppCompatActivity() {
     }
 }
 
-data class Homefeed(val items: List<Item>)
+data class search_result(val items: List<Item>)
 data class Item(
     val title: String,
     val roadAddress: String,
