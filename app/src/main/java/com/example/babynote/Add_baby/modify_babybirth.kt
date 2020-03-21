@@ -25,13 +25,14 @@ class modify_babybirth : Activity() {
     lateinit var myAPI: INodeJS
     var compositeDisposable = CompositeDisposable()
 
-    var year = ""
-    var month = ""
-    var day = ""
+    var year = ""      // 아이가 태어난 해
+    var month = ""     // 아이가 태어난 월
+    var day = ""      // 아이가 태어난 일
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // 액티비티를 다이얼로그로 만들기 위한 설정.
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         val layoutParams = WindowManager.LayoutParams()
         layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND
@@ -51,9 +52,9 @@ class modify_babybirth : Activity() {
 
         // ----------------------------- 3중 스피너 ------------------------------------------------
 
-        var modify_baby_year = findViewById(R.id.spinner5) as Spinner
-        var modify_baby_month = findViewById(R.id.spinner6) as Spinner
-        var modify_baby_day = findViewById(R.id.spinner7) as Spinner
+        var modify_baby_year = findViewById<Spinner>(R.id.spinner5)
+        var modify_baby_month = findViewById<Spinner>(R.id.spinner6)
+        var modify_baby_day = findViewById<Spinner>(R.id.spinner7)
         val adapter1 = ArrayAdapter.createFromResource(
             this,
             R.array.생년,
