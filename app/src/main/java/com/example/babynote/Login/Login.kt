@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.widget.Toast
 import com.example.babynote.Api.INodeJS
 import com.example.babynote.Api.RetrofitClient
@@ -95,18 +94,18 @@ class Login : AppCompatActivity() {
         super.onDestroy()
     }
 
-    fun SaveId(Key: String,Value: String){
+    fun SaveId(Key: String,Value: String){       // 사용자의 ID 를 쉐어드 프리퍼런스에 저장한다.
         val pref = getSharedPreferences("UserId", Context.MODE_PRIVATE)
         val ed = pref.edit()
         ed.putString(Key,Value)
         ed.apply()
     }
-    private fun UserInfo(id: String?) {
+    private fun UserInfo(id: String?) {   // 사용자의 정보를 쉐어드 프리퍼런스에 저장한다.
         compositeDisposable.add(myAPI.userInfo(id)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe{ message ->
-                Log.d("userinfo", message.toString())
+//                Log.d("userinfo", message.toString())
 
                 // 로그인한 아이디를 네비게이션 드로어 아이디에 입력한다.
                 val pref = getSharedPreferences("UserId", Context.MODE_PRIVATE)

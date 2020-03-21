@@ -24,8 +24,8 @@ class Add_baby : AppCompatActivity()  {
     val clientID = "QOxjMFTWZUPQbXiHFMFU"
     val clientSecret = "lo5yoS8YSy"
 
-    var choice_do = ""
-    var choice_se = ""
+    var choice_do = ""   // 선택한 시/도
+    var choice_se = ""   // 선택한 지역
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -582,10 +582,10 @@ class Add_baby : AppCompatActivity()  {
 
                 // Gson을 Kotlin 에서 사용 가능한 object로 만든다.
                 val gson = GsonBuilder().create()
-                val homefeed = gson.fromJson(body, Homefeed::class.java)
-                Log.d("검색결과", homefeed.toString())
+                val search_result = gson.fromJson(body, search_result::class.java)
+                Log.d("검색결과", search_result.toString())
                 runOnUiThread {
-                    search.adapter = search_RecyclerViewAdapter(baseContext, homefeed)
+                    search.adapter = search_RecyclerViewAdapter(baseContext, search_result)
                     edit_kindergartenName.setText("")
                 }
 
@@ -595,7 +595,7 @@ class Add_baby : AppCompatActivity()  {
     }
 }
 
-data class Homefeed(val items: List<Item>)
+data class search_result(val items: List<Item>)
 data class Item(
     val title: String,
     val roadAddress: String,

@@ -75,7 +75,7 @@ class modify_babygender : Activity() {
             button34.backgroundColor = Color.TRANSPARENT
             button34.textColor = Color.BLACK
         }
-        modify_babygender_button.setOnClickListener {
+        modify_babygender_button.setOnClickListener {       // 성별 변경 버튼.
             compositeDisposable.add(myAPI.modify_baby(
                 babyDTO.num,
                 babyDTO.baby_name,

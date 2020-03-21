@@ -32,12 +32,12 @@ class modify_babyimage : Activity(), ProgressRequestBody.UploadCallbacks {
 
     lateinit var myAPI: INodeJS
     var compositeDisposable = CompositeDisposable()
-    private val PICK_IMAGE_REQUEST: Int = 1001
-    private var selectedFileUri: Uri? = null
+    private val PICK_IMAGE_REQUEST: Int = 1001   // 사용자가 갤러리에서 사진을 선택하고 전달받는 값
+    private var selectedFileUri: Uri? = null    // 사용자가 갤러리에서 선택한 이미지 URI
     lateinit var dialog: ProgressDialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        // 액티비티를 다이얼로그로 변경하는 설정.
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         val layoutParams = WindowManager.LayoutParams()
         layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND
@@ -139,7 +139,7 @@ class modify_babyimage : Activity(), ProgressRequestBody.UploadCallbacks {
                 if (data != null) {
                     selectedFileUri = data.data
                     if (selectedFileUri != null && !selectedFileUri!!.path!!.isEmpty())
-                        modify_image.setImageURI(selectedFileUri)
+                        modify_image.setImageURI(selectedFileUri)      // 사용자가 갤러리에서 선택한 이미지를 사용자에게 보여준다.
                 }
             }
 

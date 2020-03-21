@@ -22,8 +22,8 @@ class modify_kindergarten : Activity() {
     val clientID = "QOxjMFTWZUPQbXiHFMFU"
     val clientSecret = "lo5yoS8YSy"
 
-    var choice_do = ""
-    var choice_se = ""
+    var choice_do = ""   // 선택한 시/도
+    var choice_se = ""   // 선택한 지역
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,8 +50,8 @@ class modify_kindergarten : Activity() {
         }
 
         // --------------------------------------------- 이중 스피너 ------------------------------------------------
-        var spn = findViewById(R.id.spinner) as Spinner
-        var spn2 = findViewById(R.id.spinner2) as Spinner
+        var spn = findViewById<Spinner>(R.id.spinner)
+        var spn2 = findViewById<Spinner>(R.id.spinner2)
         val adapter = ArrayAdapter.createFromResource(
             this,
             R.array.city,

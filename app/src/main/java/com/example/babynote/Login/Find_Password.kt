@@ -32,7 +32,7 @@ class Find_Password : AppCompatActivity() {
         myAPI = retrofit.create(INodeJS::class.java)
 
 
-        button3.setOnClickListener {
+        button3.setOnClickListener {  // 사용자의 정보로 비밀번호를 변경한다.
             if (editText_id.text.isEmpty()) {
                 Toast.makeText(this, "아이디를 입력해주세요.", Toast.LENGTH_SHORT).show()
                 editText_id.requestFocus()

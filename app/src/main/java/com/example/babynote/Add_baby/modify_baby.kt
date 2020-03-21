@@ -73,7 +73,7 @@ class modify_baby : AppCompatActivity() {
             dialog.setMessage("아이를 삭제하시겠습니까?")
 
 
-            fun toast_p() {
+            fun toast_p() {    // 아이 삭제하는 버튼.
                 compositeDisposable.add(myAPI.delete_baby(
                     Common.selected_baby?.num, Common.selected_baby?.baby_name
                 )
@@ -122,7 +122,7 @@ class modify_baby : AppCompatActivity() {
         supportActionBar!!.setDisplayShowTitleEnabled(true)    // 타이틀 안보이게 하기
     }
 
-    private fun select_baby(num: Int?) {
+    private fun select_baby(num: Int?) {    // 아이 DB를 가져와 사용자에게 보여준다.
         compositeDisposable.add(myAPI.select_baby(num)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

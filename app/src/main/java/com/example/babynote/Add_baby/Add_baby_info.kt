@@ -5,9 +5,7 @@ import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.graphics.Color
-import android.graphics.Matrix
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -38,21 +36,22 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
     override fun onProgressUpdate(percentage: Int) {
         dialog.progress = percentage
     }
-
+    lateinit var dialog: ProgressDialog
 
     lateinit var myAPI: INodeJS
-    lateinit var dialog: ProgressDialog
     var compositeDisposable = CompositeDisposable()
-    var year = ""
-    var month = ""
-    var day = ""
-    var gender: String = "남아"
-    var userID: String? = null
-    var kindergartenName = ""
-    private val OPEN_GALLERY = 1
-    private val PERMISSION_REQUEST: Int = 1000
-    private val PICK_IMAGE_REQUEST: Int = 1001
-    private var selectedFileUri: Uri? = null
+
+    var year = ""         // 아이가 태어난 해
+    var month = ""        // 아이가 태어난 월
+    var day = ""          // 아이가 태어난 일
+    var gender: String = "남아"     // 아이의 성별
+    var userID: String? = null     // 학부모 ID
+    var kindergartenName = ""      // 아이가 다니는 유치원 이름
+
+    private val PERMISSION_REQUEST: Int = 1000    // 사용자에게 갤러리 사용 권한이 있는지 확인 하기 위해 전달하는 값.
+    private val PICK_IMAGE_REQUEST: Int = 1001    // 사용자의 갤러리에서 사진을 가져오기 위해 전달하는 값.
+    private var selectedFileUri: Uri? = null      // 사용자가 갤러리에서 선택한 이미지 URI
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_baby_info)
@@ -78,10 +77,6 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
                 arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),
                 PERMISSION_REQUEST
             )
-
-        // Service
-//        mService = myAPI
-
 
         //------------------------------------------------------------------------------------------
         // --------------------------- 갤러리에서 이미지 가져오기 -----------------------------------
@@ -203,17 +198,17 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
             } else {
                 uploadFile()
             }
-            Log.d("babyname", editText2.text.toString())
-            Log.d("babybirth", year.toString() + "/" + month.toString() + "/" + day.toString())
-            Log.d("babygender", gender.toString())
-            Log.d("baby_유치원", kindergartenName.trim())
-            Log.d("baby_class", edit_class.text.toString())
-            Log.d("parents_id", userID.toString())
+//            Log.d("babyname", editText2.text.toString())
+//            Log.d("babybirth", year.toString() + "/" + month.toString() + "/" + day.toString())
+//            Log.d("babygender", gender.toString())
+//            Log.d("baby_유치원", kindergartenName.trim())
+//            Log.d("baby_class", edit_class.text.toString())
+//            Log.d("parents_id", userID.toString())
 
         }
     }
 
-    private fun uploadFile() {
+    private fun uploadFile() {   // 아이의 사진과 입력한 정보를 등록한다.
         if (selectedFileUri != null) {
             dialog = ProgressDialog(this)
             dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
@@ -232,7 +227,7 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
                 myAPI.uploadFile(
                     body,
                     editText2.text.toString(),
-                    year.toString() + " . " + month.toString() + " . " + day.toString(),
+                    year + " . " + month + " . " + day,
                     gender.toString(),
                     kindergartenName.trim(),
                     edit_class.text.toString(),
@@ -260,7 +255,7 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
 
             }).start()
         } else {
-            Toast.makeText(this, "Please choose file by click to button", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "자녀를 등록하는데 실패하였습니다.", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -293,16 +288,12 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
     }
 
     // ---------------------------------------------------------------------------------------------
-    // ------------------------------------갤러리에서 이미지 가져오기 -----------------------------
-    private fun openGallery() {
-//        val getContentIntent = FileUtils.createGetContentIntent()
-//        val intent = Intent.createChooser(getContentIntent,"Select a file")
+
+
+    private fun openGallery() {     // 사용자의 갤러리로 이동한다.
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = MediaStore.Images.Media.CONTENT_TYPE
         startActivityForResult(intent, PICK_IMAGE_REQUEST)
-//        val intent = Intent(Intent.ACTION_GET_CONTENT)
-//        intent.type = "image/*"
-//        startActivityForResult(Intent.createChooser(intent, "Select image"), OPEN_GALLERY)
     }
 
     @Override
@@ -315,31 +306,13 @@ class Add_baby_info : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
                     selectedFileUri = data.data
                     if (selectedFileUri != null && !selectedFileUri!!.path!!.isEmpty())
                         baby_image.visibility = View.VISIBLE
-                    baby_image.setImageURI(selectedFileUri)
+                    baby_image.setImageURI(selectedFileUri)  // 사용자가 선택한 이미지를 사용자에게 보여준다.
                 }
             }
-//            if (requestCode == OPEN_GALLERY) {
-//
-//                var currentImageUrl: Uri? = data!!.data
-//                try {
-//                    val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, currentImageUrl)
-//                    //val rotatedBitmap = bitmap.rotate(90F) // value must be float
-//                    baby_image.setImageBitmap(bitmap)
-//
-//                } catch (e: Exception) {
-//                    e.printStackTrace()
-//                }
-//            }
         } else {
             Log.d("ActivityResult", "something wrong")
         }
     }
 
-    // ------------------------------- 사진 회전하기 -----------------------------------------------
-    fun Bitmap.rotate(degrees: Float): Bitmap {
-        val matrix = Matrix().apply { postRotate(degrees) }
-        return Bitmap.createBitmap(this, 0, 0, width, height, matrix, true)
-    }
-    // --------------------------------------------------------------------------------------------
 }
 

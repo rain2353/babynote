@@ -39,8 +39,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     lateinit var myAPI: INodeJS
     var compositeDisposable = CompositeDisposable()
-    var num: Int = 0
-    var son: String? = null
+
+    var num: Int = 0     // 아이의 정보가 저장되어있는 DB를 선택하여 가져오기 위한 변수.
+    var son: String? = null  // 아이의 이름.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -55,7 +56,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 //        myAPI = retrofit.create(INodeJS::class.java)
 
 
-        // 메인 화면에 회원 정보 뿌리기
+        // 메인 화면에 사용자의 정보를 보여준다.
         val pref = getSharedPreferences("UserId", Context.MODE_PRIVATE)
         var userID = pref.getString("id", 0.toString())
         val pref1 = getSharedPreferences("UserInfo", Context.MODE_PRIVATE)
@@ -65,7 +66,37 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
         num = intent.getIntExtra("num", 0)
-        mybaby(UserDTO.id.toString(), num)
+
+        if (UserDTO.state == "학부모"){
+            if (Common.selected_baby?.baby_imagepath == null){   // 네비게이션 드로어에서 선택하지 않으면 아이의 정보가 나오지 않는다.
+                babyphoto.visibility = View.INVISIBLE
+                SonName.visibility = View.INVISIBLE
+                kindergartenName.visibility = View.INVISIBLE
+                ClassName.visibility = View.INVISIBLE
+            }else{  // 네비게이션 드로어에서 선택을 한 아이의 정보가 메인화면에서 사용자에게 보여지게 된다.
+                Picasso.get().load(Common.selected_baby?.baby_imagepath).resize(200, 200).into(babyphoto)
+                SonName.text = Common.selected_baby?.baby_name
+                kindergartenName.text = Common.selected_baby?.baby_kindergarten
+                ClassName.text = Common.selected_baby?.baby_class
+            }
+
+        }else if (UserDTO.state == "선생님"){
+            if (Common.selected_baby?.baby_imagepath == null){ // 네비게이션 드로어에서 선택하지 않으면 선생님의 정보가 나오지 않는다.
+                babyphoto.visibility = View.INVISIBLE
+                SonName.visibility = View.INVISIBLE
+                kindergartenName.visibility = View.INVISIBLE
+                ClassName.visibility = View.INVISIBLE
+            }else{  // 네비게이션 드로어에서 선택을 하면 선생님의 정보가 메인화면에서 사용자에게 보여지게 된다.
+                Picasso.get().load(Common.selected_baby?.baby_imagepath).resize(200, 200).into(babyphoto)
+                SonName.text = Common.selected_baby?.baby_name + " " + UserDTO.nickname
+                kindergartenName.text = Common.selected_baby?.baby_kindergarten
+                ClassName.text = Common.selected_baby?.baby_class
+            }
+        }else{
+            babyphoto.visibility = View.GONE
+
+        }
+//        mybaby(UserDTO.id.toString(), num)
 
         // 알림장 버튼 눌렀을때 알림장으로 이동.
 
@@ -131,15 +162,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 
-    fun Add_son_Click(v: View?) {
-//        Snackbar.make(toolbar,"자녀 추가",Snackbar.LENGTH_SHORT).show()
+    fun Add_son_Click(v: View?) {    // 자녀 추가를 클릭하였을때 자녀를 등록하는 액티비티로 이동한다.
         val intent = Intent(this, Add_baby::class.java)
         startActivity(intent)
         drawerLayout.closeDrawers() // 기능을 수행하고 네비게이션을 닫아준다.
     }
 
-    fun Myinfo_Click(v: View?) {
-//        Snackbar.make(toolbar, "내 정보", Snackbar.LENGTH_SHORT).show()
+    fun Myinfo_Click(v: View?) {    // 내 정보를 클릭하였을때 내 정보를 변경할 수 있는 액티비티로 이동한다.
         val intent = Intent(this, MyInfo::class.java)
         startActivity(intent)
         drawerLayout.closeDrawers() // 기능을 수행하고 네비게이션을 닫아준다.
@@ -186,50 +215,50 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return super.onOptionsItemSelected(item)
     }
 
-    private fun mybaby(parents_id: String?, num: Int) {
-        compositeDisposable.add(myAPI.mybaby(parents_id, num)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ message ->
-                Log.d("Main_kiz1", message.toString())
-                var gson = Gson()
-                var Main_babys =
-                    gson.fromJson(message, com.example.babynote.Kiz.Main_Kiz::class.java)
-                val pref = getSharedPreferences("UserId", Context.MODE_PRIVATE)
-                var userID = pref.getString("id", 0.toString())
-                val pref1 = getSharedPreferences("UserInfo", Context.MODE_PRIVATE)
-                var userEmail = pref1.getString(userID, null)
-                var UserDTO = gson.fromJson(userEmail, User::class.java)
-                son = Main_babys.baby_name
-                Log.d(son, son)
-                if (UserDTO.state == "선생님") {
-                    Picasso.get().load(Main_babys.baby_imagepath).resize(200, 200).into(babyphoto)
-                    SonName.text = Main_babys.baby_name + " " + UserDTO.nickname
-                    kindergartenName.text = Main_babys.baby_kindergarten
-                    ClassName.text = Main_babys.baby_class
+//    private fun mybaby(parents_id: String?, num: Int) {
+//        compositeDisposable.add(myAPI.mybaby(parents_id, num)
+//            .subscribeOn(Schedulers.io())
+//            .observeOn(AndroidSchedulers.mainThread())
+//            .subscribe({ message ->
+//                Log.d("Main_kiz1", message.toString())
+//                var gson = Gson()
+//                var Main_babys =
+//                    gson.fromJson(message, com.example.babynote.Kiz.Kiz::class.java)
+//                val pref = getSharedPreferences("UserId", Context.MODE_PRIVATE)
+//                var userID = pref.getString("id", 0.toString())
+//                val pref1 = getSharedPreferences("UserInfo", Context.MODE_PRIVATE)
+//                var userEmail = pref1.getString(userID, null)
+//                var UserDTO = gson.fromJson(userEmail, User::class.java)
+//                son = Main_babys.baby_name
+//                Log.d(son, son)
+//                if (UserDTO.state == "선생님") {
+//                    Picasso.get().load(Main_babys.baby_imagepath).resize(200, 200).into(babyphoto)
+//                    SonName.text = Main_babys.baby_name + " " + UserDTO.nickname
+//                    kindergartenName.text = Main_babys.baby_kindergarten
+//                    ClassName.text = Main_babys.baby_class
+//
+//                } else {
+//                    Picasso.get().load(Main_babys.baby_imagepath).resize(200, 200)
+//                        .into(babyphoto)
+//                    SonName.text = Main_babys.baby_name
+//                    kindergartenName.text = Main_babys.baby_kindergarten
+//                    ClassName.text = Main_babys.baby_class
+//                }
+//
+//
+//            }
+//                , { thr ->
+//                    Log.d("Main_kiz2", thr.message.toString())
+//                    babyphoto.visibility = View.GONE
+//                    SonName.visibility = View.GONE
+//                    kindergartenName.visibility = View.GONE
+//                    ClassName.visibility = View.GONE
+//                }
+//
+//            ))
+//    }
 
-                } else {
-                    Picasso.get().load(Main_babys.baby_imagepath).resize(200, 200)
-                        .into(babyphoto)
-                    SonName.text = Main_babys.baby_name
-                    kindergartenName.text = Main_babys.baby_kindergarten
-                    ClassName.text = Main_babys.baby_class
-                }
-
-
-            }
-                , { thr ->
-                    Log.d("Main_kiz2", thr.message.toString())
-                    babyphoto.visibility = View.GONE
-                    SonName.visibility = View.GONE
-                    kindergartenName.visibility = View.GONE
-                    ClassName.visibility = View.GONE
-                }
-
-            ))
-    }
-
-    private fun fetchbabys(parents_id: String?) {
+    private fun fetchbabys(parents_id: String?) {   // 학부모, 선생님의 DB 를 서버와 통신하여 등록한 자녀 혹은 선생님의 정보가 네비게이션 드로어 리사이클러뷰에 나오게 된다.
         compositeDisposable.add(myAPI.getbabysList(parents_id)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -264,6 +293,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.closeDrawers() // 기능을 수행하고 네비게이션을 닫아준다.
         return false
     }
+
 
     private fun UserInfo(id: String?) {
         compositeDisposable.add(myAPI.userInfo(id)

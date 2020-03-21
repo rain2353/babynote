@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_modify_babyclass.*
 class modify_babyclass : Activity() {
     lateinit var myAPI: INodeJS
     var compositeDisposable = CompositeDisposable()
-    var kindergartenName : String? = null
+    var kindergartenName : String? = null     // 아이의 유치원 이름
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modify_babyclass)
@@ -41,8 +41,8 @@ class modify_babyclass : Activity() {
                     babyDTO.baby_name,
                     babyDTO.baby_birth,
                     babyDTO.baby_gender,
-                    kindergartenName,
-                    editText_babyclass.text.toString(),
+                    kindergartenName,   // 유치원 이름
+                    editText_babyclass.text.toString(),   // 반 이름
                     babyDTO.baby_imagepath,
                     babyDTO.parents_id,
                     babyDTO.state
