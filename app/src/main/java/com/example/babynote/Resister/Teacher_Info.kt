@@ -19,8 +19,8 @@ import java.net.URLEncoder
 class Teacher_Info : AppCompatActivity() {
 
     // 네이버 api 클라이언트 ID , 클라이언트 secret
-    val clientID = "QOxjMFTWZUPQbXiHFMFU"
-    val clientSecret = "lo5yoS8YSy"
+    val clientID = "@@@@@@@@@@@@@@"
+    val clientSecret = "@@@@@@@@@@@@@@"
 
     var choice_do = ""
     var choice_se = ""
