@@ -11,10 +11,10 @@ import android.widget.Toast
 import com.example.babynote.R
 import kotlinx.android.synthetic.main.item_raw.view.*
 
-class search_RecyclerViewAdapter(val context: Context, val homefeed: Homefeed) :
+class search_RecyclerViewAdapter(val context: Context, val search_result: search_result) :
     RecyclerView.Adapter<search_RecyclerViewAdapter.ViewHolder>() {
     override fun getItemCount(): Int {
-        return homefeed.items.count()
+        return search_result.items.count()
     }
 
 
@@ -27,7 +27,7 @@ class search_RecyclerViewAdapter(val context: Context, val homefeed: Homefeed) :
     }
 
     override fun onBindViewHolder(holder: search_RecyclerViewAdapter.ViewHolder, position: Int) {
-        holder.bindItems(homefeed.items.get(position))
+        holder.bindItems(search_result.items.get(position))
 
     }
 
