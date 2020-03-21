@@ -22,6 +22,7 @@ class modify_babyname : Activity() {
     var compositeDisposable = CompositeDisposable()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // 액티비티를 다이얼로그로 변경하기 위한 설정.
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         val layoutParams = WindowManager.LayoutParams()
         layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND
