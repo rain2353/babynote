@@ -1,13 +1,17 @@
-# babynote
-유치원 어플
+# babynote 작품 소개
 
-키즈노트를 모티브해서 만들어본 개인 프로젝트 입니다.
+BabyNote 는 유치원 혹은 어린이집의 아이 담당 교사와 아이의 학부모가 소통할수 있는 어플 입니다.
+
+# 개발 환경
+
+  * Android
+  * Kotlin
+  * Node.js
+  * MySQL
+  * Retrofit2
 
 
-Android , Kotlin , Node.js , MySQL , Retrofit2를 사용하였습니다.
-
-
-서버 깃헙
+# 서버 깃헙
 
 https://github.com/rain2353/babynote_server
 
