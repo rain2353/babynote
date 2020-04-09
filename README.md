@@ -36,7 +36,7 @@ https://github.com/rain2353/babynote_server
   <img src="https://user-images.githubusercontent.com/48168860/75759778-7430c280-5d79-11ea-916e-f86d7a2d5453.png" width="200"></img>
 </div>
 
-# 회원가입
+# 학부모 회원가입
 ------------------------------------
 <div>
   <img src="https://user-images.githubusercontent.com/48168860/75759915-ac380580-5d79-11ea-9b9b-72ed16350628.png" width="200"></img>
